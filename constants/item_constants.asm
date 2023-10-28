@@ -199,7 +199,7 @@
 
 __tmhm_value__ = 1
 
-add_tm: MACRO
+MACRO add_tm
 ; Defines three constants:
 ; - TM_\1: the item id, starting at $bf
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 1
@@ -275,7 +275,7 @@ ENDM
 	add_tm NIGHTMARE    ; f2
 NUM_TMS EQU __tmhm_value__ - 1
 
-add_hm: MACRO
+MACRO add_hm
 ; Defines three constants:
 ; - HM_\1: the item id, starting at $f3
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 51
@@ -307,7 +307,7 @@ ENDM
 	add_hm WATERFALL    ; f9
 NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
-add_mt: MACRO
+MACRO add_mt
 ; Defines two constants:
 ; - \1_TMNUM: the learnable TM/HM flag, starting at 58
 ; - MT##_MOVE: alias for the move id, equal to the value of \1

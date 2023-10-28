@@ -14,7 +14,7 @@ MapSetupScripts:
 	dw MapSetupScript_Fly
 
 ; valid commands are listed in MapSetupCommands (see data/maps/setup_script_pointers.asm)
-mapsetup: MACRO
+MACRO mapsetup
 	db (\1_MapSetupCmd - MapSetupCommands) / 3
 ENDM
 

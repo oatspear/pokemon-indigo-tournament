@@ -56,7 +56,7 @@
 
 __deco_value__ = 0
 
-deco: MACRO
+MACRO deco
 	const DECO_\1
 DECOFLAG_\1 EQU __deco_value__
 __deco_value__ = __deco_value__ + 1
