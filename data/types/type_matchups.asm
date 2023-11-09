@@ -119,10 +119,25 @@ TypeMatchups:
 	db FAIRY,        DARK,         SUPER_EFFECTIVE
 	db FAIRY,        STEEL,        NOT_VERY_EFFECTIVE
 
+	db FREEZE_DRY_TYPE,   WATER,   SUPER_EFFECTIVE
+	db FREEZE_DRY_TYPE,   GRASS,   SUPER_EFFECTIVE
+	db FREEZE_DRY_TYPE,   ICE,     NOT_VERY_EFFECTIVE
+	db FREEZE_DRY_TYPE,   GROUND,  SUPER_EFFECTIVE
+	db FREEZE_DRY_TYPE,   FLYING,  SUPER_EFFECTIVE
+	db FREEZE_DRY_TYPE,   DRAGON,  SUPER_EFFECTIVE
+	db FREEZE_DRY_TYPE,   STEEL,   NOT_VERY_EFFECTIVE
+	db FREEZE_DRY_TYPE,   FIRE,    NOT_VERY_EFFECTIVE
+
 	db -2 ; end (with Foresight)
 
 ; Foresight removes Ghost's immunities.
 	db NORMAL,       GHOST,        NO_EFFECT
 	db FIGHTING,     GHOST,        NO_EFFECT
 
+	db -1 ; end
+
+
+SpecialMoveTypeMatchups:
+	;  move,         special type
+	db FREEZE_DRY,   FREEZE_DRY_TYPE
 	db -1 ; end

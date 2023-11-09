@@ -17,7 +17,8 @@
 	const STEEL
 
 UNUSED_TYPES EQU const_value
-	const_next 19
+	const_next 18
+	const FREEZE_DRY_TYPE
 	const CURSE_TYPE
 UNUSED_TYPES_END EQU const_value
 

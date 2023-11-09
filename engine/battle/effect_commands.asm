@@ -1295,9 +1295,7 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	and TYPE_MASK
+	call GetSpecialMoveTypeIfAny
 	ld b, a
 	ld hl, TypeMatchups
 
@@ -1410,9 +1408,11 @@ BattleCheckTypeMatchup:
 	jr z, .get_type
 	ld hl, wBattleMonType1
 .get_type
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar ; preserves hl, de, and bc
-	and TYPE_MASK
+	push hl
+	push bc
+	call GetSpecialMoveTypeIfAny
+	pop bc
+	pop hl
 CheckTypeMatchup:
 	push hl
 	push de
@@ -1477,6 +1477,35 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
+
+
+; OATS: new logic for moves with special type matchups
+GetSpecialMoveTypeIfAny:
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar  ; preserves hl, de, and bc
+	ld b, a
+	ld hl, SpecialMoveTypeMatchups
+
+.SpecialTypesLoop:
+	ld a, [hli]
+	cp -1
+	jr z, .UseDefault
+	cp b
+	jr z, .FoundSpecialMoveType
+	inc hl
+	jr .SpecialTypesLoop
+
+; override normal move type and jump straight to type matchups
+.FoundSpecialMoveType:
+	ld a, [hl]
+	ret
+
+.UseDefault:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar  ; preserves hl, de, and bc
+	and TYPE_MASK
+	ret
+
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
