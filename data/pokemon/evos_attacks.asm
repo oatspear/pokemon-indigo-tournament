@@ -468,7 +468,7 @@ NidokingEvosAttacks:
 ClefairyEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, CLEFABLE
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, METRONOME
 	db 1, GROWL
 	db 4, ENCORE
 	db 8, SING
@@ -515,7 +515,6 @@ JigglypuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 4, DEFENSE_CURL
-	db 9, POUND
 	db 14, DISABLE
 	db 19, ROLLOUT
 	db 24, DOUBLESLAP
@@ -1186,8 +1185,7 @@ GrimerEvosAttacks:
 	db EVOLVE_LEVEL, 38, MUK
 	db 0 ; no more evolutions
 	db 1, POISON_GAS
-	db 1, POUND
-	db 5, HARDEN
+	db 1, HARDEN
 	db 10, DISABLE
 	db 16, SLUDGE
 	db 23, MINIMIZE
@@ -1200,9 +1198,7 @@ MukEvosAttacks:
 	db 0 ; no more evolutions
 	; moves are not sorted by level
 	db 1, POISON_GAS
-	db 1, POUND
 	db 1, HARDEN
-	db 33, HARDEN
 	db 37, DISABLE
 	db 45, SLUDGE
 	db 23, MINIMIZE
@@ -1293,7 +1289,7 @@ OnixEvosAttacks:
 DrowzeeEvosAttacks:
 	db EVOLVE_LEVEL, 26, HYPNO
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, CALM_MIND
 	db 1, HYPNOSIS
 	db 10, DISABLE
 	db 18, CONFUSION
@@ -1307,7 +1303,7 @@ DrowzeeEvosAttacks:
 
 HypnoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, CALM_MIND
 	db 1, HYPNOSIS
 	db 1, DISABLE
 	db 1, CONFUSION
@@ -1535,7 +1531,7 @@ RhydonEvosAttacks:
 ChanseyEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, BLISSEY
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, SING
 	db 5, GROWL
 	db 9, TAIL_WHIP
 	db 13, SOFTBOILED
@@ -1686,7 +1682,6 @@ ScytherEvosAttacks:
 
 JynxEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
 	db 1, LICK
 	db 1, LOVELY_KISS
 	db 1, POWDER_SNOW
@@ -2050,7 +2045,7 @@ MewtwoEvosAttacks:
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, METRONOME
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, METRONOME
@@ -2360,7 +2355,6 @@ PichuEvosAttacks:
 CleffaEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
 	db 0 ; no more evolutions
-	db 1, POUND
 	db 1, CHARM
 	db 4, ENCORE
 	db 8, SING
@@ -2373,7 +2367,6 @@ IgglybuffEvosAttacks:
 	db 1, SING
 	db 1, CHARM
 	db 4, DEFENSE_CURL
-	db 9, POUND
 	db 14, SWEET_KISS
 	db 0 ; no more level-up moves
 
@@ -2597,7 +2590,6 @@ SunkernEvosAttacks:
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 1, POUND
 	db 4, GROWTH
 	db 10, RAZOR_LEAF
 	db 19, SUNNY_DAY
@@ -3164,7 +3156,6 @@ HitmontopEvosAttacks:
 SmoochumEvosAttacks:
 	db EVOLVE_LEVEL, 30, JYNX
 	db 0 ; no more evolutions
-	db 1, POUND
 	db 1, LICK
 	db 9, SWEET_KISS
 	db 13, POWDER_SNOW
@@ -3218,9 +3209,8 @@ MiltankEvosAttacks:
 
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 4, GROWL
-	db 7, TAIL_WHIP
+	db 1, GROWL
+	db 1, TAIL_WHIP
 	db 10, SOFTBOILED
 	db 13, DOUBLESLAP
 	db 18, MINIMIZE

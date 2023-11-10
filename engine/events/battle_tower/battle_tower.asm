@@ -324,7 +324,7 @@ endr
 
 .not_move
 	dec hl
-	ld a, POUND
+	ld a, FREEZE_DRY
 	ld [hli], a
 	xor a
 	ld [hli], a
