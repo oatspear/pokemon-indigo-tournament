@@ -14,7 +14,7 @@ Moves: ; 41afb
 ; entries correspond to constants/move_constants.asm
 	move FREEZE_DRY,   EFFECT_FREEZE_HIT,         85, ICE,           SPECIAL,  100, 20,  10
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0
-	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 10,   0
+	move ICICLE_CRASH, EFFECT_FLINCH_HIT,         80, ICE,           PHYSICAL, 100, 10,  30
 	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  85, 15,   0
 	move MEGA_PUNCH,   EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0
 	move PAY_DAY,      EFFECT_PAY_DAY,            40, NORMAL,        PHYSICAL, 100, 20,   0

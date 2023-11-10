@@ -1,7 +1,7 @@
 MoveNames::
 	db "FREEZE DRY@"
 	db "KARATE CHOP@"
-	db "DOUBLESLAP@"
+	db "ICICLE CRASH@"
 	db "COMET PUNCH@"
 	db "MEGA PUNCH@"
 	db "PAY DAY@"

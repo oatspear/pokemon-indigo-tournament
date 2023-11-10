@@ -3,7 +3,7 @@ BattleAnimations::
 	dw BattleAnim_0
 	dw BattleAnim_FreezeDry
 	dw BattleAnim_KarateChop
-	dw BattleAnim_Doubleslap
+	dw BattleAnim_IcicleCrash
 	dw BattleAnim_CometPunch
 	dw BattleAnim_MegaPunch
 	dw BattleAnim_PayDay
@@ -675,23 +675,23 @@ BattleAnim_KarateChop:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Doubleslap:
-	anim_1gfx ANIM_GFX_HIT
-	anim_if_param_equal $1, .alternate
-	anim_sound 0, 1, SFX_DOUBLESLAP
-	anim_obj ANIM_OBJ_PALM, 144, 48, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
-	anim_wait 8
-	anim_ret
-
-.alternate:
-	anim_sound 0, 1, SFX_DOUBLESLAP
-	anim_obj ANIM_OBJ_PALM, 120, 48, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 120, 48, $0
-	anim_wait 8
-	anim_ret
+; BattleAnim_Doubleslap:
+; 	anim_1gfx ANIM_GFX_HIT
+; 	anim_if_param_equal $1, .alternate
+; 	anim_sound 0, 1, SFX_DOUBLESLAP
+; 	anim_obj ANIM_OBJ_PALM, 144, 48, $0
+; 	anim_wait 6
+; 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
+; 	anim_wait 8
+; 	anim_ret
+; 
+; .alternate:
+; 	anim_sound 0, 1, SFX_DOUBLESLAP
+; 	anim_obj ANIM_OBJ_PALM, 120, 48, $0
+; 	anim_wait 6
+; 	anim_obj ANIM_OBJ_HIT_YFIX, 120, 48, $0
+; 	anim_wait 8
+; 	anim_ret
 
 BattleAnim_CometPunch:
 	anim_1gfx ANIM_GFX_HIT
@@ -970,6 +970,27 @@ BattleAnim_FireBlast:
 	anim_wait 16
 	anim_loop 2, .loop3
 	anim_wait 32
+	anim_ret
+
+BattleAnim_IcicleCrash:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_ICE
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_BLIZZARD, 64, 88, $63
+	anim_wait 2
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_BLIZZARD, 64, 80, $64
+	anim_wait 2
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj ANIM_OBJ_BLIZZARD, 64, 96, $63
+	anim_wait 2
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 44, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_IcePunch:

@@ -472,7 +472,6 @@ ClefairyEvosAttacks:
 	db 1, GROWL
 	db 4, ENCORE
 	db 8, SING
-	db 13, DOUBLESLAP
 	db 19, MINIMIZE
 	db 26, DEFENSE_CURL
 	db 34, METRONOME
@@ -483,7 +482,6 @@ ClefairyEvosAttacks:
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
-	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
 	db 0 ; no more level-up moves
@@ -517,7 +515,6 @@ JigglypuffEvosAttacks:
 	db 4, DEFENSE_CURL
 	db 14, DISABLE
 	db 19, ROLLOUT
-	db 24, DOUBLESLAP
 	db 29, REST
 	db 34, BODY_SLAM
 	db 39, DOUBLE_EDGE
@@ -528,7 +525,7 @@ WigglytuffEvosAttacks:
 	db 1, SING
 	db 1, DISABLE
 	db 1, DEFENSE_CURL
-	db 1, DOUBLESLAP
+	db 1, BODY_SLAM
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -796,7 +793,6 @@ PoliwagEvosAttacks:
 	db 1, BUBBLE
 	db 7, HYPNOSIS
 	db 13, WATER_GUN
-	db 19, DOUBLESLAP
 	db 25, RAIN_DANCE
 	db 31, BODY_SLAM
 	db 37, BELLY_DRUM
@@ -812,7 +808,6 @@ PoliwhirlEvosAttacks:
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
 	db 13, WATER_GUN
-	db 19, DOUBLESLAP
 	db 27, RAIN_DANCE
 	db 35, BODY_SLAM
 	db 43, BELLY_DRUM
@@ -823,7 +818,7 @@ PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, HYPNOSIS
-	db 1, DOUBLESLAP
+	db 1, BODY_SLAM
 	db 1, SUBMISSION
 	db 35, SUBMISSION
 	db 51, MIND_READER
@@ -1535,7 +1530,6 @@ ChanseyEvosAttacks:
 	db 5, GROWL
 	db 9, TAIL_WHIP
 	db 13, SOFTBOILED
-	db 17, DOUBLESLAP
 	db 23, MINIMIZE
 	db 29, SING
 	db 35, EGG_BOMB
@@ -1656,7 +1650,6 @@ MrMimeEvosAttacks:
 	db 6, CONFUSION
 	db 11, SUBSTITUTE
 	db 16, MEDITATE
-	db 21, DOUBLESLAP
 	db 26, LIGHT_SCREEN
 	db 26, REFLECT
 	db 31, ENCORE
@@ -1687,7 +1680,6 @@ JynxEvosAttacks:
 	db 1, FROST_BREATH
 	db 9, LOVELY_KISS
 	db 13, FROST_BREATH
-	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
 	db 41, BODY_SLAM
@@ -2508,7 +2500,6 @@ PolitoedEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 1, HYPNOSIS
-	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
 	db 35, PERISH_SONG
 	db 51, SWAGGER
@@ -3212,7 +3203,6 @@ BlisseyEvosAttacks:
 	db 1, GROWL
 	db 1, TAIL_WHIP
 	db 10, SOFTBOILED
-	db 13, DOUBLESLAP
 	db 18, MINIMIZE
 	db 23, SING
 	db 28, EGG_BOMB

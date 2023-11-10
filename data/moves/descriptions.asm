@@ -2,7 +2,7 @@ MoveDescriptions::
 ; entries correspond to move ids (see constants/move_constants.asm)
 	dw FreezeDryDescription
 	dw KarateChopDescription
-	dw DoubleslapDescription
+	dw IcicleCrashDescription
 	dw CometPunchDescription
 	dw MegaPunchDescription
 	dw PayDayDescription
@@ -269,10 +269,6 @@ KarateChopDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
-DoubleslapDescription:
-	db   "Repeatedly slaps"
-	next "2-5 times.@"
-
 CometPunchDescription:
 	db   "Repeatedly punches"
 	next "2-5 times.@"
@@ -433,6 +429,7 @@ LeerDescription:
 	db   "Reduces the foe's"
 	next "DEFENSE.@"
 
+IcicleCrashDescription:
 BiteDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
