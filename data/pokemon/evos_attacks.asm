@@ -1684,9 +1684,9 @@ JynxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 1, LOVELY_KISS
-	db 1, POWDER_SNOW
+	db 1, FROST_BREATH
 	db 9, LOVELY_KISS
-	db 13, POWDER_SNOW
+	db 13, FROST_BREATH
 	db 21, DOUBLESLAP
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
@@ -1946,7 +1946,7 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
-	db 1, POWDER_SNOW
+	db 1, FROST_BREATH
 	db 13, MIST
 	db 25, AGILITY
 	db 37, MIND_READER
@@ -2941,7 +2941,7 @@ SwinubEvosAttacks:
 	db EVOLVE_LEVEL, 33, PILOSWINE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 10, POWDER_SNOW
+	db 10, FROST_BREATH
 	db 19, ENDURE
 	db 28, TAKE_DOWN
 	db 37, MIST
@@ -2952,9 +2952,9 @@ SwinubEvosAttacks:
 PiloswineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, POWDER_SNOW
+	db 1, FROST_BREATH
 	db 1, ENDURE
-	db 10, POWDER_SNOW
+	db 10, FROST_BREATH
 	db 19, ENDURE
 	db 28, TAKE_DOWN
 	db 33, FURY_ATTACK
@@ -3158,7 +3158,7 @@ SmoochumEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
 	db 9, SWEET_KISS
-	db 13, POWDER_SNOW
+	db 13, FROST_BREATH
 	db 21, CONFUSION
 	db 25, SING
 	db 33, MEAN_LOOK

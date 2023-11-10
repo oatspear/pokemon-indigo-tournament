@@ -1178,10 +1178,17 @@ BattleCommand_Critical:
 .CheckCritical:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	ld de, 1
+	ld hl, AlwaysCriticalHitMoves
+	push bc
+	call IsInByteArray
+	pop bc
+	jr c, .AlwaysCritical
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
 	ld hl, CriticalHitMoves
 	push bc
-	call IsInArray
+	call IsInByteArray
 	pop bc
 	jr nc, .ScopeLens
 
@@ -1207,6 +1214,7 @@ BattleCommand_Critical:
 	call BattleRandom
 	cp [hl]
 	ret nc
+.AlwaysCritical:
 	ld a, 1
 	ld [wCriticalHit], a
 	ret

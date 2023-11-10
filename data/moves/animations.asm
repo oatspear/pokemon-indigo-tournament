@@ -181,7 +181,7 @@ BattleAnimations::
 	dw BattleAnim_CottonSpore
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
-	dw BattleAnim_PowderSnow
+	dw BattleAnim_FrostBreath
 	dw BattleAnim_Protect
 	dw BattleAnim_MachPunch
 	dw BattleAnim_ScaryFace
@@ -3338,7 +3338,8 @@ BattleAnim_Spite:
 	anim_ret
 
 BattleAnim_FreezeDry:
-BattleAnim_PowderSnow:
+BattleAnim_FrostBreath:
+; BattleAnim_PowderSnow:
 	anim_1gfx ANIM_GFX_ICE
 .loop
 	anim_sound 6, 2, SFX_SHINE

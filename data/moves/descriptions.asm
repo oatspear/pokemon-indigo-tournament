@@ -180,7 +180,7 @@ MoveDescriptions::
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
-	dw PowderSnowDescription
+	dw FrostBreathDescription
 	dw ProtectDescription
 	dw MachPunchDescription
 	dw ScaryFaceDescription
@@ -981,9 +981,9 @@ SpiteDescription:
 	db   "Cuts the PP of the"
 	next "foe's last move.@"
 
-PowderSnowDescription:
-	db   "An attack that may"
-	next "cause freezing.@"
+FrostBreathDescription:
+	db   "Always results in"
+	next "a critical hit.@"
 
 ProtectDescription:
 	db   "Foils attack that"

@@ -179,7 +179,7 @@ MoveNames::
 	db "COTTON SPORE@"
 	db "REVERSAL@"
 	db "SPITE@"
-	db "POWDER SNOW@"
+	db "FROST BREATH@"
 	db "PROTECT@"
 	db "MACH PUNCH@"
 	db "SCARY FACE@"

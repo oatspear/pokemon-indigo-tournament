@@ -1,3 +1,7 @@
+AlwaysCriticalHitMoves:
+	db FROST_BREATH
+	db -1
+
 CriticalHitMoves:
 	db KARATE_CHOP
 	db RAZOR_LEAF
