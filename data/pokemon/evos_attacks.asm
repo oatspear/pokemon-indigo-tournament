@@ -1317,7 +1317,7 @@ KrabbyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 5, LEER
-	db 12, VICEGRIP
+	db 12, X_SCISSOR
 	db 16, HARDEN
 	db 23, STOMP
 	db 27, GUILLOTINE
@@ -1329,9 +1329,9 @@ KinglerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, LEER
-	db 1, VICEGRIP
+	db 1, X_SCISSOR
 	db 5, LEER
-	db 12, VICEGRIP
+	db 12, X_SCISSOR
 	db 16, HARDEN
 	db 23, STOMP
 	db 27, GUILLOTINE
@@ -1718,7 +1718,7 @@ MagmarEvosAttacks:
 
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, VICEGRIP
+	db 1, X_SCISSOR
 	db 7, FOCUS_ENERGY
 	db 13, BIND
 	db 19, SEISMIC_TOSS

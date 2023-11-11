@@ -10,7 +10,7 @@ MoveDescriptions::
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
+	dw XScissorDescription
 	dw GuillotineDescription
 	dw AirSlashDescription
 	dw SwordsDanceDescription
@@ -297,10 +297,6 @@ ScratchDescription:
 	db   "Scratches with"
 	next "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
-
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
@@ -554,6 +550,7 @@ GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
 
+XSCissorDescription:
 RazorLeafDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"

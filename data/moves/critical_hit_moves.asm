@@ -3,6 +3,7 @@ AlwaysCriticalHitMoves:
 	db -1
 
 CriticalHitMoves:
+	db X_SCISSOR
 	db KARATE_CHOP
 	db RAZOR_LEAF
 	db CRABHAMMER

@@ -8,6 +8,7 @@
 - **Freeze Dry** (Ice, Special): 85 Power, 100% Accuracy, 10% chance to freeze, super effective vs Water.
 - **Frost Breath** (Ice, Special): 65 Power, 100% Accuracy, always a critical hit.
 - **Icicle Crash** (Ice, Physical): 80 Power, 100% Accuracy, 30% chance to flinch.
+- **X-Scissor** (Bug, Physical): 80 Power, 100% Accuracy, high critical-hit ratio.
 
 ### Removed
 
@@ -15,6 +16,7 @@
 - Pound
 - Powder Snow
 - Doubleslap
+- Vicegrip
 
 ### Changed
 
