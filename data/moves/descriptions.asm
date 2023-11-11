@@ -80,7 +80,7 @@ MoveDescriptions::
 	dw StunSporeDescription
 	dw SleepPowderDescription
 	dw PetalDanceDescription
-	dw StringShotDescription
+	dw LungeDescription
 	dw DragonRageDescription
 	dw FireSpinDescription
 	dw ThundershockDescription
@@ -426,6 +426,7 @@ BiteDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
+LungeDescription:
 GrowlDescription:
 	db   "Reduces the foe's"
 	next "ATTACK.@"
@@ -570,10 +571,6 @@ SleepPowderDescription:
 PetalDanceDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
-
-StringShotDescription:
-	db   "A move that lowers"
-	next "the foe's SPEED.@"
 
 DragonRageDescription:
 	db   "Always inflicts"

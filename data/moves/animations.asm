@@ -81,7 +81,7 @@ BattleAnimations::
 	dw BattleAnim_StunSpore
 	dw BattleAnim_SleepPowder
 	dw BattleAnim_PetalDance
-	dw BattleAnim_StringShot
+	dw BattleAnim_Lunge
 	dw BattleAnim_DragonRage
 	dw BattleAnim_FireSpin
 	dw BattleAnim_Thundershock
@@ -2039,28 +2039,28 @@ BattleAnim_SandAttack:
 	anim_call BattleAnimSub_SandOrMud
 	anim_ret
 
-BattleAnim_StringShot:
-	anim_1gfx ANIM_GFX_WEB
-	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_sound 6, 2, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 64, 80, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 132, 48, $1
-	anim_wait 4
-	anim_sound 6, 2, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 64, 88, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 132, 64, $1
-	anim_wait 4
-	anim_sound 6, 2, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 64, 84, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_MENU
-	anim_obj ANIM_OBJ_STRING_SHOT, 132, 56, $2
-	anim_wait 64
-	anim_ret
+; BattleAnim_StringShot:
+; 	anim_1gfx ANIM_GFX_WEB
+; 	anim_bgeffect ANIM_BG_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+; 	anim_sound 6, 2, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 64, 80, $0
+; 	anim_wait 4
+; 	anim_sound 0, 1, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 132, 48, $1
+; 	anim_wait 4
+; 	anim_sound 6, 2, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 64, 88, $0
+; 	anim_wait 4
+; 	anim_sound 0, 1, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 132, 64, $1
+; 	anim_wait 4
+; 	anim_sound 6, 2, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 64, 84, $0
+; 	anim_wait 4
+; 	anim_sound 0, 1, SFX_MENU
+; 	anim_obj ANIM_OBJ_STRING_SHOT, 132, 56, $2
+; 	anim_wait 64
+; 	anim_ret
 
 BattleAnim_Headbutt:
 	anim_1gfx ANIM_GFX_HIT
@@ -2086,6 +2086,7 @@ BattleAnim_Tackle:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_Lunge:
 BattleAnim_BodySlam:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row

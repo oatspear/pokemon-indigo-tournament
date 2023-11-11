@@ -173,7 +173,6 @@ CaterpieEvosAttacks:
 	db EVOLVE_LEVEL, 7, METAPOD
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, STRING_SHOT
 	db 0 ; no more level-up moves
 
 MetapodEvosAttacks:
@@ -201,7 +200,6 @@ WeedleEvosAttacks:
 	db EVOLVE_LEVEL, 7, KAKUNA
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 1, STRING_SHOT
 	db 0 ; no more level-up moves
 
 KakunaEvosAttacks:
@@ -2266,7 +2264,6 @@ SpinarakEvosAttacks:
 	db EVOLVE_LEVEL, 22, ARIADOS
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 1, STRING_SHOT
 	db 6, SCARY_FACE
 	db 11, CONSTRICT
 	db 17, NIGHT_SHADE
@@ -2280,7 +2277,6 @@ SpinarakEvosAttacks:
 AriadosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 1, STRING_SHOT
 	db 1, SCARY_FACE
 	db 1, CONSTRICT
 	db 6, SCARY_FACE

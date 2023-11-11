@@ -11,7 +11,8 @@ StallMoves:
 	db COUNTER
 	db LEECH_SEED
 	db GROWTH
-	db STRING_SHOT
+	db CALM_MIND
+	db DRAGON_DANCE
 	db MEDITATE
 	db AGILITY
 	db RAGE

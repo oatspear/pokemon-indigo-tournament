@@ -79,7 +79,7 @@ MoveNames::
 	db "STUN SPORE@"
 	db "SLEEP POWDER@"
 	db "PETAL DANCE@"
-	db "STRING SHOT@"
+	db "LUNGE@"
 	db "DRAGON RAGE@"
 	db "FIRE SPIN@"
 	db "THUNDERSHOCK@"
