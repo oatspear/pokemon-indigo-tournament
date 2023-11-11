@@ -9,6 +9,7 @@
 - **Frost Breath** (Ice, Special): 65 Power, 100% Accuracy, always a critical hit.
 - **Icicle Crash** (Ice, Physical): 80 Power, 100% Accuracy, 30% chance to flinch.
 - **X-Scissor** (Bug, Physical): 80 Power, 100% Accuracy, high critical-hit ratio.
+- **Bug Buzz** (Bug, Special): 95 Power, 100% Accuracy, 10% chance to lower Sp. Def.
 
 ### Removed
 
@@ -17,6 +18,7 @@
 - Powder Snow
 - Doubleslap
 - Vicegrip
+- Cut
 
 ### Changed
 

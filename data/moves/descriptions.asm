@@ -14,7 +14,7 @@ MoveDescriptions::
 	dw GuillotineDescription
 	dw AirSlashDescription
 	dw SwordsDanceDescription
-	dw CutDescription
+	dw BugBuzzDescription
 	dw GustDescription
 	dw WingAttackDescription
 	dw WhirlwindDescription
@@ -308,10 +308,6 @@ AirSlashDescription:
 SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
-
-CutDescription:
-	db   "Cuts using claws,"
-	next "scythes, etc.@"
 
 GustDescription:
 	db   "Whips up a strong"
@@ -627,6 +623,7 @@ ConfusionDescription:
 	db   "An attack that may"
 	next "cause confusion.@"
 
+BugBuzzDescription:
 PsychicMDescription:
 	db   "An attack that may"
 	next "lower SPCL.DEF.@"

@@ -1,3 +1,5 @@
+CUT EQU $0f
+
 ; move ids
 ; indexes for:
 ; - Moves (see data/moves/moves.asm)
@@ -20,7 +22,7 @@
 	const GUILLOTINE   ; 0c
 	const AIR_SLASH    ; 0d
 	const SWORDS_DANCE ; 0e
-	const CUT          ; 0f
+	const BUG_BUZZ     ; 0f
 	const GUST         ; 10
 	const WING_ATTACK  ; 11
 	const WHIRLWIND    ; 12

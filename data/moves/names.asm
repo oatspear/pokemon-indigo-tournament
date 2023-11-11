@@ -13,7 +13,7 @@ MoveNames::
 	db "GUILLOTINE@"
 	db "AIR SLASH@"
 	db "SWORDS DANCE@"
-	db "CUT@"
+	db "BUG BUZZ@"
 	db "GUST@"
 	db "WING ATTACK@"
 	db "WHIRLWIND@"
