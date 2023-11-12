@@ -11,6 +11,7 @@
 - **X-Scissor** (Bug, Physical): 80 Power, 100% Accuracy, high critical-hit ratio.
 - **Bug Buzz** (Bug, Special): 95 Power, 100% Accuracy, 10% chance to lower the foe's Sp. Def.
 - **Lunge** (Bug, Physical): 80 Power, 100% Accuracy, 100% chance to lower the foe's Attack.
+- **U-turn** (Bug, Physical): 70 Power, 100% Accuracy, switches the user after dealing damage.
 
 ### Removed
 
@@ -21,6 +22,7 @@
 - Vicegrip
 - Cut
 - String Shot
+- Frustration
 
 ### Changed
 

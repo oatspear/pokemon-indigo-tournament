@@ -77,7 +77,7 @@ MoveEffectsPointers:
 	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
-	dw NormalHit
+	dw UTurn
 	dw Substitute
 	dw HyperBeam
 	dw Rage
@@ -122,7 +122,6 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
 	dw Safeguard
 	dw SacredFire
 	dw Magnitude
