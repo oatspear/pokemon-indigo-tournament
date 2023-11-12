@@ -1617,13 +1617,13 @@ BattleCommand_CheckHit:
 	call .XAccuracy
 	ret nz
 
-	; Perfect-accuracy moves
+; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
 	ret z
 
-    ld a, [wPlayerMoveStruct + MOVE_ACC]
+	ld a, [wPlayerMoveStruct + MOVE_ACC]
 	ld b, a
 	ldh a, [hBattleTurn]
 	and a
@@ -1632,9 +1632,9 @@ BattleCommand_CheckHit:
 	ld b, a
 
 .CheckPerfectAccuracy:
-    ld a, b
-    and a
-    jr z, .Hit
+	ld a, b
+	and a
+	jr z, .Hit
 
 	call .StatModifiers
 
