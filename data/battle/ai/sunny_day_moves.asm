@@ -2,7 +2,6 @@
 
 SunnyDayMoves:
 	db FIRE_PUNCH
-	db EMBER
 	db FLAMETHROWER
 	db FIRE_SPIN
 	db FIRE_BLAST

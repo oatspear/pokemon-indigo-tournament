@@ -63,7 +63,7 @@ Moves: ; 41afb
 	move SONICBOOM,    EFFECT_STATIC_DAMAGE,      20, NORMAL,        SPECIAL,   90, 20,   0
 	move DISABLE,      EFFECT_DISABLE,             0, NORMAL,        STATUS,   100, 20,   0
 	move ACID,         EFFECT_SP_DEF_DOWN_HIT,    40, POISON,        SPECIAL,  100, 30,  10
-	move EMBER,        EFFECT_BURN_HIT,           40, FIRE,          SPECIAL,  100, 25,  10
+	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          STATUS,    85, 15, 100
 	move FLAMETHROWER, EFFECT_BURN_HIT,           90, FIRE,          SPECIAL,  100, 15,  10
 	move MIST,         EFFECT_MIST,                0, ICE,           STATUS,   100, 30,   0
 	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,         SPECIAL,  100, 25,   0
@@ -251,8 +251,8 @@ Moves: ; 41afb
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       60, NORMAL,        SPECIAL,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL,  80,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,        SPECIAL,  100, 20,  20
-	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,    90,  5,   0
-	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0
+	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,         STATUS,     0,  5,   0
+	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,     0,  5,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,          PHYSICAL, 100, 15,  20
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE,  SPECIAL,  100, 20,   0
 	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0
@@ -263,6 +263,6 @@ Moves: ; 41afb
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING,      PHYSICAL, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,         SPECIAL,   85, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
-	move HAIL,         EFFECT_HAIL,                0, ICE,           STATUS,   100, 10,   0
-	move DRAGON_DANCE, EFFECT_ATK_SPEED_UP,        0, DRAGON,        STATUS,  100, 20,   0
-	move CALM_MIND,    EFFECT_SPECIALS_UP,         0, PSYCHIC_TYPE,  STATUS,  100, 20,   0
+	move HAIL,         EFFECT_HAIL,                0, ICE,           STATUS,     0, 10,   0
+	move DRAGON_DANCE, EFFECT_ATK_SPEED_UP,        0, DRAGON,        STATUS,   100, 20,   0
+	move CALM_MIND,    EFFECT_SPECIALS_UP,         0, PSYCHIC_TYPE,  STATUS,   100, 20,   0

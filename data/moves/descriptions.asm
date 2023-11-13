@@ -51,7 +51,7 @@ MoveDescriptions::
 	dw SonicboomDescription
 	dw DisableDescription
 	dw AcidDescription
-	dw EmberDescription
+	dw WillOWispDescription
 	dw FlamethrowerDescription
 	dw MistDescription
 	dw WaterGunDescription
@@ -455,9 +455,9 @@ AcidDescription:
 	db   "An attack that may"
 	next "lower DEFENSE.@"
 
-EmberDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+WillOWispDescription:
+	db   "Inflicts Burn on"
+	next "the target.@"
 
 FlamethrowerDescription:
 	db   "An attack that may"

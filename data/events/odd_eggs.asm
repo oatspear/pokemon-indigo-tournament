@@ -235,7 +235,7 @@ OddEggs:
 
 	db MAGBY
 	db NO_ITEM
-	db EMBER, DIZZY_PUNCH, 0, 0
+	db WILL_O_WISP, DIZZY_PUNCH, 0, 0
 	dw 02560 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -261,7 +261,7 @@ OddEggs:
 
 	db MAGBY
 	db NO_ITEM
-	db EMBER, DIZZY_PUNCH, 0, 0
+	db WILL_O_WISP, DIZZY_PUNCH, 0, 0
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	; Stat exp

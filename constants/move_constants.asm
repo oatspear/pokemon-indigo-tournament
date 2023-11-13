@@ -59,7 +59,7 @@ CUT EQU $0f
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
-	const EMBER        ; 34
+	const WILL_O_WISP  ; 34
 	const FLAMETHROWER ; 35
 	const MIST         ; 36
 	const WATER_GUN    ; 37

@@ -50,7 +50,7 @@ MoveNames::
 	db "SONICBOOM@"
 	db "DISABLE@"
 	db "ACID@"
-	db "EMBER@"
+	db "WILL-O-WISP@"
 	db "FLAMETHROWER@"
 	db "MIST@"
 	db "WATER GUN@"

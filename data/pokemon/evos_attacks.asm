@@ -74,7 +74,7 @@ CharmanderEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 7, EMBER
+	db 7, WILL_O_WISP
 	db 13, SMOKESCREEN
 	db 19, RAGE
 	db 25, SCARY_FACE
@@ -89,8 +89,8 @@ CharmeleonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 1, EMBER
-	db 7, EMBER
+	db 1, WILL_O_WISP
+	db 7, WILL_O_WISP
 	db 13, SMOKESCREEN
 	db 20, RAGE
 	db 27, SCARY_FACE
@@ -104,9 +104,9 @@ CharizardEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 1, SMOKESCREEN
-	db 7, EMBER
+	db 7, WILL_O_WISP
 	db 13, SMOKESCREEN
 	db 20, RAGE
 	db 27, SCARY_FACE
@@ -487,7 +487,7 @@ ClefableEvosAttacks:
 VulpixEvosAttacks:
 	db EVOLVE_ITEM, FIRE_STONE, NINETALES
 	db 0 ; no more evolutions
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 1, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 13, ROAR
@@ -499,7 +499,7 @@ VulpixEvosAttacks:
 
 NinetalesEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 1, QUICK_ATTACK
 	db 1, CONFUSE_RAY
 	db 1, SAFEGUARD
@@ -768,7 +768,7 @@ GrowlitheEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, ROAR
-	db 9, EMBER
+	db 9, WILL_O_WISP
 	db 18, LEER
 	db 26, TAKE_DOWN
 	db 34, FLAME_WHEEL
@@ -1024,7 +1024,7 @@ PonytaEvosAttacks:
 	db 1, TACKLE
 	db 4, GROWL
 	db 8, TAIL_WHIP
-	db 13, EMBER
+	db 13, WILL_O_WISP
 	db 19, STOMP
 	db 26, FIRE_SPIN
 	db 34, TAKE_DOWN
@@ -1037,10 +1037,10 @@ RapidashEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, TAIL_WHIP
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 4, GROWL
 	db 8, TAIL_WHIP
-	db 13, EMBER
+	db 13, WILL_O_WISP
 	db 19, STOMP
 	db 26, FIRE_SPIN
 	db 34, TAKE_DOWN
@@ -1700,7 +1700,7 @@ ElectabuzzEvosAttacks:
 
 MagmarEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 1, LEER
 	db 1, SMOG
 	db 1, FIRE_PUNCH
@@ -1829,7 +1829,7 @@ FlareonEvosAttacks:
 	db 1, TACKLE
 	db 1, TAIL_WHIP
 	db 8, SAND_ATTACK
-	db 16, EMBER
+	db 16, WILL_O_WISP
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, FIRE_SPIN
@@ -1960,7 +1960,7 @@ ZapdosEvosAttacks:
 MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WING_ATTACK
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 37, ENDURE
@@ -2097,7 +2097,7 @@ CyndaquilEvosAttacks:
 	db 1, TACKLE
 	db 1, LEER
 	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 12, WILL_O_WISP
 	db 19, QUICK_ATTACK
 	db 27, FLAME_WHEEL
 	db 36, SWIFT
@@ -2111,7 +2111,7 @@ QuilavaEvosAttacks:
 	db 1, LEER
 	db 1, SMOKESCREEN
 	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 12, WILL_O_WISP
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 42, SWIFT
@@ -2123,9 +2123,9 @@ TyphlosionEvosAttacks:
 	db 1, TACKLE
 	db 1, LEER
 	db 1, SMOKESCREEN
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 6, SMOKESCREEN
-	db 12, EMBER
+	db 12, WILL_O_WISP
 	db 21, QUICK_ATTACK
 	db 31, FLAME_WHEEL
 	db 45, SWIFT
@@ -2901,7 +2901,7 @@ SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
 	db 1, SMOG
-	db 8, EMBER
+	db 8, WILL_O_WISP
 	db 15, ROCK_THROW
 	db 22, HARDEN
 	db 29, AMNESIA
@@ -2913,9 +2913,9 @@ SlugmaEvosAttacks:
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 1, ROCK_THROW
-	db 8, EMBER
+	db 8, WILL_O_WISP
 	db 15, ROCK_THROW
 	db 22, HARDEN
 	db 29, AMNESIA
@@ -3020,7 +3020,7 @@ HoundourEvosAttacks:
 	db EVOLVE_LEVEL, 24, HOUNDOOM
 	db 0 ; no more evolutions
 	db 1, LEER
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 7, ROAR
 	db 13, SMOG
 	db 20, BITE
@@ -3032,7 +3032,7 @@ HoundourEvosAttacks:
 HoundoomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEER
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 7, ROAR
 	db 13, SMOG
 	db 20, BITE
@@ -3170,7 +3170,7 @@ ElekidEvosAttacks:
 MagbyEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGMAR
 	db 0 ; no more evolutions
-	db 1, EMBER
+	db 1, WILL_O_WISP
 	db 7, LEER
 	db 13, SMOG
 	db 19, FIRE_PUNCH
@@ -3224,7 +3224,7 @@ EnteiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-	db 11, EMBER
+	db 11, WILL_O_WISP
 	db 21, ROAR
 	db 31, FIRE_SPIN
 	db 41, STOMP

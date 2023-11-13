@@ -52,7 +52,7 @@ BattleAnimations::
 	dw BattleAnim_Sonicboom
 	dw BattleAnim_Disable
 	dw BattleAnim_Acid
-	dw BattleAnim_Ember
+	dw BattleAnim_WillOWisp
 	dw BattleAnim_Flamethrower
 	dw BattleAnim_Mist
 	dw BattleAnim_WaterGun
@@ -855,7 +855,8 @@ BattleAnim_SuperFang:
 	anim_loop 3, .loop
 	anim_ret
 
-BattleAnim_Ember:
+; BattleAnim_Ember:
+BattleAnim_WillOWisp:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_EMBER, 64, 96, $12
