@@ -49,7 +49,7 @@ BattleAnimations::
 	dw BattleAnim_Roar
 	dw BattleAnim_Sing
 	dw BattleAnim_Supersonic
-	dw BattleAnim_Sonicboom
+	dw BattleAnim_Overheat
 	dw BattleAnim_Disable
 	dw BattleAnim_Acid
 	dw BattleAnim_WillOWisp
@@ -1334,7 +1334,6 @@ BattleAnim_AirSlash:
 	anim_ret
 
 BattleAnim_Gust:
-BattleAnim_Sonicboom:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
@@ -4028,6 +4027,7 @@ BattleAnim_PainSplit:
 	anim_wait 1
 	anim_ret
 
+BattleAnim_Overheat:
 BattleAnim_SacredFire:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0

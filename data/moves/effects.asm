@@ -817,6 +817,32 @@ AllUpHit:
 	buildopponentrage
 	endmove
 
+Overheat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	; effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	switchturn
+	specialattackdown2
+	statdownanim
+	statdownmessage
+	statdownfailtext
+	switchturn
+	checkfaint
+	buildopponentrage
+	endmove
+
 PayDay:
 	checkobedience
 	usedmovetext

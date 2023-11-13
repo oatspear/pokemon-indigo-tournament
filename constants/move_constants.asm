@@ -56,7 +56,7 @@ CUT EQU $0f
 	const ROAR         ; 2e
 	const SING         ; 2f
 	const SUPERSONIC   ; 30
-	const SONICBOOM    ; 31
+	const OVERHEAT     ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
 	const WILL_O_WISP  ; 34

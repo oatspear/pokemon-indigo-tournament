@@ -47,7 +47,7 @@ MoveNames::
 	db "ROAR@"
 	db "SING@"
 	db "SUPERSONIC@"
-	db "SONICBOOM@"
+	db "OVERHEAT@"
 	db "DISABLE@"
 	db "ACID@"
 	db "WILL-O-WISP@"

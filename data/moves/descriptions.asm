@@ -48,7 +48,7 @@ MoveDescriptions::
 	dw RoarDescription
 	dw SingDescription
 	dw SupersonicDescription
-	dw SonicboomDescription
+	dw OverheatDescription
 	dw DisableDescription
 	dw AcidDescription
 	dw WillOWispDescription
@@ -443,9 +443,9 @@ SupersonicDescription:
 	db   "Sound waves that"
 	next "cause confusion.@"
 
-SonicboomDescription:
-	db   "Always inflicts"
-	next "20HP damage.@"
+OverheatDescription:
+	db   "Lowers the user's"
+	next "SP. ATK.@"
 
 DisableDescription:
 	db   "Disables the foe's"

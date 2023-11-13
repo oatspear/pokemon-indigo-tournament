@@ -13,6 +13,7 @@
 - **Lunge** (Bug, Physical): 80 Power, 100% Accuracy, 100% chance to lower the foe's Attack.
 - **U-turn** (Bug, Physical): 70 Power, 100% Accuracy, switches the user after dealing damage.
 - **Will-O-Wisp** (Fire, Status): 85% Accuracy, inflicts Burn.
+- **Overheat** (Fire, Special): 130 Power, 90% Accuracy, harshly lowers the user's Sp. Attack.
 
 ### Removed
 
@@ -25,6 +26,7 @@
 - String Shot
 - Frustration
 - Ember
+- Sonicboom
 
 ### Changed
 
