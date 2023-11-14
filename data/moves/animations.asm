@@ -39,7 +39,7 @@ BattleAnimations::
 	dw BattleAnim_TakeDown
 	dw BattleAnim_Thrash
 	dw BattleAnim_DoubleEdge
-	dw BattleAnim_TailWhip
+	dw BattleAnim_NastyPlot
 	dw BattleAnim_PoisonSting
 	dw BattleAnim_Twineedle
 	dw BattleAnim_PinMissile
@@ -3088,15 +3088,15 @@ BattleAnim_Disable:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_TailWhip:
-	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_2Row
-	anim_sound 0, 0, SFX_TAIL_WHIP
-	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 32
-	anim_incbgeffect ANIM_BG_WOBBLE_MON
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
+; BattleAnim_TailWhip:
+; 	anim_1gfx ANIM_GFX_HIT
+; 	anim_call BattleAnim_TargetObj_2Row
+; 	anim_sound 0, 0, SFX_TAIL_WHIP
+; 	anim_bgeffect ANIM_BG_WOBBLE_MON, $0, BG_EFFECT_USER, $0
+; 	anim_wait 32
+; 	anim_incbgeffect ANIM_BG_WOBBLE_MON
+; 	anim_call BattleAnim_ShowMon_0
+; 	anim_ret
 
 BattleAnim_Struggle:
 	anim_1gfx ANIM_GFX_HIT
@@ -4454,6 +4454,7 @@ BattleAnim_MirrorCoat:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_NastyPlot:
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row

@@ -37,7 +37,7 @@ MoveNames::
 	db "TAKE DOWN@"
 	db "THRASH@"
 	db "DOUBLE-EDGE@"
-	db "TAIL WHIP@"
+	db "NASTY PLOT@"
 	db "POISON STING@"
 	db "TWINEEDLE@"
 	db "PIN MISSILE@"

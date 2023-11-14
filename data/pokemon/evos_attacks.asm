@@ -121,7 +121,7 @@ SquirtleEvosAttacks:
 	db EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
 	db 13, WATER_GUN
@@ -137,9 +137,9 @@ WartortleEvosAttacks:
 	db EVOLVE_LEVEL, 36, BLASTOISE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, BUBBLE
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
 	db 13, WATER_GUN
@@ -154,10 +154,10 @@ WartortleEvosAttacks:
 BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, BUBBLE
 	db 1, WITHDRAW
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
 	db 13, WATER_GUN
@@ -268,7 +268,7 @@ RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
 	db 20, FOCUS_ENERGY
@@ -279,7 +279,7 @@ RattataEvosAttacks:
 RaticateEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, QUICK_ATTACK
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
@@ -347,7 +347,7 @@ PikachuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
-	db 6, TAIL_WHIP
+	db 6, NASTY_PLOT
 	db 8, THUNDER_WAVE
 	db 11, QUICK_ATTACK
 	db 15, DOUBLE_TEAM
@@ -361,7 +361,7 @@ PikachuEvosAttacks:
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, QUICK_ATTACK
 	db 1, THUNDERBOLT
 	db 0 ; no more level-up moves
@@ -401,7 +401,7 @@ NidoranFEvosAttacks:
 	db 8, SCRATCH
 	db 12, DOUBLE_KICK
 	db 17, POISON_STING
-	db 23, TAIL_WHIP
+	db 23, NASTY_PLOT
 	db 30, BITE
 	db 38, FURY_SWIPES
 	db 0 ; no more level-up moves
@@ -414,7 +414,7 @@ NidorinaEvosAttacks:
 	db 8, SCRATCH
 	db 12, DOUBLE_KICK
 	db 19, POISON_STING
-	db 27, TAIL_WHIP
+	db 27, NASTY_PLOT
 	db 36, BITE
 	db 46, FURY_SWIPES
 	db 0 ; no more level-up moves
@@ -424,7 +424,7 @@ NidoqueenEvosAttacks:
 	db 1, TACKLE
 	db 1, SCRATCH
 	db 1, DOUBLE_KICK
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 23, BODY_SLAM
 	db 0 ; no more level-up moves
 
@@ -488,7 +488,7 @@ VulpixEvosAttacks:
 	db EVOLVE_ITEM, FIRE_STONE, NINETALES
 	db 0 ; no more evolutions
 	db 1, WILL_O_WISP
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 7, QUICK_ATTACK
 	db 13, ROAR
 	db 19, CONFUSE_RAY
@@ -707,7 +707,7 @@ PsyduckEvosAttacks:
 	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 10, DISABLE
 	db 16, CONFUSION
 	db 23, SCREECH
@@ -719,10 +719,10 @@ PsyduckEvosAttacks:
 GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, DISABLE
 	db 1, CONFUSION
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 10, DISABLE
 	db 16, CONFUSION
 	db 23, SCREECH
@@ -1023,7 +1023,7 @@ PonytaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, GROWL
-	db 8, TAIL_WHIP
+	db 8, NASTY_PLOT
 	db 13, WILL_O_WISP
 	db 19, STOMP
 	db 26, FIRE_SPIN
@@ -1036,10 +1036,10 @@ RapidashEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, WILL_O_WISP
 	db 4, GROWL
-	db 8, TAIL_WHIP
+	db 8, NASTY_PLOT
 	db 13, WILL_O_WISP
 	db 19, STOMP
 	db 26, FIRE_SPIN
@@ -1388,7 +1388,7 @@ CuboneEvosAttacks:
 	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 9, BONE_CLUB
 	db 13, HEADBUTT
 	db 17, LEER
@@ -1403,10 +1403,10 @@ CuboneEvosAttacks:
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, BONE_CLUB
 	db 1, HEADBUTT
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 9, BONE_CLUB
 	db 13, HEADBUTT
 	db 17, LEER
@@ -1492,7 +1492,7 @@ RhyhornEvosAttacks:
 	db EVOLVE_LEVEL, 42, RHYDON
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 13, STOMP
 	db 19, FURY_ATTACK
 	db 31, SCARY_FACE
@@ -1504,7 +1504,7 @@ RhyhornEvosAttacks:
 RhydonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, STOMP
 	db 1, FURY_ATTACK
 	db 13, STOMP
@@ -1520,7 +1520,7 @@ ChanseyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 5, GROWL
-	db 9, TAIL_WHIP
+	db 9, NASTY_PLOT
 	db 13, SOFTBOILED
 	db 23, MINIMIZE
 	db 29, SING
@@ -1549,7 +1549,7 @@ KangaskhanEvosAttacks:
 	db 1, COMET_PUNCH
 	db 7, LEER
 	db 13, BITE
-	db 19, TAIL_WHIP
+	db 19, NASTY_PLOT
 	db 25, MEGA_PUNCH
 	db 31, RAGE
 	db 37, ENDURE
@@ -1588,7 +1588,7 @@ GoldeenEvosAttacks:
 	db EVOLVE_LEVEL, 33, SEAKING
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 10, SUPERSONIC
 	db 15, HORN_ATTACK
 	db 24, FLAIL
@@ -1601,8 +1601,8 @@ GoldeenEvosAttacks:
 SeakingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 1, TAIL_WHIP
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
+	db 1, NASTY_PLOT
 	db 10, SUPERSONIC
 	db 15, HORN_ATTACK
 	db 24, FLAIL
@@ -1723,7 +1723,7 @@ PinsirEvosAttacks:
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 8, RAGE
 	db 13, HORN_ATTACK
 	db 19, SCARY_FACE
@@ -1781,7 +1781,7 @@ EeveeEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, GROWL
 	db 23, QUICK_ATTACK
@@ -1793,7 +1793,7 @@ EeveeEvosAttacks:
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, WATER_GUN
 	db 23, QUICK_ATTACK
@@ -1807,7 +1807,7 @@ VaporeonEvosAttacks:
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, THUNDERSHOCK
 	db 23, QUICK_ATTACK
@@ -1821,7 +1821,7 @@ JolteonEvosAttacks:
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, WILL_O_WISP
 	db 23, QUICK_ATTACK
@@ -2329,7 +2329,7 @@ PichuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, CHARM
-	db 6, TAIL_WHIP
+	db 6, NASTY_PLOT
 	db 8, THUNDER_WAVE
 	db 11, SWEET_KISS
 	db 0 ; no more level-up moves
@@ -2452,7 +2452,7 @@ MarillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 3, DEFENSE_CURL
-	db 6, TAIL_WHIP
+	db 6, NASTY_PLOT
 	db 10, WATER_GUN
 	db 15, ROLLOUT
 	db 21, BUBBLEBEAM
@@ -2464,10 +2464,10 @@ AzumarillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, WATER_GUN
 	db 3, DEFENSE_CURL
-	db 6, TAIL_WHIP
+	db 6, NASTY_PLOT
 	db 10, WATER_GUN
 	db 15, ROLLOUT
 	db 25, BUBBLEBEAM
@@ -2500,7 +2500,7 @@ HoppipEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 5, SYNTHESIS
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 10, TACKLE
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2515,10 +2515,10 @@ SkiploomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, SYNTHESIS
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, TACKLE
 	db 5, SYNTHESIS
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 10, TACKLE
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2532,10 +2532,10 @@ JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, SYNTHESIS
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 1, TACKLE
 	db 5, SYNTHESIS
-	db 5, TAIL_WHIP
+	db 5, NASTY_PLOT
 	db 10, TACKLE
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2548,7 +2548,7 @@ JumpluffEvosAttacks:
 AipomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 6, SAND_ATTACK
 	db 12, BATON_PASS
 	db 19, FURY_SWIPES
@@ -2594,7 +2594,7 @@ WooperEvosAttacks:
 	db EVOLVE_LEVEL, 20, QUAGSIRE
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 11, SLAM
 	db 21, AMNESIA
 	db 31, EARTHQUAKE
@@ -2606,7 +2606,7 @@ WooperEvosAttacks:
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 11, SLAM
 	db 23, AMNESIA
 	db 35, EARTHQUAKE
@@ -2618,7 +2618,7 @@ QuagsireEvosAttacks:
 EspeonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, CONFUSION
 	db 23, QUICK_ATTACK
@@ -2632,7 +2632,7 @@ EspeonEvosAttacks:
 UmbreonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
 	db 16, PURSUIT
 	db 23, QUICK_ATTACK
@@ -2774,7 +2774,7 @@ SnubbullEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCARY_FACE
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 8, CHARM
 	db 13, BITE
 	db 19, LICK
@@ -2787,7 +2787,7 @@ GranbullEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCARY_FACE
-	db 4, TAIL_WHIP
+	db 4, NASTY_PLOT
 	db 8, CHARM
 	db 13, BITE
 	db 19, LICK
@@ -3190,7 +3190,7 @@ MiltankEvosAttacks:
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, TAIL_WHIP
+	db 1, NASTY_PLOT
 	db 10, SOFTBOILED
 	db 18, MINIMIZE
 	db 23, SING

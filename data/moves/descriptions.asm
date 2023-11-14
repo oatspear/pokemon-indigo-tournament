@@ -38,7 +38,7 @@ MoveDescriptions::
 	dw TakeDownDescription
 	dw ThrashDescription
 	dw DoubleEdgeDescription
-	dw TailWhipDescription
+	dw NastyPlotDescription
 	dw PoisonStingDescription
 	dw TwineedleDescription
 	dw PinMissileDescription
@@ -310,6 +310,10 @@ SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
 
+NastyPlotDescription:
+	db   "Sharply raises the"
+	next "user's SP. ATK.@"
+
 GustDescription:
 	db   "Whips up a strong"
 	next "gust of wind.@"
@@ -401,10 +405,6 @@ ThrashDescription:
 DoubleEdgeDescription:
 	db   "A tackle that also"
 	next "hurts the user.@"
-
-TailWhipDescription:
-	db   "Lowers the foe's"
-	next "DEFENSE.@"
 
 PoisonStingDescription:
 	db   "An attack that may"

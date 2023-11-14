@@ -3,7 +3,7 @@
 
 StallMoves:
 	db SWORDS_DANCE
-	db TAIL_WHIP
+	db NASTY_PLOT
 	db LEER
 	db GROWL
 	db DISABLE
