@@ -31,7 +31,7 @@ OddEggs:
 
 	db PICHU
 	db NO_ITEM
-	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
+	db VOLT_SWITCH, CHARM, DIZZY_PUNCH, 0
 	dw 02048 ; OT ID
 	dt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
@@ -53,7 +53,7 @@ OddEggs:
 
 	db PICHU
 	db NO_ITEM
-	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
+	db VOLT_SWITCH, CHARM, DIZZY_PUNCH, 0
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	; Stat exp

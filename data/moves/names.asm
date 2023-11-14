@@ -82,7 +82,7 @@ MoveNames::
 	db "LUNGE@"
 	db "DRAGON RAGE@"
 	db "FIRE SPIN@"
-	db "THUNDERSHOCK@"
+	db "VOLT SWITCH@"
 	db "THUNDERBOLT@"
 	db "THUNDER WAVE@"
 	db "THUNDER@"

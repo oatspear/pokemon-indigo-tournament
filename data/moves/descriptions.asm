@@ -83,7 +83,7 @@ MoveDescriptions::
 	dw LungeDescription
 	dw DragonRageDescription
 	dw FireSpinDescription
-	dw ThundershockDescription
+	dw VoltSwitchDescription
 	dw ThunderboltDescription
 	dw ThunderWaveDescription
 	dw ThunderDescription
@@ -580,10 +580,6 @@ DragonRageDescription:
 FireSpinDescription:
 	db   "Traps foe in fire"
 	next "for 2-5 turns.@"
-
-ThundershockDescription:
-	db   "An attack that may"
-	next "cause paralysis.@"
 
 ThunderboltDescription:
 	db   "An attack that may"
@@ -1115,6 +1111,7 @@ PresentDescription:
 	db   "A bomb that may"
 	next "restore HP.@"
 
+VoltSwitchDescription:
 UTurnDescription:
 	db   "Attacks, and then"
 	next "switches out.@"

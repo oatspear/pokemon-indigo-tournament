@@ -91,7 +91,7 @@ CUT EQU $0f
 	const LUNGE        ; 51
 	const DRAGON_RAGE  ; 52
 	const FIRE_SPIN    ; 53
-	const THUNDERSHOCK ; 54
+	const VOLT_SWITCH  ; 54
 	const THUNDERBOLT  ; 55
 	const THUNDER_WAVE ; 56
 	const THUNDER      ; 57

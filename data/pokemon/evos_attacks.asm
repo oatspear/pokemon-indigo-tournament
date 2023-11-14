@@ -345,7 +345,7 @@ ArbokEvosAttacks:
 PikachuEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
 	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 1, GROWL
 	db 6, NASTY_PLOT
 	db 8, THUNDER_WAVE
@@ -360,7 +360,7 @@ PikachuEvosAttacks:
 
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 1, NASTY_PLOT
 	db 1, QUICK_ATTACK
 	db 1, THUNDERBOLT
@@ -1084,7 +1084,7 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 6, THUNDERSHOCK
+	db 6, VOLT_SWITCH
 	db 11, SUPERSONIC
 	db 21, THUNDER_WAVE
 	db 27, LOCK_ON
@@ -1096,9 +1096,9 @@ MagnemiteEvosAttacks:
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 1, SUPERSONIC
-	db 6, THUNDERSHOCK
+	db 6, VOLT_SWITCH
 	db 11, SUPERSONIC
 	db 21, THUNDER_WAVE
 	db 27, LOCK_ON
@@ -1809,7 +1809,7 @@ JolteonEvosAttacks:
 	db 1, TACKLE
 	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
-	db 16, THUNDERSHOCK
+	db 16, VOLT_SWITCH
 	db 23, QUICK_ATTACK
 	db 30, DOUBLE_KICK
 	db 36, PIN_MISSILE
@@ -1942,7 +1942,7 @@ ArticunoEvosAttacks:
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 13, THUNDER_WAVE
 	db 25, AGILITY
 	db 37, DETECT
@@ -2327,7 +2327,7 @@ LanturnEvosAttacks:
 PichuEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
 	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 1, CHARM
 	db 6, NASTY_PLOT
 	db 8, THUNDER_WAVE
@@ -2404,7 +2404,7 @@ MareepEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 9, THUNDERSHOCK
+	db 9, VOLT_SWITCH
 	db 16, THUNDER_WAVE
 	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
@@ -2416,8 +2416,8 @@ FlaaffyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, THUNDERSHOCK
-	db 9, THUNDERSHOCK
+	db 1, VOLT_SWITCH
+	db 9, VOLT_SWITCH
 	db 18, THUNDER_WAVE
 	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
@@ -2428,9 +2428,9 @@ AmpharosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, THUNDERSHOCK
+	db 1, VOLT_SWITCH
 	db 1, THUNDER_WAVE
-	db 9, THUNDERSHOCK
+	db 9, VOLT_SWITCH
 	db 18, THUNDER_WAVE
 	db 27, COTTON_SPORE
 	db 30, THUNDERPUNCH
@@ -3204,7 +3204,7 @@ RaikouEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-	db 11, THUNDERSHOCK
+	db 11, VOLT_SWITCH
 	db 21, ROAR
 	db 31, QUICK_ATTACK
 	db 41, SPARK
