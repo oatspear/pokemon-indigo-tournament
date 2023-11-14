@@ -147,7 +147,7 @@ CUT EQU $0f
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c
+	const NIGHT_SLASH  ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f

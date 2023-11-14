@@ -8,6 +8,7 @@ CriticalHitMoves:
 	db RAZOR_LEAF
 	db CRABHAMMER
 	db SLASH
+	db NIGHT_SLASH
 	db AEROBLAST
 	db CROSS_CHOP
 	db SKY_ATTACK

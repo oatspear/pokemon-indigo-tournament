@@ -140,7 +140,7 @@ BattleAnimations::
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
 	dw BattleAnim_PoisonGas
-	dw BattleAnim_Barrage
+	dw BattleAnim_NightSlash
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
 	dw BattleAnim_SkyAttack
@@ -1543,6 +1543,15 @@ BattleAnim_Slash:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_NightSlash:
+	anim_1gfx ANIM_GFX_CUT
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_obj ANIM_OBJ_CUT_LONG_DOWN_LEFT, 148, 36, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Clamp:
 	anim_2gfx ANIM_GFX_CUT, ANIM_GFX_HIT
 	anim_obj ANIM_OBJ_CLAMP, 136, 56, $a0
@@ -2364,15 +2373,15 @@ BattleAnim_PetalDance:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Barrage:
-	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
-	anim_wait 36
-	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_EXPLOSION2, 136, 56, $0
-	anim_wait 16
-	anim_ret
+; BattleAnim_Barrage:
+; 	anim_2gfx ANIM_GFX_EGG, ANIM_GFX_EXPLOSION
+; 	anim_sound 6, 2, SFX_THROW_BALL
+; 	anim_obj ANIM_OBJ_SLUDGE_BOMB, 64, 92, $10
+; 	anim_wait 36
+; 	anim_sound 0, 1, SFX_EGG_BOMB
+; 	anim_obj ANIM_OBJ_EXPLOSION2, 136, 56, $0
+; 	anim_wait 16
+; 	anim_ret
 
 BattleAnim_PayDay:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_STATUS

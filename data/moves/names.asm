@@ -138,7 +138,7 @@ MoveNames::
 	db "GLARE@"
 	db "DREAM EATER@"
 	db "POISON GAS@"
-	db "BARRAGE@"
+	db "NIGHT SLASH@"
 	db "LEECH LIFE@"
 	db "LOVELY KISS@"
 	db "SKY ATTACK@"

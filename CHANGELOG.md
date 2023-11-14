@@ -16,6 +16,7 @@
 - **Overheat** (Fire, Special): 130 Power, 90% Accuracy, harshly lowers the user's Sp. Attack.
 - **Dark Pulse** (Dark, Special): 80 Power, 100% Accuracy, 20% chance to flinch.
 - **Nasty Plot** (Dark, Status): sharply raises the user's Special Attack.
+- **Night Slash** (Dark, Physical): 70 Power, 100% Accuracy, high critical-hit ratio.
 
 ### Removed
 
@@ -31,6 +32,7 @@
 - Sonicboom
 - Beat Up
 - Tail Whip
+- Barrage
 
 ### Changed
 
