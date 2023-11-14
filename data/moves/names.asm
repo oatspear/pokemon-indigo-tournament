@@ -249,7 +249,7 @@ MoveNames::
 	db "FUTURE SIGHT@"
 	db "ROCK SMASH@"
 	db "WHIRLPOOL@"
-	db "BEAT UP@"
+	db "DARK PULSE@"
 	db "HAIL@"
 	db "DRAGON DANCE@"
 	db "CALM MIND@"

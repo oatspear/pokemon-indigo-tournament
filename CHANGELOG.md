@@ -14,6 +14,7 @@
 - **U-turn** (Bug, Physical): 70 Power, 100% Accuracy, switches the user after dealing damage.
 - **Will-O-Wisp** (Fire, Status): 85% Accuracy, inflicts Burn.
 - **Overheat** (Fire, Special): 130 Power, 90% Accuracy, harshly lowers the user's Sp. Attack.
+- **Dark Pulse** (Dark, Special): 80 Power, 100% Accuracy, 20% chance to flinch.
 
 ### Removed
 
@@ -27,6 +28,7 @@
 - Frustration
 - Ember
 - Sonicboom
+- Beat Up
 
 ### Changed
 

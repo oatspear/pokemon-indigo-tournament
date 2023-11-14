@@ -258,7 +258,7 @@ CUT EQU $0f
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb
+	const DARK_PULSE   ; fb
 	const HAIL         ; fc
 	const DRAGON_DANCE ; fd
 	const CALM_MIND    ; fe

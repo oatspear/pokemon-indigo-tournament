@@ -262,7 +262,7 @@ Moves: ; 41afb
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING,      PHYSICAL, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,         SPECIAL,   85, 15,   0
-	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
+	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
 	move HAIL,         EFFECT_HAIL,                0, ICE,           STATUS,     0, 10,   0
 	move DRAGON_DANCE, EFFECT_ATK_SPEED_UP,        0, DRAGON,        STATUS,   100, 20,   0
 	move CALM_MIND,    EFFECT_SPECIALS_UP,         0, PSYCHIC_TYPE,  STATUS,   100, 20,   0

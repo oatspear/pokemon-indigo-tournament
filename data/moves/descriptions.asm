@@ -250,7 +250,7 @@ MoveDescriptions::
 	dw FutureSightDescription
 	dw RockSmashDescription
 	dw WhirlpoolDescription
-	dw BeatUpDescription
+	dw DarkPulseDescription
 	dw HailDescription
 	dw DragonDanceDescription
 	dw CalmMindDescription
@@ -301,6 +301,7 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
+DarkPulseDescription:
 AirSlashDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
