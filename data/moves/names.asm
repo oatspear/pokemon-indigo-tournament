@@ -53,7 +53,7 @@ MoveNames::
 	db "WILL-O-WISP@"
 	db "FLAMETHROWER@"
 	db "MIST@"
-	db "WATER GUN@"
+	db "FLIP TURN@"
 	db "HYDRO PUMP@"
 	db "SURF@"
 	db "ICE BEAM@"

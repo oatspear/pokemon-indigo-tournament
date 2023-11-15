@@ -124,7 +124,7 @@ SquirtleEvosAttacks:
 	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 18, BITE
 	db 23, RAPID_SPIN
 	db 28, PROTECT
@@ -142,7 +142,7 @@ WartortleEvosAttacks:
 	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 19, BITE
 	db 25, RAPID_SPIN
 	db 31, PROTECT
@@ -160,7 +160,7 @@ BlastoiseEvosAttacks:
 	db 4, NASTY_PLOT
 	db 7, BUBBLE
 	db 10, WITHDRAW
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 19, BITE
 	db 25, RAPID_SPIN
 	db 31, PROTECT
@@ -790,7 +790,7 @@ PoliwagEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 25, RAIN_DANCE
 	db 31, BODY_SLAM
 	db 37, BELLY_DRUM
@@ -803,9 +803,9 @@ PoliwhirlEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, HYPNOSIS
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 27, RAIN_DANCE
 	db 35, BODY_SLAM
 	db 43, BELLY_DRUM
@@ -814,7 +814,7 @@ PoliwhirlEvosAttacks:
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 1, HYPNOSIS
 	db 1, BODY_SLAM
 	db 1, SUBMISSION
@@ -1056,7 +1056,7 @@ SlowpokeEvosAttacks:
 	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
-	db 15, WATER_GUN
+	db 15, FLIP_TURN
 	db 20, CONFUSION
 	db 29, DISABLE
 	db 34, HEADBUTT
@@ -1069,9 +1069,9 @@ SlowbroEvosAttacks:
 	db 1, CURSE
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 6, GROWL
-	db 15, WATER_GUN
+	db 15, FLIP_TURN
 	db 20, CONFUSION
 	db 29, DISABLE
 	db 34, HEADBUTT
@@ -1563,7 +1563,7 @@ HorseaEvosAttacks:
 	db 1, BUBBLE
 	db 8, SMOKESCREEN
 	db 15, LEER
-	db 22, WATER_GUN
+	db 22, FLIP_TURN
 	db 29, TWISTER
 	db 36, AGILITY
 	db 43, HYDRO_PUMP
@@ -1575,10 +1575,10 @@ SeadraEvosAttacks:
 	db 1, BUBBLE
 	db 1, SMOKESCREEN
 	db 1, LEER
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 8, SMOKESCREEN
 	db 15, LEER
-	db 22, WATER_GUN
+	db 22, FLIP_TURN
 	db 29, TWISTER
 	db 40, AGILITY
 	db 51, HYDRO_PUMP
@@ -1617,7 +1617,7 @@ StaryuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
-	db 7, WATER_GUN
+	db 7, FLIP_TURN
 	db 13, RAPID_SPIN
 	db 19, RECOVER
 	db 25, SWIFT
@@ -1755,7 +1755,7 @@ GyaradosEvosAttacks:
 
 LaprasEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 1, GROWL
 	db 1, SING
 	db 8, MIST
@@ -1795,7 +1795,7 @@ VaporeonEvosAttacks:
 	db 1, TACKLE
 	db 1, NASTY_PLOT
 	db 8, SAND_ATTACK
-	db 16, WATER_GUN
+	db 16, FLIP_TURN
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, AURORA_BEAM
@@ -1853,7 +1853,7 @@ OmanyteEvosAttacks:
 	db 1, CONSTRICT
 	db 1, WITHDRAW
 	db 13, BITE
-	db 19, WATER_GUN
+	db 19, FLIP_TURN
 	db 31, LEER
 	db 37, PROTECT
 	db 49, ANCIENTPOWER
@@ -1866,7 +1866,7 @@ OmastarEvosAttacks:
 	db 1, WITHDRAW
 	db 1, BITE
 	db 13, BITE
-	db 19, WATER_GUN
+	db 19, FLIP_TURN
 	db 31, LEER
 	db 37, PROTECT
 	db 40, SPIKE_CANNON
@@ -2132,7 +2132,7 @@ TotodileEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 7, RAGE
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 20, BITE
 	db 27, SCARY_FACE
 	db 35, SLASH
@@ -2147,7 +2147,7 @@ CroconawEvosAttacks:
 	db 1, LEER
 	db 1, RAGE
 	db 7, RAGE
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 21, BITE
 	db 28, SCARY_FACE
 	db 37, SLASH
@@ -2160,9 +2160,9 @@ FeraligatrEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, RAGE
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 7, RAGE
-	db 13, WATER_GUN
+	db 13, FLIP_TURN
 	db 21, BITE
 	db 28, SCARY_FACE
 	db 38, SLASH
@@ -2303,7 +2303,7 @@ ChinchouEvosAttacks:
 	db 1, THUNDER_WAVE
 	db 5, SUPERSONIC
 	db 13, FLAIL
-	db 17, WATER_GUN
+	db 17, FLIP_TURN
 	db 25, SPARK
 	db 29, CONFUSE_RAY
 	db 37, TAKE_DOWN
@@ -2317,7 +2317,7 @@ LanturnEvosAttacks:
 	db 1, SUPERSONIC
 	db 5, SUPERSONIC
 	db 13, FLAIL
-	db 17, WATER_GUN
+	db 17, FLIP_TURN
 	db 25, SPARK
 	db 33, CONFUSE_RAY
 	db 45, TAKE_DOWN
@@ -2453,7 +2453,7 @@ MarillEvosAttacks:
 	db 1, TACKLE
 	db 3, DEFENSE_CURL
 	db 6, NASTY_PLOT
-	db 10, WATER_GUN
+	db 10, FLIP_TURN
 	db 15, ROLLOUT
 	db 21, BUBBLEBEAM
 	db 28, DOUBLE_EDGE
@@ -2465,10 +2465,10 @@ AzumarillEvosAttacks:
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
 	db 1, NASTY_PLOT
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 3, DEFENSE_CURL
 	db 6, NASTY_PLOT
-	db 10, WATER_GUN
+	db 10, FLIP_TURN
 	db 15, ROLLOUT
 	db 25, BUBBLEBEAM
 	db 36, DOUBLE_EDGE
@@ -2488,7 +2488,7 @@ SudowoodoEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 1, HYPNOSIS
 	db 1, PERISH_SONG
 	db 35, PERISH_SONG
@@ -2593,7 +2593,7 @@ YanmaEvosAttacks:
 WooperEvosAttacks:
 	db EVOLVE_LEVEL, 20, QUAGSIRE
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 1, NASTY_PLOT
 	db 11, SLAM
 	db 21, AMNESIA
@@ -2605,7 +2605,7 @@ WooperEvosAttacks:
 
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 1, NASTY_PLOT
 	db 11, SLAM
 	db 23, AMNESIA
@@ -2658,7 +2658,7 @@ SlowkingEvosAttacks:
 	db 1, CURSE
 	db 1, TACKLE
 	db 6, GROWL
-	db 15, WATER_GUN
+	db 15, FLIP_TURN
 	db 20, CONFUSION
 	db 29, DISABLE
 	db 34, HEADBUTT
@@ -2803,7 +2803,7 @@ QwilfishEvosAttacks:
 	db 1, POISON_STING
 	db 10, HARDEN
 	db 10, MINIMIZE
-	db 19, WATER_GUN
+	db 19, FLIP_TURN
 	db 28, PIN_MISSILE
 	db 37, TAKE_DOWN
 	db 46, HYDRO_PUMP
@@ -2958,7 +2958,7 @@ CorsolaEvosAttacks:
 RemoraidEvosAttacks:
 	db EVOLVE_LEVEL, 25, OCTILLERY
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 11, LOCK_ON
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
@@ -2970,7 +2970,7 @@ RemoraidEvosAttacks:
 
 OctilleryEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 11, CONSTRICT
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
@@ -3039,10 +3039,10 @@ KingdraEvosAttacks:
 	db 1, BUBBLE
 	db 1, SMOKESCREEN
 	db 1, LEER
-	db 1, WATER_GUN
+	db 1, FLIP_TURN
 	db 8, SMOKESCREEN
 	db 15, LEER
-	db 22, WATER_GUN
+	db 22, FLIP_TURN
 	db 29, TWISTER
 	db 40, AGILITY
 	db 51, HYDRO_PUMP

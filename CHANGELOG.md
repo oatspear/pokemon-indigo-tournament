@@ -11,13 +11,14 @@
 - **X-Scissor** (Bug, Physical): 80 Power, 100% Accuracy, high critical-hit ratio.
 - **Bug Buzz** (Bug, Special): 95 Power, 100% Accuracy, 10% chance to lower the foe's Sp. Def.
 - **Lunge** (Bug, Physical): 80 Power, 100% Accuracy, 100% chance to lower the foe's Attack.
-- **U-turn** (Bug, Physical): 60 Power, 100% Accuracy, switches the user after dealing damage.
+- **U-turn** (Bug, Physical): 70 Power, 100% Accuracy, switches the user after dealing damage.
 - **Will-O-Wisp** (Fire, Status): 85% Accuracy, inflicts Burn.
 - **Overheat** (Fire, Special): 130 Power, 90% Accuracy, harshly lowers the user's Sp. Attack.
 - **Dark Pulse** (Dark, Special): 80 Power, 100% Accuracy, 20% chance to flinch.
 - **Nasty Plot** (Dark, Status): sharply raises the user's Special Attack.
 - **Night Slash** (Dark, Physical): 70 Power, 100% Accuracy, high critical-hit ratio.
-- **Volt Switch** (Electric, Special): 60 Power, 100% Accuracy, switches the user after dealing damage.
+- **Volt Switch** (Electric, Special): 70 Power, 100% Accuracy, switches the user after dealing damage.
+- **Flip Turn** (Water, Physical): 60 Power, 100% Accuracy, switches the user after dealing damage.
 
 ### Removed
 
@@ -35,6 +36,7 @@
 - Tail Whip
 - Barrage
 - Thundershock
+- Water Gun
 
 ### Changed
 

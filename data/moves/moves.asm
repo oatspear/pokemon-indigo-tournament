@@ -66,7 +66,7 @@ Moves: ; 41afb
 	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          STATUS,    85, 15, 100
 	move FLAMETHROWER, EFFECT_BURN_HIT,           90, FIRE,          SPECIAL,  100, 15,  10
 	move MIST,         EFFECT_MIST,                0, ICE,           STATUS,   100, 30,   0
-	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,         SPECIAL,  100, 25,   0
+	move FLIP_TURN,    EFFECT_HIT_AND_SWITCH,     60, WATER,         PHYSICAL, 100, 20,   0
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        110, WATER,         SPECIAL,   80,  5,   0
 	move SURF,         EFFECT_NORMAL_HIT,         90, WATER,         SPECIAL,  100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         90, ICE,           SPECIAL,  100, 10,  10
@@ -95,7 +95,7 @@ Moves: ; 41afb
 	move LUNGE,        EFFECT_ATTACK_DOWN_HIT,    80, BUG,           PHYSICAL, 100, 15, 100
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0
 	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        35, FIRE,          SPECIAL,   85, 15,   0
-	move VOLT_SWITCH,  EFFECT_HIT_AND_SWITCH,     60, ELECTRIC,      SPECIAL,  100, 20,   0
+	move VOLT_SWITCH,  EFFECT_HIT_AND_SWITCH,     70, ELECTRIC,      SPECIAL,  100, 20,   0
 	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       90, ELECTRIC,      SPECIAL,  100, 15,  10
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, ELECTRIC,      STATUS,    90, 20,   0
 	move THUNDER,      EFFECT_THUNDER,           110, ELECTRIC,      SPECIAL,   70, 10,  30
@@ -229,7 +229,7 @@ Moves: ; 41afb
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, NORMAL,        STATUS,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,        PHYSICAL, 100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, NORMAL,        PHYSICAL,  90, 15,   0
-	move U_TURN,       EFFECT_HIT_AND_SWITCH,     60, BUG,           PHYSICAL, 100, 20,   0
+	move U_TURN,       EFFECT_HIT_AND_SWITCH,     70, BUG,           PHYSICAL, 100, 20,   0
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,        STATUS,   100, 25,   0
 	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, NORMAL,        STATUS,     0, 20,   0
 	move SACRED_FIRE,  EFFECT_SACRED_FIRE,       100, FIRE,          PHYSICAL,  95,  5,  50

@@ -54,7 +54,7 @@ MoveDescriptions::
 	dw WillOWispDescription
 	dw FlamethrowerDescription
 	dw MistDescription
-	dw WaterGunDescription
+	dw FlipTurnDescription
 	dw HydroPumpDescription
 	dw SurfDescription
 	dw IceBeamDescription
@@ -467,10 +467,6 @@ FlamethrowerDescription:
 MistDescription:
 	db   "Prevents stat"
 	next "reduction.@"
-
-WaterGunDescription:
-	db   "Squirts water to"
-	next "attack.@"
 
 HydroPumpDescription:
 	db   "A powerful water-"
@@ -1111,6 +1107,7 @@ PresentDescription:
 	db   "A bomb that may"
 	next "restore HP.@"
 
+FlipTurnDescription:
 VoltSwitchDescription:
 UTurnDescription:
 	db   "Attacks, and then"
