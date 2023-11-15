@@ -383,7 +383,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_TWISTER,          AI_Smart_Twister
 	dbw EFFECT_EARTHQUAKE,       AI_Smart_Earthquake
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
-	dbw EFFECT_GUST,             AI_Smart_Gust
+	dbw EFFECT_HURRICANE,        AI_Smart_Hurricane
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
@@ -2578,7 +2578,6 @@ AI_Smart_MirrorCoat:
 	ret
 
 AI_Smart_Twister:
-AI_Smart_Gust:
 ; Greatly encourage this move if the player is flying and the enemy is faster.
 	ld a, [wLastPlayerCounterMove]
 	cp FLY
@@ -2662,6 +2661,7 @@ AI_Smart_Solarbeam:
 	ret
 
 AI_Smart_Thunder:
+AI_Smart_Hurricane:
 ; 90% chance to discourage this move when it's sunny.
 
 	ld a, [wBattleWeather]

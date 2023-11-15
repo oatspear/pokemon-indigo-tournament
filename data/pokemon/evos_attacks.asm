@@ -191,7 +191,7 @@ ButterfreeEvosAttacks:
 	db 15, SLEEP_POWDER
 	db 18, SUPERSONIC
 	db 23, WHIRLWIND
-	db 28, GUST
+	db 28, HURRICANE
 	db 34, PSYBEAM
 	db 40, SAFEGUARD
 	db 0 ; no more level-up moves
@@ -226,7 +226,7 @@ PidgeyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 5, SAND_ATTACK
-	db 9, GUST
+	db 9, HURRICANE
 	db 15, QUICK_ATTACK
 	db 21, WHIRLWIND
 	db 29, WING_ATTACK
@@ -239,9 +239,9 @@ PidgeottoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SAND_ATTACK
-	db 1, GUST
+	db 1, HURRICANE
 	db 5, SAND_ATTACK
-	db 9, GUST
+	db 9, HURRICANE
 	db 15, QUICK_ATTACK
 	db 23, WHIRLWIND
 	db 33, WING_ATTACK
@@ -253,10 +253,10 @@ PidgeotEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SAND_ATTACK
-	db 1, GUST
+	db 1, HURRICANE
 	db 1, QUICK_ATTACK
 	db 5, SAND_ATTACK
-	db 9, GUST
+	db 9, HURRICANE
 	db 15, QUICK_ATTACK
 	db 23, WHIRLWIND
 	db 33, WING_ATTACK
@@ -643,7 +643,7 @@ VenomothEvosAttacks:
 	db 20, POISONPOWDER
 	db 25, LEECH_LIFE
 	db 28, STUN_SPORE
-	db 31, GUST
+	db 31, HURRICANE
 	db 36, PSYBEAM
 	db 42, SLEEP_POWDER
 	db 52, PSYCHIC_M
@@ -1929,7 +1929,7 @@ SnorlaxEvosAttacks:
 
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GUST
+	db 1, HURRICANE
 	db 1, FROST_BREATH
 	db 13, MIST
 	db 25, AGILITY
@@ -3232,7 +3232,7 @@ SuicuneEvosAttacks:
 	db 1, LEER
 	db 11, BUBBLEBEAM
 	db 21, RAIN_DANCE
-	db 31, GUST
+	db 31, HURRICANE
 	db 41, AURORA_BEAM
 	db 51, MIST
 	db 61, MIRROR_COAT
@@ -3291,7 +3291,7 @@ LugiaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, AEROBLAST
 	db 11, SAFEGUARD
-	db 22, GUST
+	db 22, HURRICANE
 	db 33, RECOVER
 	db 44, HYDRO_PUMP
 	db 55, RAIN_DANCE
@@ -3305,7 +3305,7 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SACRED_FIRE
 	db 11, SAFEGUARD
-	db 22, GUST
+	db 22, HURRICANE
 	db 33, RECOVER
 	db 44, FIRE_BLAST
 	db 55, SUNNY_DAY

@@ -105,7 +105,6 @@ ZubatEggMoves:
 	db QUICK_ATTACK
 	db PURSUIT
 	db FAINT_ATTACK
-	db GUST
 	db WHIRLWIND
 	db -1 ; end
 
@@ -234,7 +233,6 @@ SlowpokeEggMoves:
 FarfetchDEggMoves:
 	db FORESIGHT
 	db MIRROR_MOVE
-	db GUST
 	db QUICK_ATTACK
 	db FLAIL
 	db -1 ; end

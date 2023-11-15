@@ -19,6 +19,7 @@
 - **Night Slash** (Dark, Physical): 70 Power, 100% Accuracy, high critical-hit ratio.
 - **Volt Switch** (Electric, Special): 70 Power, 100% Accuracy, switches the user after dealing damage.
 - **Flip Turn** (Water, Physical): 60 Power, 100% Accuracy, switches the user after dealing damage.
+- **Hurricane** (Flying, Special): 110 Power, 70% Accuracy, guaranteed hit during Rain, 50% Accuracy in sunlight, 30% chance to inflict Confusion.
 
 ### Removed
 
@@ -37,6 +38,7 @@
 - Barrage
 - Thundershock
 - Water Gun
+- Gust
 
 ### Changed
 

@@ -1783,7 +1783,7 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
-	cp GUST
+	cp HURRICANE
 	ret z
 	cp WHIRLWIND
 	ret z
@@ -1805,13 +1805,15 @@ BattleCommand_CheckHit:
 
 .ThunderRain:
 ; Return z if the current move always hits in rain, and it is raining.
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
+	ret z
+	cp EFFECT_HURRICANE
 	ret
 
 .BlizzardHail:

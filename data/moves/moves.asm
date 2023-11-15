@@ -27,7 +27,7 @@ Moves: ; 41afb
 	move AIR_SLASH,    EFFECT_FLINCH_HIT,         75, FLYING,        SPECIAL,   95, 15,  30
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
 	move BUG_BUZZ,     EFFECT_SP_DEF_DOWN_HIT,    95, BUG,           SPECIAL,  100, 10,  10
-	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
+	move HURRICANE,    EFFECT_HURRICANE,         110, FLYING,        SPECIAL,   70, 10,  30
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,     0, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,        PHYSICAL,  95, 15,   0

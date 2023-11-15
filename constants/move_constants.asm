@@ -23,7 +23,7 @@ CUT EQU $0f
 	const AIR_SLASH    ; 0d
 	const SWORDS_DANCE ; 0e
 	const BUG_BUZZ     ; 0f
-	const GUST         ; 10
+	const HURRICANE    ; 10
 	const WING_ATTACK  ; 11
 	const WHIRLWIND    ; 12
 	const FLY          ; 13

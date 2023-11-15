@@ -128,7 +128,7 @@ MoveEffectsPointers:
 	dw BatonPass
 	dw Pursuit
 	dw RapidSpin
-	dw NormalHit
+	dw Hurricane
 	dw NormalHit
 	dw MorningSun
 	dw Synthesis
@@ -147,7 +147,6 @@ MoveEffectsPointers:
 	dw Twister
 	dw Earthquake
 	dw FutureSight
-	dw Gust
 	dw Stomp
 	dw Solarbeam
 	dw Thunder

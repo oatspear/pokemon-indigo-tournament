@@ -14,7 +14,7 @@ MoveNames::
 	db "AIR SLASH@"
 	db "SWORDS DANCE@"
 	db "BUG BUZZ@"
-	db "GUST@"
+	db "HURRICANE@"
 	db "WING ATTACK@"
 	db "WHIRLWIND@"
 	db "FLY@"

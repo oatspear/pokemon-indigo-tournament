@@ -15,7 +15,7 @@ MoveDescriptions::
 	dw AirSlashDescription
 	dw SwordsDanceDescription
 	dw BugBuzzDescription
-	dw GustDescription
+	dw HurricaneDescription
 	dw WingAttackDescription
 	dw WhirlwindDescription
 	dw FlyDescription
@@ -314,10 +314,6 @@ NastyPlotDescription:
 	db   "Sharply raises the"
 	next "user's SP. ATK.@"
 
-GustDescription:
-	db   "Whips up a strong"
-	next "gust of wind.@"
-
 WingAttackDescription:
 	db   "Strikes the target"
 	next "with wings.@"
@@ -484,6 +480,7 @@ BlizzardDescription:
 	db   "An attack that may"
 	next "freeze the foe.@"
 
+HurricaneDescription:
 PsybeamDescription:
 	db   "An attack that may"
 	next "confuse the foe.@"

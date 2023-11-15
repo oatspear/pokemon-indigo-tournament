@@ -16,7 +16,7 @@ BattleAnimations::
 	dw BattleAnim_AirSlash
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_BugBuzz
-	dw BattleAnim_Gust
+	dw BattleAnim_Hurricane
 	dw BattleAnim_WingAttack
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
@@ -1333,8 +1333,13 @@ BattleAnim_AirSlash:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_Gust:
+; BattleAnim_Gust:
+; GUST does not have the 3 lines with background effects
+BattleAnim_Hurricane:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
+	anim_bgp $1b
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $50, $4, $10
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_GUST, 136, 72, $0
