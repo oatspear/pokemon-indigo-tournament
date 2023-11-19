@@ -20,7 +20,7 @@ MoveDescriptions::
 	dw WhirlwindDescription
 	dw FlyDescription
 	dw BindDescription
-	dw SlamDescription
+	dw MysticFireDescription
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
@@ -330,10 +330,6 @@ BindDescription:
 	db   "Binds the target"
 	next "for 2-5 turns.@"
 
-SlamDescription:
-	db   "Slams the foe with"
-	next "a tail, vine, etc.@"
-
 VineWhipDescription:
 	db   "Whips the foe with"
 	next "slender vines.@"
@@ -442,6 +438,10 @@ SupersonicDescription:
 
 OverheatDescription:
 	db   "Lowers the user's"
+	next "SP. ATK.@"
+
+MysticFireDescription:
+	db   "Lowers the foe's"
 	next "SP. ATK.@"
 
 DisableDescription:

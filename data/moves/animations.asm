@@ -21,7 +21,7 @@ BattleAnimations::
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
 	dw BattleAnim_Bind
-	dw BattleAnim_Slam
+	dw BattleAnim_MysticFire
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
@@ -903,6 +903,7 @@ BattleAnim_FireSpin:
 	anim_wait 96
 	anim_ret
 
+BattleAnim_MysticFire:
 BattleAnim_DragonRage:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
@@ -3085,13 +3086,13 @@ BattleAnim_WingAttack:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Slam:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
-	anim_obj ANIM_OBJ_HIT_YFIX, 124, 40, $0
-	anim_wait 16
-	anim_ret
+; BattleAnim_Slam:
+; 	anim_1gfx ANIM_GFX_HIT
+; 	anim_sound 0, 1, SFX_WING_ATTACK
+; 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $2
+; 	anim_obj ANIM_OBJ_HIT_YFIX, 124, 40, $0
+; 	anim_wait 16
+; 	anim_ret
 
 BattleAnim_Disable:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_STATUS
