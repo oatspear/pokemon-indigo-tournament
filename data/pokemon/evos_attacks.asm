@@ -768,7 +768,7 @@ GrowlitheEvosAttacks:
 	db 9, WILL_O_WISP
 	db 18, LEER
 	db 26, TAKE_DOWN
-	db 34, FLAME_WHEEL
+	db 34, FLARE_BLITZ
 	db 42, AGILITY
 	db 50, FLAMETHROWER
 	db 0 ; no more level-up moves
@@ -778,7 +778,7 @@ ArcanineEvosAttacks:
 	db 1, ROAR
 	db 1, LEER
 	db 1, TAKE_DOWN
-	db 1, FLAME_WHEEL
+	db 1, FLARE_BLITZ
 	db 50, EXTREMESPEED
 	db 0 ; no more level-up moves
 
@@ -2080,7 +2080,7 @@ CyndaquilEvosAttacks:
 	db 6, SMOKESCREEN
 	db 12, WILL_O_WISP
 	db 19, QUICK_ATTACK
-	db 27, FLAME_WHEEL
+	db 27, FLARE_BLITZ
 	db 36, SWIFT
 	db 46, FLAMETHROWER
 	db 0 ; no more level-up moves
@@ -2094,7 +2094,7 @@ QuilavaEvosAttacks:
 	db 6, SMOKESCREEN
 	db 12, WILL_O_WISP
 	db 21, QUICK_ATTACK
-	db 31, FLAME_WHEEL
+	db 31, FLARE_BLITZ
 	db 42, SWIFT
 	db 54, FLAMETHROWER
 	db 0 ; no more level-up moves
@@ -2108,7 +2108,7 @@ TyphlosionEvosAttacks:
 	db 6, SMOKESCREEN
 	db 12, WILL_O_WISP
 	db 21, QUICK_ATTACK
-	db 31, FLAME_WHEEL
+	db 31, FLARE_BLITZ
 	db 45, SWIFT
 	db 60, FLAMETHROWER
 	db 0 ; no more level-up moves

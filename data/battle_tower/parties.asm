@@ -1990,7 +1990,7 @@ BattleTowerMons:
 
 	db ARCANINE
 	db CHARCOAL
-	db FLAME_WHEEL, LEER, BODY_SLAM, ROAR
+	db FLARE_BLITZ, LEER, BODY_SLAM, ROAR
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp

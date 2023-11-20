@@ -171,7 +171,7 @@ MoveDescriptions::
 	dw SpiderWebDescription
 	dw MindReaderDescription
 	dw NightmareDescription
-	dw FlameWheelDescription
+	dw FlareBlitzDescription
 	dw SnoreDescription
 	dw CurseDescription
 	dw FlailDescription
@@ -918,9 +918,9 @@ NightmareDescription:
 	db   "A sleeper loses"
 	next "1/4 HP every turn.@"
 
-FlameWheelDescription:
-	db   "An attack that may"
-	next "cause a burn.@"
+FlareBlitzDescription:
+	db   "1/3 recoil damage."
+	next "May burn the foe.@"
 
 SnoreDescription:
 	db   "An attack useable"

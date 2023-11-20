@@ -172,7 +172,7 @@ BattleAnimations::
 	dw BattleAnim_SpiderWeb
 	dw BattleAnim_MindReader
 	dw BattleAnim_Nightmare
-	dw BattleAnim_FlameWheel
+	dw BattleAnim_FlareBlitz
 	dw BattleAnim_Snore
 	dw BattleAnim_Curse
 	dw BattleAnim_Flail
@@ -3214,7 +3214,8 @@ BattleAnim_Nightmare:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_FlameWheel:
+; BattleAnim_FlameWheel:
+BattleAnim_FlareBlitz:
 	anim_1gfx ANIM_GFX_FIRE
 .loop
 	anim_sound 0, 0, SFX_EMBER

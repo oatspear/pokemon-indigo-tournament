@@ -1529,7 +1529,7 @@ Nightmare:
 	nightmare
 	endmove
 
-FlameWheel:
+FlareBlitz:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1546,9 +1546,11 @@ FlameWheel:
 	criticaltext
 	supereffectivetext
 	defrost
+	recoil
 	checkfaint
 	buildopponentrage
 	burntarget
+	kingsrock
 	endmove
 
 Curse:

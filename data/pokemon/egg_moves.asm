@@ -45,7 +45,6 @@ PidgeyEggMoves:
 
 RattataEggMoves:
 	db SCREECH
-	db FLAME_WHEEL
 	db FURY_SWIPES
 	db BITE
 	db COUNTER
@@ -214,7 +213,6 @@ GeodudeEggMoves:
 	db -1 ; end
 
 PonytaEggMoves:
-	db FLAME_WHEEL
 	db THRASH
 	db DOUBLE_KICK
 	db HYPNOSIS

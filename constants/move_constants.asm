@@ -179,7 +179,7 @@ CUT EQU $0f
 	const SPIDER_WEB   ; a9
 	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
-	const FLAME_WHEEL  ; ac
+	const FLARE_BLITZ  ; ac
 	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af

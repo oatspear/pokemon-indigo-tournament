@@ -170,7 +170,7 @@ MoveNames::
 	db "SPIDER WEB@"
 	db "MIND READER@"
 	db "NIGHTMARE@"
-	db "FLAME WHEEL@"
+	db "FLARE BLITZ@"
 	db "SNORE@"
 	db "CURSE@"
 	db "FLAIL@"
