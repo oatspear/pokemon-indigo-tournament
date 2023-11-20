@@ -5775,7 +5775,9 @@ BattleCommand_Recoil:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
-; get 1/4 damage or 1 HP, whichever is higher
+; Quick fix: moves should do 1/3 recoil damage.
+; We will simplify and just get 1/4 + 1/16, which is slightly less (0.3125).
+; Get 1/4 damage:
 	ld a, [wCurDamage]
 	ld b, a
 	ld a, [wCurDamage + 1]
@@ -5784,6 +5786,19 @@ BattleCommand_Recoil:
 	rr c
 	srl b
 	rr c
+; Get 1/16 and add to previous amount:
+	push hl
+	ld h, b
+	ld l, c
+	srl b
+	rr c
+	srl b
+	rr c
+	add hl, bc
+	ld b, h
+	ld c, l
+	pop hl
+; Got recoil damage
 	ld a, b
 	or c
 	jr nz, .min_damage
