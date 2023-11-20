@@ -199,7 +199,7 @@ if ISCONST(\2)
 	ld a, \2
 ._\@:
 else
-	if STRSUB("\2", 1, 1) == "."
+	if !STRCMP(STRSUB("\2", 1, 1), ".")
 	; Locals can use a short jump
 	jr z, \2
 	else
