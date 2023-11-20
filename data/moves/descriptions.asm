@@ -191,7 +191,7 @@ MoveDescriptions::
 	dw MudSlapDescription
 	dw OctazookaDescription
 	dw SpikesDescription
-	dw ZapCannonDescription
+	dw WildChargeDescription
 	dw ForesightDescription
 	dw DestinyBondDescription
 	dw PerishSongDescription
@@ -386,9 +386,10 @@ WrapDescription:
 	db   "Squeezes the foe"
 	next "for 2-5 turns.@"
 
+WildChargeDescription:
 TakeDownDescription:
-	db   "A tackle that also"
-	next "hurts the user.@"
+	db   "1/4 recoil damage"
+	next "to the user.@"
 
 ThrashDescription:
 	db   "Works 2-3 turns"
@@ -996,10 +997,6 @@ OctazookaDescription:
 SpikesDescription:
 	db   "Hurts foes when"
 	next "they switch out.@"
-
-ZapCannonDescription:
-	db   "An attack that"
-	next "always paralyzes.@"
 
 ForesightDescription:
 	db   "Negates accuracy"

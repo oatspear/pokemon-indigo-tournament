@@ -192,7 +192,7 @@ BattleAnimations::
 	dw BattleAnim_MudSlap
 	dw BattleAnim_Octazooka
 	dw BattleAnim_Spikes
-	dw BattleAnim_ZapCannon
+	dw BattleAnim_WildCharge
 	dw BattleAnim_Foresight
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
@@ -3563,19 +3563,19 @@ BattleAnim_Spikes:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_ZapCannon:
-	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
-	anim_bgp $1b
-	anim_obp0 $30
-	anim_sound 6, 2, SFX_ZAP_CANNON
-	anim_obj ANIM_OBJ_ZAP_CANNON, 64, 92, $2
-	anim_wait 40
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
-	anim_wait 16
-	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
-	anim_wait 128
-	anim_ret
+; BattleAnim_ZapCannon:
+; 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+; 	anim_bgp $1b
+; 	anim_obp0 $30
+; 	anim_sound 6, 2, SFX_ZAP_CANNON
+; 	anim_obj ANIM_OBJ_ZAP_CANNON, 64, 92, $2
+; 	anim_wait 40
+; 	anim_sound 0, 1, SFX_THUNDERSHOCK
+; 	anim_obj ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
+; 	anim_wait 16
+; 	anim_obj ANIM_OBJ_SPARKS_CIRCLE_BIG, 136, 56, $0
+; 	anim_wait 128
+; 	anim_ret
 
 BattleAnim_Foresight:
 	anim_1gfx ANIM_GFX_SHINE
@@ -3839,6 +3839,7 @@ BattleAnim_MilkDrink:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_WildCharge:
 BattleAnim_Spark:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_ZAP_CANNON

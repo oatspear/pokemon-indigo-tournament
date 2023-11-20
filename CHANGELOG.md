@@ -21,6 +21,7 @@
 - **Flip Turn** (Water, Physical): 60 Power, 100% Accuracy, switches the user after dealing damage.
 - **Hurricane** (Flying, Special): 110 Power, 70% Accuracy, guaranteed hit during Rain, 50% Accuracy in sunlight, 30% chance to inflict Confusion.
 - **Brave Bird** (Flying, Physical): 120 Power, 100% Accuracy, 1/3 recoil damage.
+- **Wild Charge** (Electric, Physical): 90 Power, 100% Accuracy, 1/4 recoil damage.
 
 ### Removed
 
@@ -41,6 +42,7 @@
 - Water Gun
 - Gust
 - Peck
+- Zap Cannon
 
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.

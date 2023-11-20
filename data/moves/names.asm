@@ -190,7 +190,7 @@ MoveNames::
 	db "MUD-SLAP@"
 	db "OCTAZOOKA@"
 	db "SPIKES@"
-	db "ZAP CANNON@"
+	db "WILD CHARGE@"
 	db "FORESIGHT@"
 	db "DESTINY BOND@"
 	db "PERISH SONG@"
