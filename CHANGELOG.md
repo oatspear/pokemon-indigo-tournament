@@ -43,7 +43,7 @@
 - Peck
 
 ### Changed
-- Recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
+- High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
 
 ## Version 0.1
 
