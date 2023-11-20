@@ -291,7 +291,6 @@ RaticateEvosAttacks:
 SpearowEvosAttacks:
 	db EVOLVE_LEVEL, 20, FEAROW
 	db 0 ; no more evolutions
-	db 1, PECK
 	db 1, GROWL
 	db 7, LEER
 	db 13, FURY_ATTACK
@@ -303,7 +302,6 @@ SpearowEvosAttacks:
 
 FearowEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
 	db 1, GROWL
 	db 1, LEER
 	db 1, FURY_ATTACK
@@ -1106,7 +1104,7 @@ MagnetonEvosAttacks:
 
 FarfetchDEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 7, SAND_ATTACK
 	db 13, LEER
 	db 19, FURY_ATTACK
@@ -1119,7 +1117,6 @@ FarfetchDEvosAttacks:
 DoduoEvosAttacks:
 	db EVOLVE_LEVEL, 31, DODRIO
 	db 0 ; no more evolutions
-	db 1, PECK
 	db 1, GROWL
 	db 9, PURSUIT
 	db 13, FURY_ATTACK
@@ -1131,7 +1128,6 @@ DoduoEvosAttacks:
 
 DodrioEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
 	db 1, GROWL
 	db 1, PURSUIT
 	db 1, FURY_ATTACK
@@ -1581,7 +1577,7 @@ SeadraEvosAttacks:
 GoldeenEvosAttacks:
 	db EVOLVE_LEVEL, 33, SEAKING
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 1, NASTY_PLOT
 	db 10, SUPERSONIC
 	db 15, HORN_ATTACK
@@ -1594,7 +1590,7 @@ GoldeenEvosAttacks:
 
 SeakingEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 1, NASTY_PLOT
 	db 1, NASTY_PLOT
 	db 10, SUPERSONIC
@@ -1935,7 +1931,7 @@ ArticunoEvosAttacks:
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, DRILL_PECK
 	db 1, VOLT_SWITCH
 	db 13, THUNDER_WAVE
 	db 25, AGILITY
@@ -2190,7 +2186,6 @@ HoothootEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, FORESIGHT
-	db 11, PECK
 	db 16, HYPNOSIS
 	db 22, REFLECT
 	db 28, TAKE_DOWN
@@ -2203,9 +2198,7 @@ NoctowlEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, FORESIGHT
-	db 1, PECK
 	db 6, FORESIGHT
-	db 11, PECK
 	db 16, HYPNOSIS
 	db 25, REFLECT
 	db 33, TAKE_DOWN
@@ -2367,7 +2360,7 @@ TogeticEvosAttacks:
 NatuEvosAttacks:
 	db EVOLVE_LEVEL, 25, XATU
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 1, LEER
 	db 10, NIGHT_SHADE
 	db 20, TELEPORT
@@ -2378,7 +2371,7 @@ NatuEvosAttacks:
 
 XatuEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 1, LEER
 	db 1, NIGHT_SHADE
 	db 10, NIGHT_SHADE
@@ -2631,7 +2624,7 @@ UmbreonEvosAttacks:
 
 MurkrowEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, TACKLE
 	db 11, PURSUIT
 	db 16, HAZE
 	db 26, NIGHT_SHADE
@@ -2986,7 +2979,7 @@ MantineEvosAttacks:
 SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEER
-	db 1, PECK
+	db 1, BRAVE_BIRD
 	db 13, SAND_ATTACK
 	db 19, SWIFT
 	db 25, AGILITY

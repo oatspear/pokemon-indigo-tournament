@@ -64,7 +64,7 @@ BattleAnimations::
 	dw BattleAnim_Bubblebeam
 	dw BattleAnim_AuroraBeam
 	dw BattleAnim_HyperBeam
-	dw BattleAnim_Peck
+	dw BattleAnim_BraveBird
 	dw BattleAnim_DrillPeck
 	dw BattleAnim_Submission
 	dw BattleAnim_LowKick
@@ -2490,15 +2490,15 @@ BattleAnim_Kinesis:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Peck:
-	anim_1gfx ANIM_GFX_HIT
-	anim_sound 0, 1, SFX_PECK
-	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 128, 48, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_PECK
-	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 136, 56, $0
-	anim_wait 16
-	anim_ret
+; BattleAnim_Peck:
+; 	anim_1gfx ANIM_GFX_HIT
+; 	anim_sound 0, 1, SFX_PECK
+; 	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 128, 48, $0
+; 	anim_wait 8
+; 	anim_sound 0, 1, SFX_PECK
+; 	anim_obj ANIM_OBJ_HIT_SMALL_YFIX, 136, 56, $0
+; 	anim_wait 16
+; 	anim_ret
 
 BattleAnim_DrillPeck:
 	anim_1gfx ANIM_GFX_HIT
@@ -2610,15 +2610,16 @@ BattleAnim_Minimize:
 
 BattleAnim_SkyAttack:
 	anim_if_param_equal $1, BattleAnim_FocusEnergy
+BattleAnim_BraveBird:
 	anim_1gfx ANIM_GFX_SKY_ATTACK
 	anim_bgeffect ANIM_BG_REMOVE_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 32
-	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_sound 0, 0, SFX_WING_ATTACK
 	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
 	anim_wait 64
 	anim_incobj 1
 	anim_wait 21
-	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_sound 0, 1, SFX_WING_ATTACK
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
 	anim_wait 64
 	anim_incobj 1

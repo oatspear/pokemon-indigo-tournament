@@ -71,7 +71,7 @@ CUT EQU $0f
 	const BUBBLEBEAM   ; 3d
 	const AURORA_BEAM  ; 3e
 	const HYPER_BEAM   ; 3f
-	const PECK         ; 40
+	const BRAVE_BIRD   ; 40
 	const DRILL_PECK   ; 41
 	const SUBMISSION   ; 42
 	const LOW_KICK     ; 43

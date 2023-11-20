@@ -248,7 +248,6 @@ SeelEggMoves:
 	db LICK
 	db PERISH_SONG
 	db DISABLE
-	db PECK
 	db ENCORE
 	db -1 ; end
 
@@ -517,7 +516,6 @@ IgglybuffEggMoves:
 TogepiEggMoves:
 	db PRESENT
 	db MIRROR_MOVE
-	db PECK
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db -1 ; end

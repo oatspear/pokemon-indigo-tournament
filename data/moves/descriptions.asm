@@ -63,7 +63,7 @@ MoveDescriptions::
 	dw BubblebeamDescription
 	dw AuroraBeamDescription
 	dw HyperBeamDescription
-	dw PeckDescription
+	dw BraveBirdDescription
 	dw DrillPeckDescription
 	dw SubmissionDescription
 	dw LowKickDescription
@@ -394,9 +394,10 @@ ThrashDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
 
+BraveBirdDescription:
 DoubleEdgeDescription:
-	db   "A tackle that also"
-	next "hurts the user.@"
+	db   "1/3 recoil damage"
+	next "to the user.@"
 
 PoisonStingDescription:
 	db   "An attack that may"
@@ -496,10 +497,6 @@ AuroraBeamDescription:
 HyperBeamDescription:
 	db   "1st turn: Attack"
 	next "2nd turn: Rest@"
-
-PeckDescription:
-	db   "Jabs the foe with"
-	next "a beak, etc.@"
 
 DrillPeckDescription:
 	db   "A strong, spin-"

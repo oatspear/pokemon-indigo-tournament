@@ -62,7 +62,7 @@ MoveNames::
 	db "BUBBLEBEAM@"
 	db "AURORA BEAM@"
 	db "HYPER BEAM@"
-	db "PECK@"
+	db "BRAVE BIRD@"
 	db "DRILL PECK@"
 	db "SUBMISSION@"
 	db "LOW KICK@"
