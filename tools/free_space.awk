@@ -1,13 +1,13 @@
 #!/usr/bin/gawk -f
 
-# Usage:  tools/free_space.awk [BANK=<bank_spec>] pokecrystal.map
+# Usage:  tools/free_space.awk [BANK=<bank_spec>] indigo.map
 
 # The BANK argument allows printing free space in one, all, or none of the ROM's banks.
 # Valid arguments are numbers (in decimal "42" or hexadecimal "0x2a"), "all" or "none".
 # If not specified, defaults to "none".
 # The `BANK` argument MUST be before the map file name, otherwise it has no effect!
-# Yes:  tools/free_space.awk BANK=all pokecrystal.map
-# No:   tools/free_space.awk pokecrystal.map BANK=42
+# Yes:  tools/free_space.awk BANK=all indigo.map
+# No:   tools/free_space.awk indigo.map BANK=42
 
 # Copyright (c) 2020, Eldred Habert.
 # SPDX-License-Identifier: MIT

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# A library for parsing the pokecrystal.map file output by rgbds.
+# A library for parsing the indigo.map file output by rgbds.
 
 import re
 

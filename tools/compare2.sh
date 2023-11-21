@@ -1,5 +1,5 @@
 #!/bin/sh
-# Compares baserom.gbc and pokecrystal.gbc
+# Compares baserom.gbc and indigo.gbc
 
 # create baserom.txt if necessary
 crystal_md5=9f2922b235a5eeb78d65594e82ef5dde
@@ -27,9 +27,9 @@ if [ $base_md5 != $crystal_md5 ]; then
     exit 1
 fi
 
-built_md5=`md5sum pokecrystal.gbc | cut -d' ' -f1`
+built_md5=`md5sum indigo.gbc | cut -d' ' -f1`
 if [ $verbose == 1 ]; then
-	echo "pokecrystal.gbc: $built_md5"
+	echo "indigo.gbc: $built_md5"
 fi
 if [ $built_md5 != $crystal_md5 ]
 then
@@ -40,12 +40,11 @@ then
         hexdump -C baserom.gbc > baserom.txt
     fi
 
-    hexdump -C pokecrystal.gbc > pokecrystal.txt
+    hexdump -C indigo.gbc > indigo.txt
 
-    diff -u baserom.txt pokecrystal.txt | less
+    diff -u baserom.txt indigo.txt | less
 else
 	if [ $verbose == 1 ]; then
 		echo "Checksums match! :D"
 	fi
 fi
-

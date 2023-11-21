@@ -31,7 +31,7 @@ gfx/pokemon/*/frames.asm
 
 # compare.sh
 baserom.txt
-pokecrystal.txt
+indigo.txt
 
 # used_space.py
 used_space.png

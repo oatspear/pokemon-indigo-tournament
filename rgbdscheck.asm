@@ -1,4 +1,4 @@
-; pokecrystal requires rgbds 0.4.2 or newer.
+; pokecrystal requires rgbds 0.6.0 or newer.
 MAJOR EQU 0
 MINOR EQU 6
 PATCH EQU 0
