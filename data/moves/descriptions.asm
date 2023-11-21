@@ -539,7 +539,7 @@ GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
 
-XSCissorDescription:
+XScissorDescription:
 RazorLeafDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"

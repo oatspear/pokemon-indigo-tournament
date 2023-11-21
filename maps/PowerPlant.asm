@@ -167,13 +167,13 @@ PowerPlantManager:
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
 .ReturnedMachinePart:
-	checkevent EVENT_GOT_TM07_ZAP_CANNON
+	checkevent EVENT_GOT_TM07_WILD_CHARGE
 	iftrue .GotZapCannon
 	writetext PowerPlantManagerTakeThisTMText
 	promptbutton
-	verbosegiveitem TM_ZAP_CANNON
+	verbosegiveitem TM_WILD_CHARGE
 	iffalse .NoRoom
-	setevent EVENT_GOT_TM07_ZAP_CANNON
+	setevent EVENT_GOT_TM07_WILD_CHARGE
 	writetext PowerPlantManagerTM07IsZapCannonText
 	waitbutton
 .NoRoom:

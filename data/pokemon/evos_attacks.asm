@@ -1085,7 +1085,7 @@ MagnemiteEvosAttacks:
 	db 27, LOCK_ON
 	db 33, SWIFT
 	db 39, SCREECH
-	db 45, ZAP_CANNON
+	db 45, THUNDER
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1099,7 +1099,7 @@ MagnetonEvosAttacks:
 	db 27, LOCK_ON
 	db 35, TRI_ATTACK
 	db 43, SCREECH
-	db 53, ZAP_CANNON
+	db 53, THUNDER
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1834,7 +1834,7 @@ PorygonEvosAttacks:
 	db 24, SHARPEN
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 44, THUNDERBOLT
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:
@@ -3062,7 +3062,7 @@ Porygon2EvosAttacks:
 	db 24, DEFENSE_CURL
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 44, THUNDERBOLT
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
