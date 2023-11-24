@@ -70,7 +70,7 @@ MoveDescriptions::
 	dw CounterDescription
 	dw SeismicTossDescription
 	dw StrengthDescription
-	dw AbsorbDescription
+	dw AromatherapyDescription
 	dw MegaDrainDescription
 	dw LeechSeedDescription
 	dw GrowthDescription
@@ -522,10 +522,6 @@ SeismicTossDescription:
 StrengthDescription:
 	db   "A powerful physi-"
 	next "cal attack.@"
-
-AbsorbDescription:
-	db   "Steals 1/2 of the"
-	next "damage inflicted.@"
 
 MegaDrainDescription:
 	db   "Steals 1/2 of the"
@@ -1086,6 +1082,7 @@ SleepTalkDescription:
 	db   "Randomly attacks"
 	next "while asleep.@"
 
+AromatherapyDescription:
 HealBellDescription:
 	db   "Eliminates all"
 	next "status problems.@"

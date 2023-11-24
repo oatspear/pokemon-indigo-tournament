@@ -69,7 +69,7 @@ MoveNames::
 	db "COUNTER@"
 	db "SEISMIC TOSS@"
 	db "STRENGTH@"
-	db "ABSORB@"
+	db "AROMATHERAPY@"
 	db "MEGA DRAIN@"
 	db "LEECH SEED@"
 	db "GROWTH@"

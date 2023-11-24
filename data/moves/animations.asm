@@ -71,7 +71,7 @@ BattleAnimations::
 	dw BattleAnim_Counter
 	dw BattleAnim_SeismicToss
 	dw BattleAnim_Strength
-	dw BattleAnim_Absorb
+	dw BattleAnim_Aromatherapy
 	dw BattleAnim_MegaDrain
 	dw BattleAnim_LeechSeed
 	dw BattleAnim_Growth
@@ -4198,6 +4198,20 @@ BattleAnim_RapidSpin:
 	anim_wait 4
 	anim_incobj 6
 	anim_wait 1
+	anim_ret
+
+BattleAnim_Aromatherapy:
+	anim_sound 0, 0, SFX_MENU
+	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
+.loop
+	anim_obj ANIM_OBJ_PETAL_DANCE, 48, 56, $0
+	anim_wait 11
+	anim_loop 8, .loop
+	anim_wait 128
+	anim_sound 0, 1, SFX_SWEET_SCENT
+	anim_wait 64
 	anim_ret
 
 BattleAnim_SweetScent:

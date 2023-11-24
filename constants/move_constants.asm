@@ -78,7 +78,7 @@ CUT EQU $0f
 	const COUNTER      ; 44
 	const SEISMIC_TOSS ; 45
 	const STRENGTH     ; 46
-	const ABSORB       ; 47
+	const AROMATHERAPY ; 47
 	const MEGA_DRAIN   ; 48
 	const LEECH_SEED   ; 49
 	const GROWTH       ; 4a

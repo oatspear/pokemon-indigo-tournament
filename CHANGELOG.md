@@ -23,6 +23,7 @@
 - **Brave Bird** (Flying, Physical): 120 Power, 100% Accuracy, 1/3 recoil damage.
 - **Wild Charge** (Electric, Physical): 90 Power, 100% Accuracy, 1/4 recoil damage.
 - **Flare Blitz** (Fire, Physical): 120 Power, 100% Accuracy, 1/3 recoil damage, 10% chance to inflict Burn, thaws the user.
+- **Aromatherapy** (Grass, Status): 100% Accuracy, heals all status effects from the user's party.
 
 ### Removed
 
@@ -45,6 +46,7 @@
 - Peck
 - Zap Cannon
 - Flame Wheel
+- Absorb
 
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
