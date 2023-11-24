@@ -552,7 +552,7 @@ GolbatEvosAttacks:
 OddishEvosAttacks:
 	db EVOLVE_LEVEL, 21, GLOOM
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 7, SWEET_SCENT
 	db 14, POISONPOWDER
 	db 16, STUN_SPORE
@@ -566,7 +566,7 @@ GloomEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VILEPLUME
 	db EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 1, SWEET_SCENT
 	db 1, POISONPOWDER
 	db 7, SWEET_SCENT
@@ -580,7 +580,7 @@ GloomEvosAttacks:
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
@@ -1525,7 +1525,7 @@ TangelaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CONSTRICT
 	db 4, SLEEP_POWDER
-	db 10, ABSORB
+	db 10, AROMATHERAPY
 	db 13, POISONPOWDER
 	db 19, VINE_WHIP
 	db 25, BIND
@@ -1869,11 +1869,10 @@ KabutoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, HARDEN
-	db 10, ABSORB
+	db 10, LEECH_LIFE
 	db 19, LEER
 	db 28, SAND_ATTACK
 	db 37, ENDURE
-	db 46, MEGA_DRAIN
 	db 55, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
@@ -1881,13 +1880,11 @@ KabutopsEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, HARDEN
-	db 1, ABSORB
-	db 10, ABSORB
+	db 1, LEECH_LIFE
 	db 19, LEER
 	db 28, SAND_ATTACK
 	db 37, ENDURE
 	db 40, SLASH
-	db 51, MEGA_DRAIN
 	db 65, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
@@ -2422,7 +2419,7 @@ AmpharosEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 1, SWEET_SCENT
 	db 1, STUN_SPORE
 	db 1, PETAL_DANCE
@@ -2541,7 +2538,7 @@ AipomEvosAttacks:
 SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 4, GROWTH
 	db 10, MEGA_DRAIN
 	db 19, SUNNY_DAY
@@ -2551,7 +2548,7 @@ SunkernEvosAttacks:
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, AROMATHERAPY
 	db 4, GROWTH
 	db 10, RAZOR_LEAF
 	db 19, SUNNY_DAY

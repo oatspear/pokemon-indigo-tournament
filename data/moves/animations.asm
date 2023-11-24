@@ -684,7 +684,7 @@ BattleAnim_KarateChop:
 ; 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
 ; 	anim_wait 8
 ; 	anim_ret
-; 
+;
 ; .alternate:
 ; 	anim_sound 0, 1, SFX_DOUBLESLAP
 ; 	anim_obj ANIM_OBJ_PALM, 120, 48, $0
@@ -1647,22 +1647,22 @@ BattleAnim_Recover:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Absorb:
-	anim_1gfx ANIM_GFX_CHARGE
-	anim_obj ANIM_OBJ_ABSORB_CENTER, 44, 88, $0
-.loop
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 6
-	anim_loop 5, .loop
-	anim_wait 32
-	anim_ret
+; BattleAnim_Absorb:
+; 	anim_1gfx ANIM_GFX_CHARGE
+; 	anim_obj ANIM_OBJ_ABSORB_CENTER, 44, 88, $0
+; .loop
+; 	anim_sound 6, 3, SFX_WATER_GUN
+; 	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+; 	anim_wait 6
+; 	anim_sound 6, 3, SFX_WATER_GUN
+; 	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+; 	anim_wait 6
+; 	anim_sound 6, 3, SFX_WATER_GUN
+; 	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
+; 	anim_wait 6
+; 	anim_loop 5, .loop
+; 	anim_wait 32
+; 	anim_ret
 
 BattleAnim_MegaDrain:
 	anim_1gfx ANIM_GFX_CHARGE
