@@ -51,6 +51,10 @@
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
 
+#### Moves
+- **Razor Leaf**: increased Power from 55 to 70; increased Accuracy from 95% to 100%; decreased PP from 25 to 15.
+
+
 ## Version 0.1
 
 Initial prototype.
