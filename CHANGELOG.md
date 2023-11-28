@@ -24,6 +24,8 @@
 - **Wild Charge** (Electric, Physical): 90 Power, 100% Accuracy, 1/4 recoil damage.
 - **Flare Blitz** (Fire, Physical): 120 Power, 100% Accuracy, 1/3 recoil damage, 10% chance to inflict Burn, thaws the user.
 - **Aromatherapy** (Grass, Status): 100% Accuracy, heals all status effects from the user's party.
+- **Leaf Blade** (Grass, Physical): 70 Power, 100% Accuracy, high critical-hit ratio.
+- **Power Whip** (Grass, Physical): 120 Power, 85% Accuracy.
 
 ### Removed
 
@@ -47,12 +49,11 @@
 - Zap Cannon
 - Flame Wheel
 - Absorb
+- Razor Leaf
+- Vine Whip
 
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
-
-#### Moves
-- **Razor Leaf**: increased Power from 55 to 70; increased Accuracy from 95% to 100%; decreased PP from 25 to 15.
 
 
 ## Version 0.1
