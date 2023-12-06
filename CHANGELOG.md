@@ -26,6 +26,7 @@
 - **Aromatherapy** (Grass, Status): 100% Accuracy, heals all status effects from the user's party.
 - **Leaf Blade** (Grass, Physical): 70 Power, 100% Accuracy, high critical-hit ratio.
 - **Power Whip** (Grass, Physical): 120 Power, 85% Accuracy.
+- **Drill Run** (Ground, Physical): 80 Power, 95% Accuracy, high critical-hit ratio.
 
 ### Removed
 
@@ -51,6 +52,7 @@
 - Absorb
 - Razor Leaf
 - Vine Whip
+- Bind
 
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.

@@ -19,7 +19,7 @@ MoveDescriptions::
 	dw WingAttackDescription
 	dw WhirlwindDescription
 	dw FlyDescription
-	dw BindDescription
+	dw DrillRunDescription
 	dw MysticFireDescription
 	dw VineWhipDescription
 	dw StompDescription
@@ -325,10 +325,6 @@ WhirlwindDescription:
 FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
-
-BindDescription:
-	db   "Binds the target"
-	next "for 2-5 turns.@"
 
 VineWhipDescription:
 	db   "Whips the foe with"
@@ -1177,6 +1173,7 @@ HiddenPowerDescription:
 	db   "The power varies"
 	next "with the #MON.@"
 
+DrillRunDescription:
 CrossChopDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"

@@ -27,7 +27,7 @@ CUT EQU $0f
 	const WING_ATTACK  ; 11
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
-	const BIND         ; 14
+	const DRILL_RUN    ; 14
 	const MYSTIC_FIRE  ; 15
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17

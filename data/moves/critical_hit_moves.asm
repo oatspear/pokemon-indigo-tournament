@@ -12,4 +12,5 @@ CriticalHitMoves:
 	db AEROBLAST
 	db CROSS_CHOP
 	db SKY_ATTACK
+	db DRILL_RUN
 	db -1

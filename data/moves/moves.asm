@@ -31,7 +31,7 @@ Moves: ; 41afb
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,     0, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,        PHYSICAL,  95, 15,   0
-	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  85, 20,   0
+	move DRILL_RUN,    EFFECT_NORMAL_HIT,         80, GROUND,        PHYSICAL,  95, 10,   0
 	move MYSTIC_FIRE,  EFFECT_SP_ATK_DOWN_HIT,    75, FIRE,          SPECIAL,  100, 10, 100
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,        120, GRASS,         PHYSICAL,  85, 10,   0
 	move STOMP,        EFFECT_STOMP,              65, NORMAL,        PHYSICAL, 100, 20,  30

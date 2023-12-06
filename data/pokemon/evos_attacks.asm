@@ -1261,7 +1261,7 @@ OnixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
-	db 10, BIND
+	db 10, WRAP
 	db 14, ROCK_THROW
 	db 23, HARDEN
 	db 27, RAGE
@@ -1528,7 +1528,7 @@ TangelaEvosAttacks:
 	db 10, AROMATHERAPY
 	db 13, POISONPOWDER
 	db 19, VINE_WHIP
-	db 25, BIND
+	db 25, WRAP
 	db 31, MEGA_DRAIN
 	db 34, STUN_SPORE
 	db 46, GROWTH
@@ -1702,7 +1702,7 @@ PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, X_SCISSOR
 	db 7, FOCUS_ENERGY
-	db 13, BIND
+	db 13, WRAP
 	db 19, SEISMIC_TOSS
 	db 25, HARDEN
 	db 31, GUILLOTINE
@@ -2736,7 +2736,7 @@ SteelixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SCREECH
-	db 10, BIND
+	db 10, WRAP
 	db 14, ROCK_THROW
 	db 23, HARDEN
 	db 27, RAGE
