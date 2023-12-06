@@ -6,7 +6,7 @@ ENDM
 ; BattleCommandPointers indexes (see data/battle/effect_command_pointers.asm)
 	const_def 1
 	command checkturn               ; 01
-	command checkobedience          ; 02
+	command effect0x02              ; 02
 	command usedmovetext            ; 03
 	command doturn                  ; 04
 	command critical                ; 05

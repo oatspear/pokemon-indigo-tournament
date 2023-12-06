@@ -5,7 +5,7 @@
 BattleCommandPointers:
 ; entries correspond to macros/scripts/battle_commands.asm
 	dw BattleCommand_CheckTurn
-	dw BattleCommand_CheckObedience
+	dw BattleCommand_CheckTurn  ; placeholder
 	dw BattleCommand_UsedMoveText
 	dw BattleCommand_DoTurn
 	dw BattleCommand_Critical
