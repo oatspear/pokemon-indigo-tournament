@@ -2610,7 +2610,7 @@ BattleAnim_Minimize:
 	anim_ret
 
 BattleAnim_SkyAttack:
-	anim_if_param_equal $1, BattleAnim_FocusEnergy
+	; anim_if_param_equal $1, BattleAnim_FocusEnergy
 BattleAnim_BraveBird:
 	anim_1gfx ANIM_GFX_SKY_ATTACK
 	anim_bgeffect ANIM_BG_REMOVE_MON, $0, BG_EFFECT_USER, $0

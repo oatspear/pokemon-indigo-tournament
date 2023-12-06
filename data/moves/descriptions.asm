@@ -794,8 +794,8 @@ LovelyKissDescription:
 	next "to fall asleep.@"
 
 SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "High critical hit"
+	next "and flinch ratio.@"
 
 TransformDescription:
 	db   "The user assumes"

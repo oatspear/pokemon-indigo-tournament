@@ -56,6 +56,7 @@
 
 ### Changed
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
+- **Sky Attack**: single turn attack, 80 Power, 100% Accuracy, high critical-hit ratio, 30% chance to flinch.
 
 
 ## Version 0.1

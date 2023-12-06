@@ -74,7 +74,6 @@ MoveEffectsPointers:
 	dw SpecialDefenseDownHit
 	dw AccuracyDownHit
 	dw EvasionDownHit
-	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
 	dw UTurn
