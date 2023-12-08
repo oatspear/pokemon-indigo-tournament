@@ -41,8 +41,8 @@ ReadPlayerParty:
 
 	ld d, h
 	ld e, l
-	call PlayerTrainerType4
-	ret
+	; jr PlayerTrainerType4
+	; fallthrough
 
 PlayerTrainerType4:
 ; species, item, EVs, moves
@@ -88,7 +88,7 @@ PlayerTrainerType4:
 	pop hl
 
 ; read EVs
-    call _ReadEVs
+	call _ReadEVs
 
 ; prepare moves
 	push hl
@@ -153,76 +153,74 @@ PlayerTrainerType4:
 	pop hl
 
 ; Custom EVs affect stats, so recalculate them after TryAddMonToParty
-    push hl
+	push hl
 
-    ld a, [wPartyCount]
-    dec a
-    ld hl, wPartyMon1MaxHP
-    call GetPartyLocation
-    ld d, h
-    ld e, l
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1MaxHP
+	call GetPartyLocation
+	ld d, h
+	ld e, l
 
-    ld a, [wPartyCount]
-    dec a
-    ld hl, wPartyMon1EVs - 1
-    call GetPartyLocation
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1EVs - 1
+	call GetPartyLocation
 
 ; recalculate stats
-    ld b, TRUE
-    push de
-    predef CalcMonStats
-    pop hl
+	ld b, TRUE
+	push de
+	predef CalcMonStats
+	pop hl
 
 ; copy max HP to current HP
-    inc hl
-    ld c, [hl]
-    dec hl
-    ld b, [hl]
-    dec hl
-    ld [hl], c
-    dec hl
-    ld [hl], b
+	inc hl
+	ld c, [hl]
+	dec hl
+	ld b, [hl]
+	dec hl
+	ld [hl], c
+	dec hl
+	ld [hl], b
 
-    pop hl
-
+	pop hl
 	jp .loop
 
 
 _ReadEVs:
 ; TODO check that only 2 fields are set
-    ld a, [hli]
-    ld b, a
-    ld a, MAX_EV
-    bit HP_EV_BIT, b
-    jr z, .atk_ev
-    ld [de], a
+	ld a, [hli]
+	ld b, a
+	ld a, MAX_EV
+	bit HP_EV_BIT, b
+	jr z, .atk_ev
+	ld [de], a
 .atk_ev
-    inc de
-    bit ATK_EV_BIT, b
-    jr z, .def_ev
-    ld [de], a
+	inc de
+	bit ATK_EV_BIT, b
+	jr z, .def_ev
+	ld [de], a
 .def_ev
-    inc de
-    bit DEF_EV_BIT, b
-    jr z, .spd_ev
-    ld [de], a
+	inc de
+	bit DEF_EV_BIT, b
+	jr z, .spd_ev
+	ld [de], a
 .spd_ev
-    inc de
-    bit SPD_EV_BIT, b
-    jr z, .sp_atk_ev
-    ld [de], a
+	inc de
+	bit SPD_EV_BIT, b
+	jr z, .sp_atk_ev
+	ld [de], a
 .sp_atk_ev
-    inc de
-    bit SP_ATK_EV_BIT, b
-    jr z, .sp_def_ev
-    ld [de], a
+	inc de
+	bit SP_ATK_EV_BIT, b
+	jr z, .sp_def_ev
+	ld [de], a
 .sp_def_ev
-    inc de
-    bit SP_DEF_EV_BIT, b
-    jr z, .evs_done
-    ld [de], a
-.evs_done
-    ret
+	inc de
+	bit SP_DEF_EV_BIT, b
+	ret z
+	ld [de], a
+	ret
 
 
 ReadTrainerParty:
@@ -268,10 +266,11 @@ ReadTrainerParty:
 
 	ld d, h
 	ld e, l
-	ld hl, TrainerType4
-	ld bc, .done
-	push bc
-	jp hl
+	; ld hl, TrainerType4
+	; ld bc, .done
+	; push bc
+	; jp hl
+	call TrainerType4
 
 .done
 	jp ComputeTrainerReward
@@ -321,7 +320,7 @@ TrainerType4:
 	pop hl
 
 ; read EVs
-    call _ReadEVs
+	call _ReadEVs
 
 ; prepare moves
 	push hl
@@ -386,37 +385,37 @@ TrainerType4:
 	pop hl
 
 ; Custom EVs affect stats, so recalculate them after TryAddMonToParty
-    push hl
+	push hl
 
-    ld a, [wOTPartyCount]
-    dec a
-    ld hl, wOTPartyMon1MaxHP
-    call GetPartyLocation
-    ld d, h
-    ld e, l
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1MaxHP
+	call GetPartyLocation
+	ld d, h
+	ld e, l
 
-    ld a, [wOTPartyCount]
-    dec a
-    ld hl, wOTPartyMon1EVs - 1
-    call GetPartyLocation
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1EVs - 1
+	call GetPartyLocation
 
 ; recalculate stats
-    ld b, TRUE
-    push de
-    predef CalcMonStats
-    pop hl
+	ld b, TRUE
+	push de
+	predef CalcMonStats
+	pop hl
 
 ; copy max HP to current HP
-    inc hl
-    ld c, [hl]
-    dec hl
-    ld b, [hl]
-    dec hl
-    ld [hl], c
-    dec hl
-    ld [hl], b
+	inc hl
+	ld c, [hl]
+	dec hl
+	ld b, [hl]
+	dec hl
+	ld [hl], c
+	dec hl
+	ld [hl], b
 
-    pop hl
+	pop hl
 
 	jp .loop
 
