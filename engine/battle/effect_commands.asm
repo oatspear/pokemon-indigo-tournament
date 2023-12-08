@@ -1323,7 +1323,7 @@ BattleCommand_CheckHit:
 .CheckPerfectAccuracy:
 	ld a, b
 	and a
-	jr z, .Hit
+	ret z
 
 	call .StatModifiers
 
@@ -1354,13 +1354,11 @@ BattleCommand_CheckHit:
 .skip_brightpowder
 	ld a, b
 	cp -1
-	jr z, .Hit
+	ret z
 
 	call BattleRandom
 	cp b
 	jr nc, .Miss
-
-.Hit:
 	ret
 
 .Miss:
