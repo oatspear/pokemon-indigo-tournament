@@ -47,3 +47,22 @@ CONTEXT_USE        EQU 1 << CONTEXT_USE_F
 	const TRAINERTYPE_MOVES
 	const TRAINERTYPE_ITEM
 	const TRAINERTYPE_ITEM_MOVES
+
+; EV bit field constants for trainer parties (see engine/battle/read_trainer_party.asm)
+
+	const_def
+	const MAX_EVS_HP_ATK
+	const MAX_EVS_HP_DEF
+	const MAX_EVS_HP_SPD
+	const MAX_EVS_HP_SP_ATK
+	const MAX_EVS_HP_SP_DEF
+	const MAX_EVS_ATK_DEF
+	const MAX_EVS_ATK_SPD
+	const MAX_EVS_ATK_SP_ATK
+	const MAX_EVS_ATK_SP_DEF
+	const MAX_EVS_DEF_SPD
+	const MAX_EVS_DEF_SP_ATK
+	const MAX_EVS_DEF_SP_DEF
+	const MAX_EVS_SPD_SP_ATK
+	const MAX_EVS_SPD_SP_DEF
+	const MAX_EVS_SP_ATK_SP_DEF
