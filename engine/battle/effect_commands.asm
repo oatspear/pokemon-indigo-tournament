@@ -3547,14 +3547,18 @@ BattleCommand_PoisonTarget:
 
 	call CheckSubstituteOpp
 	ret nz
+	ld a, POISON
+	call CheckOpponentHasType
+	ret z  ; immune
+	ld a, STEEL
+	call CheckOpponentHasType
+	ret z  ; immune
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
 	ret nz
 	ld a, [wTypeModifier]
 	and $7f
-	ret z
-	call CheckIfTargetIsPoisonType
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3585,8 +3589,12 @@ BattleCommand_Poison:
 	and $7f
 	jp z, .failed
 
-	call CheckIfTargetIsPoisonType
-	jp z, .failed
+	ld a, POISON
+	call CheckOpponentHasType
+	jr z, .failed
+	ld a, STEEL
+	call CheckOpponentHasType
+	jr z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
@@ -3661,21 +3669,6 @@ BattleCommand_Poison:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_TOXIC
-	ret
-
-CheckIfTargetIsPoisonType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp POISON
-	ret z
-	ld a, [de]
-	cp POISON
 	ret
 
 PoisonOpponent:

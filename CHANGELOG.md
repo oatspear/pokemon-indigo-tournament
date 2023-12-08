@@ -59,6 +59,7 @@
 - Bind
 
 ### Changed
+- Poison-types and Steel-types cannot be poisoned.
 - Electric-types cannot be paralyzed.
 - Paralysis reduces Speed by 50%, instead of 75%.
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
