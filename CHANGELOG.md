@@ -28,6 +28,9 @@
 - **Power Whip** (Grass, Physical): 120 Power, 85% Accuracy.
 - **Drill Run** (Ground, Physical): 80 Power, 95% Accuracy, high critical-hit ratio.
 
+#### Abilities
+- **No Guard**: if either Pokémon has this ability, accuracy checks are skipped.
+
 ### Removed
 
 #### Moves

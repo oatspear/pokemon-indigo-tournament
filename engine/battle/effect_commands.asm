@@ -1291,6 +1291,9 @@ BattleCommand_CheckHit:
 	call .DrainSub
 	jp z, .Miss
 
+	call .NoGuard
+	ret z
+
 	call .LockOn
 	ret nz
 
@@ -1372,6 +1375,15 @@ BattleCommand_CheckHit:
 .Missed:
 	ld a, 1
 	ld [wAttackMissed], a
+	ret
+
+.NoGuard:
+; Return z if either Pokémon has the ability No Guard.
+	ld a, [wBattleMonAbility]
+	cp NO_GUARD
+	ret z
+	ld a, [wEnemyMonAbility]
+	cp NO_GUARD
 	ret
 
 .DreamEater:
