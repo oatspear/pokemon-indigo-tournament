@@ -1,0 +1,2 @@
+AbilityNames::
+	db "NO GUARD@"
