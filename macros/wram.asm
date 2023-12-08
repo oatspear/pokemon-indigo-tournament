@@ -46,6 +46,30 @@ MACRO party_struct
 \1StructEnd::
 ENDM
 
+MACRO battle_struct
+\1Species::   db
+\1Item::      db
+\1Moves::     ds NUM_MOVES
+\1DVs::       dw
+\1PP::        ds NUM_MOVES
+\1Happiness:: db
+\1Level::     db
+\1Status::    ds 2
+\1HP::        dw
+\1MaxHP::     dw
+\1Stats:: ; big endian
+\1Attack::    dw
+\1Defense::   dw
+\1Speed::     dw
+\1SpclAtk::   dw
+\1SpclDef::   dw
+\1Type::
+\1Type1::     db
+\1Type2::     db
+\1StructEnd::
+ENDM
+
+
 MACRO red_box_struct
 \1Species::    db
 \1HP::         dw
@@ -78,28 +102,6 @@ MACRO red_party_struct
 \1Special::    dw
 ENDM
 
-MACRO battle_struct
-\1Species::   db
-\1Item::      db
-\1Moves::     ds NUM_MOVES
-\1DVs::       dw
-\1PP::        ds NUM_MOVES
-\1Happiness:: db
-\1Level::     db
-\1Status::    ds 2
-\1HP::        dw
-\1MaxHP::     dw
-\1Stats:: ; big endian
-\1Attack::    dw
-\1Defense::   dw
-\1Speed::     dw
-\1SpclAtk::   dw
-\1SpclDef::   dw
-\1Type::
-\1Type1::     db
-\1Type2::     db
-\1StructEnd::
-ENDM
 
 MACRO box
 \1Count::           db
