@@ -30,6 +30,7 @@
 
 #### Abilities
 - **No Guard**: if either Pokémon has this ability, accuracy checks are skipped.
+- **Battle Armor**: blocks critical hits against the user.
 
 ### Removed
 

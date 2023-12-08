@@ -107,6 +107,23 @@ DoMove:
 .DoMoveEffectCommand:
 	jp hl
 
+
+GetCurrentAbility:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonAbility]
+	ret nz
+	ld a, [wBattleMonAbility]
+	ret
+
+GetOpponentAbility:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonAbility]
+	ret nz
+	ld a, [wEnemyMonAbility]
+	ret
+
 CheckTurn:
 BattleCommand_CheckTurn:
 ; checkturn
@@ -821,6 +838,10 @@ BattleCommand_Critical:
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	and a
+	ret z
+
+	call GetOpponentAbility
+	cp BATTLE_ARMOR
 	ret z
 
 	ldh a, [hBattleTurn]

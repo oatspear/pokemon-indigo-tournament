@@ -6,4 +6,5 @@
 	const_def
 	const NO_MOVE      ; 00
 	const NO_GUARD     ; 01
+	const BATTLE_ARMOR ; 02
 NUM_ABILITIES EQU const_value - 1
