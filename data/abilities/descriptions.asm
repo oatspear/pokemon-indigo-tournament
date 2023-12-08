@@ -2,6 +2,7 @@ AbilityDescriptions::
 	; entries correspond to ability ids (see constants/ability_constants.asm)
 		dw NoGuardDescription
 		dw BattleArmorDescription
+		dw MoldBreakerDescription
 
 
 NoAbilityDescription:
@@ -14,3 +15,7 @@ NoGuardDescription:
 BattleArmorDescription:
 	db   "Blocks critical"
 	next "hits.@"
+
+MoldBreakerDescription:
+	db   "Negates defensive"
+	next "abilities.@"

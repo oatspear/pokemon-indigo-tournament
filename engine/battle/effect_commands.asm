@@ -116,12 +116,46 @@ GetCurrentAbility:
 	ld a, [wBattleMonAbility]
 	ret
 
+; Get the current ability of the non-turn holder's Pokémon,
+; accounting for the turn holder's MOLD_BREAKER ability
+; cancellation effects.
+; preserves: hl, de, bc
 GetOpponentAbility:
 	ldh a, [hBattleTurn]
 	and a
-	ld a, [wBattleMonAbility]
-	ret nz
+	jr z, .player
+
+; enemy
 	ld a, [wEnemyMonAbility]
+	cp MOLD_BREAKER
+	ld a, [wBattleMonAbility]
+	jr z, .mold_breaker
+	ret
+
+.player
+	ld a, [wBattleMonAbility]
+	cp MOLD_BREAKER
+	ld a, [wEnemyMonAbility]
+	ret nz
+	; fallthrough
+
+.mold_breaker
+	push hl
+	push de
+	push bc
+	ld hl, MoldBreakerSuppressedAbilities
+	ld b, a  ; store ability
+	push bc
+	call IsInByteArray
+	pop bc
+	ld a, b  ; restore ability
+	jr nc, .end
+; supressed
+	xor a  ; ld a, NO_ABILITY
+.end
+	pop bc
+	pop de
+	pop hl
 	ret
 
 CheckTurn:
