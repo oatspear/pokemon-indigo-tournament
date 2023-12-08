@@ -45,7 +45,7 @@ ReadPlayerParty:
 	; fallthrough
 
 PlayerTrainerType4:
-; species, item, EVs, moves
+; species, item, ability, EVs, moves
 	ld h, d
 	ld l, e
 	ld a, TPT_MON_LEVEL         ; hard-coded level
@@ -73,6 +73,21 @@ PlayerTrainerType4:
 	pop hl
 
 ; read item
+	ld a, [hli]
+	ld [de], a
+
+; prepare ability
+	push hl
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Ability
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+
+; read ability
 	ld a, [hli]
 	ld [de], a
 
@@ -277,7 +292,7 @@ ReadTrainerParty:
 
 
 TrainerType4:
-; species, item, EVs, moves
+; species, item, ability, EVs, moves
 	ld h, d
 	ld l, e
 	ld a, TPT_MON_LEVEL         ; hard-coded level
@@ -305,6 +320,21 @@ TrainerType4:
 	pop hl
 
 ; read item
+	ld a, [hli]
+	ld [de], a
+
+; prepare ability
+	push hl
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Ability
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+
+; read ability
 	ld a, [hli]
 	ld [de], a
 
