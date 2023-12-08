@@ -46,6 +46,8 @@ MACRO party_struct
 \1StructEnd::
 ENDM
 
+; 17 bytes from Level to Sp. Def (incl.) should appear in the
+; same order as the party/box struct
 MACRO battle_struct
 \1Species::   db
 \1Item::      db
@@ -54,7 +56,8 @@ MACRO battle_struct
 \1PP::        ds NUM_MOVES
 \1Happiness:: db
 \1Level::     db
-\1Status::    ds 2
+\1Status::    db
+\1Unused::    db
 \1HP::        dw
 \1MaxHP::     dw
 \1Stats:: ; big endian
