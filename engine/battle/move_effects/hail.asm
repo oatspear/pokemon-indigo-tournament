@@ -6,5 +6,18 @@ BattleCommand_StartHail:
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
 	ld hl, ItStartedToHailText
-	jp StdBattleTextbox
+	call StdBattleTextbox
 
+; apply speed boosts
+	ld a, [wBattleMonAbility]
+	cp SLUSH_RUSH
+	jr nz, .enemy
+	ld hl, wBattleMonSpeed
+	call DoubleBattleStat
+
+.enemy
+	ld a, [wEnemyMonAbility]
+	cp SLUSH_RUSH
+	ret nz
+	ld hl, wEnemyMonSpeed
+	jp DoubleBattleStat

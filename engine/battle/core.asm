@@ -1677,6 +1677,9 @@ HandleWeather:
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
+; recalculate speed stats due to abilities
+	farcall CalcPlayerSpeed
+	farcall CalcEnemySpeed
 	ret
 
 .continues
@@ -1707,6 +1710,15 @@ HandleWeather:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonAbility]
+	jr z, .ability_ok
+	ld a, [wEnemyMonAbility]
+.ability_ok
+	cp SAND_RUSH
+	ret z
 
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -1767,6 +1779,15 @@ HandleWeather:
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wBattleMonAbility]
+	jr z, .ability_ok
+	ld a, [wEnemyMonAbility]
+.ability_ok
+	cp SLUSH_RUSH
+	ret z
 
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
@@ -3867,8 +3888,8 @@ InitBattleMon:
 	ld de, wPlayerStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
-	call ApplyStatusEffectOnPlayerStats
-	ret
+	call ApplySpeedAbilities
+	jp ApplyStatusEffectOnPlayerStats
 
 BattleCheckPlayerShininess:
 	call GetPartyMonDVs
@@ -3946,6 +3967,7 @@ InitEnemyMon:
 	ld de, wEnemyStats
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
+	call ApplySpeedAbilities
 	call ApplyStatusEffectOnEnemyStats
 	ld hl, wBaseType1
 	ld de, wEnemyMonType1
@@ -6617,6 +6639,65 @@ ApplyBrnEffectOnAttack:
 	ld [hl], b
 	ret
 
+
+ApplySpeedAbilities:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+; player
+	ld hl, wBattleMonSpeed
+	ld a, [wBattleMonAbility]
+	jr .check_ability
+
+.enemy
+	ld hl, wEnemyMonSpeed
+	ld a, [wEnemyMonAbility]
+	; fallthrough
+
+.check_ability
+	cp CHLOROPHYLL
+	jr z, .chlorophyll
+	cp SWIFT_SWIM
+	jr z, .swift_swim
+	cp SAND_RUSH
+	jr z, .sand_rush
+	cp SLUSH_RUSH
+	jr z, .slush_rush
+	ret
+
+.chlorophyll
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	ret nz
+	jr .double_speed
+
+.swift_swim
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	ret nz
+	jr .double_speed
+
+.sand_rush
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	ret nz
+	jr .double_speed
+
+.slush_rush
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+	; fallthrough
+
+.double_speed
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	farcall DoubleStatInHL
+	ret
+
+
 ApplyStatLevelMultiplierOnAllStats:
 ; Apply StatLevelMultipliers on all 5 Stats
 	ld c, 0
@@ -7073,7 +7154,8 @@ GiveExperiencePoints:
 	xor a ; FALSE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
-	callfar ApplyStatusEffectOnPlayerStats
+	call ApplySpeedAbilities
+	call ApplyStatusEffectOnPlayerStats
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap

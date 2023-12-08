@@ -31,6 +31,11 @@
 #### Abilities
 - **No Guard**: if either Pokémon has this ability, accuracy checks are skipped.
 - **Battle Armor**: blocks critical hits against the user.
+- **Mold Breaker**: Negates some defensive abilities.
+- **Chlorophyll**: Doubles Speed during harsh sunlight.
+- **Swift Swim**: Doubles Speed during heavy rain.
+- **Sand Rush**: Doubles Speed during a sandstorm. Prevents Sandstorm damage.
+- **Slush Rush**: Doubles Speed during hail. Prevents Hail damage.
 
 ### Removed
 

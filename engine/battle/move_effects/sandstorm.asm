@@ -11,7 +11,21 @@ BattleCommand_StartSandstorm:
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
 	ld hl, SandstormBrewedText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+
+; apply speed boosts
+	ld a, [wBattleMonAbility]
+	cp SAND_RUSH
+	jr nz, .enemy
+	ld hl, wBattleMonSpeed
+	call DoubleBattleStat
+
+.enemy
+	ld a, [wEnemyMonAbility]
+	cp SAND_RUSH
+	ret nz
+	ld hl, wEnemyMonSpeed
+	jp DoubleBattleStat
 
 .failed
 	call AnimateFailedMove

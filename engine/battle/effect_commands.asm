@@ -2632,8 +2632,12 @@ SpeciesItemBoost:
 	pop hl
 	cp d
 	ret nz
+	; Double the stat
+	; fallthrough
 
-; Double the stat
+; Doubles the stat value in hl (big endian).
+; hl does not point to the stat, the 2 bytes hold the actual value
+DoubleStatInHL:
 	sla l
 	rl h
 
@@ -2648,6 +2652,15 @@ SpeciesItemBoost:
 .cap
 	ld hl, MAX_STAT_VALUE
 	ret
+
+
+; receives a pointer in hl to a stat and doubles its value
+DoubleBattleStat:
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+	jr DoubleStatInHL
+
 
 EnemyAttackDamage:
 	call ResetDamage
@@ -4659,6 +4672,9 @@ CalcPlayerStats:
 
 	call BattleCommand_SwitchTurn
 
+	ld hl, ApplySpeedAbilities
+	call CallBattleCore
+
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
@@ -4677,6 +4693,9 @@ CalcEnemyStats:
 
 	call BattleCommand_SwitchTurn
 
+	ld hl, ApplySpeedAbilities
+	call CallBattleCore
+
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
@@ -4685,9 +4704,19 @@ CalcEnemyStats:
 
 	jp BattleCommand_SwitchTurn
 
+
 CalcBattleStats:
-.loop
 	push af
+	call CalcSingleBattleStat
+	pop af
+	dec a
+	jr nz, CalcBattleStats
+	ret
+
+; hl: stat level (e.g., wEnemyAtkLevel)
+; de: out of battle stat (e.g., wEnemyAttack)
+; bc: in battle stat (e.g., wEnemyMonAttack)
+CalcSingleBattleStat:
 	ld a, [hli]
 	push hl
 	push bc
@@ -4748,11 +4777,23 @@ CalcBattleStats:
 	ld [bc], a
 	inc bc
 	pop hl
-	pop af
-	dec a
-	jr nz, .loop
-
 	ret
+
+
+; only base stat plus stages (stat level multipliers)
+CalcPlayerSpeed:
+	ld hl, wPlayerSpdLevel
+	ld de, wPlayerSpeed
+	ld bc, wBattleMonSpeed
+	jp CalcSingleBattleStat
+
+; only base stat plus stages (stat level multipliers)
+CalcEnemySpeed:
+	ld hl, wEnemySpdLevel
+	ld de, wEnemySpeed
+	ld bc, wEnemyMonSpeed
+	jp CalcSingleBattleStat
+
 
 INCLUDE "engine/battle/move_effects/bide.asm"
 

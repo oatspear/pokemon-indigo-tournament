@@ -8,4 +8,8 @@
 	const NO_GUARD     ; 01
 	const BATTLE_ARMOR ; 02
 	const MOLD_BREAKER ; 03
+	const CHLOROPHYLL  ; 04
+	const SWIFT_SWIM   ; 05
+	const SAND_RUSH    ; 06
+	const SLUSH_RUSH   ; 07
 NUM_ABILITIES EQU const_value - 1

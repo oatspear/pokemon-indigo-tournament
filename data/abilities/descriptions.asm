@@ -3,6 +3,10 @@ AbilityDescriptions::
 		dw NoGuardDescription
 		dw BattleArmorDescription
 		dw MoldBreakerDescription
+		dw ChlorophyllDescription
+		dw SwiftSwimDescription
+		dw SandRushDescription
+		dw SlushRushDescription
 
 
 NoAbilityDescription:
@@ -19,3 +23,19 @@ BattleArmorDescription:
 MoldBreakerDescription:
 	db   "Negates defensive"
 	next "abilities.@"
+
+ChlorophyllDescription:
+	db   "Doubles SPEED"
+	next "in sunlight.@"
+
+SwiftSwimDescription:
+	db   "Doubles SPEED"
+	next "in rain.@"
+
+SandRushDescription:
+	db   "Doubles SPEED in"
+	next "a sandstorm.@"
+
+SlushRushDescription:
+	db   "Doubles SPEED in"
+	next "a hail storm.@"

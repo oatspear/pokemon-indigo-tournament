@@ -6,4 +6,18 @@ BattleCommand_StartSun:
 	ld [wWeatherCount], a
 	call AnimateCurrentMove
 	ld hl, SunGotBrightText
-	jp StdBattleTextbox
+	call StdBattleTextbox
+
+; apply speed boosts
+	ld a, [wBattleMonAbility]
+	cp CHLOROPHYLL
+	jr nz, .enemy
+	ld hl, wBattleMonSpeed
+	call DoubleBattleStat
+
+.enemy
+	ld a, [wEnemyMonAbility]
+	cp CHLOROPHYLL
+	ret nz
+	ld hl, wEnemyMonSpeed
+	jp DoubleBattleStat
