@@ -3915,6 +3915,9 @@ BattleCommand_ParalyzeTarget:
 	ld [wNumHits], a
 	call CheckSubstituteOpp
 	ret nz
+	ld a, ELECTRIC
+	call CheckOpponentHasType
+	ret z  ; immune
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -5701,6 +5704,9 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 BattleCommand_Paralyze:
 ; paralyze
 
+	ld a, ELECTRIC
+	call CheckOpponentHasType
+	jr z, .didnt_affect
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	bit PAR, a
@@ -6412,24 +6418,32 @@ BattleCommand_CheckPowder:
 	ret nc
 
 ; If the opponent is Grass-type, the move fails.
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .checkgrasstype
-	ld hl, wBattleMonType1
-
-.checkgrasstype:
-	ld a, [hli]
-	cp GRASS
-	jp z, .Immune
-	ld a, [hl]
-	cp GRASS
+	ld a, GRASS
+	call CheckOpponentHasType
 	ret nz
-	;fallthrough
-.Immune:
+; immune
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
+
+
+; return z if the opponent has the type given in a
+CheckOpponentHasType:
+	push af
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .checktype
+	ld hl, wBattleMonType1
+
+.checktype
+	pop af
+	cp [hl]
+	ret z
+	inc hl
+	cp [hl]
+	ret
+
 
 INCLUDE "engine/battle/move_effects/future_sight.asm"
 
