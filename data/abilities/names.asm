@@ -8,3 +8,4 @@ AbilityNames::
 	db "SLUSH RUSH@"
 	db "FLASH FIRE@"
 	db "LIGHTNINGROD@"
+	db "LEVITATE@"

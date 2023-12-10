@@ -14,4 +14,5 @@
 	const SLUSH_RUSH    ; 07
 	const FLASH_FIRE    ; 08
 	const LIGHTNING_ROD ; 09
+	const LEVITATE      ; 0a
 NUM_ABILITIES EQU const_value - 1

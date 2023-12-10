@@ -4117,13 +4117,18 @@ SpikesDamage:
 	and SPIKES_LAYER_MASK
 	ret z
 
-	; Flying-types aren't affected by Spikes.
+	; Flying-types are not affected by Spikes.
 	ld a, [de]
 	cp FLYING
 	ret z
 	inc de
 	ld a, [de]
 	cp FLYING
+	ret z
+
+	; Levitate users are not affected by Spikes.
+	call GetCurrentAbility
+	cp LEVITATE
 	ret z
 
 	push bc

@@ -108,6 +108,7 @@ DoMove:
 	jp hl
 
 
+; preserves: hl, de, bc
 GetCurrentAbility:
 	ldh a, [hBattleTurn]
 	and a
@@ -1695,6 +1696,14 @@ CheckDamageAbsorptionAbilities:
 	cp FIRE
 	jr z, .fire
 
+	cp GROUND
+	jr z, .ground
+
+	ret
+
+.hit
+	ld a, 1
+	and a
 	ret
 
 .electric
@@ -1705,6 +1714,18 @@ CheckDamageAbsorptionAbilities:
 	ld hl, LightningRodPowerUpText
 	call .nullify
 	jr LightningRodEffect
+
+.ground
+	call GetOpponentAbility
+	cp LEVITATE
+	ret nz
+
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	and a
+	jr z, .hit
+	xor a
+	ret
 
 .fire
 	call GetOpponentAbility

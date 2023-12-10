@@ -9,6 +9,7 @@ AbilityDescriptions::
 		dw SlushRushDescription
 		dw FlashFireDescription
 		dw LightningRodDescription
+		dw LevitateDescription
 
 
 NoAbilityDescription:
@@ -49,3 +50,7 @@ FlashFireDescription:
 LightningRodDescription:
 	db   "Ups SP. ATK. if"
 	next "hit by ELECTRIC.@"
+
+LevitateDescription:
+	db   "Immune to GROUND"
+	next "moves.@"
