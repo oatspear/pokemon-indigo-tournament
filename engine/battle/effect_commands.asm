@@ -1690,11 +1690,14 @@ CheckDamageAbsorptionAbilities:
 	and TYPE_MASK
 
 	cp FIRE
-	jr z, .flash_fire
+	jr z, .fire
+
+	cp ELECTRIC
+	jr z, .electric
 
 	ret
 
-.flash_fire
+.fire
 	call GetOpponentAbility
 	cp FLASH_FIRE
 	ret nz
@@ -1705,6 +1708,26 @@ CheckDamageAbsorptionAbilities:
 	set SUBSTATUS_FLASH_FIRE, [hl]
 
 	ld hl, FlashFirePowerUpText
+	jr .nullify
+
+.electric
+	call GetOpponentAbility
+	cp LIGHTNING_ROD
+	ret nz
+
+	; TODO raise Sp. Attack
+	; switchturn
+	; attackup2
+	; switchturn
+	; lowersub
+	; statupanim
+	; raisesub
+	; failuretext
+	; switchturn
+	; statupmessage
+	; switchturn
+
+	ld hl, LightningRodPowerUpText
 	; jr .nullify
 	; fallthrough
 

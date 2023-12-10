@@ -8,6 +8,7 @@ AbilityDescriptions::
 		dw SandRushDescription
 		dw SlushRushDescription
 		dw FlashFireDescription
+		dw LightningRodDescription
 
 
 NoAbilityDescription:
@@ -44,3 +45,7 @@ SlushRushDescription:
 FlashFireDescription:
 	db   "Powers up if hit"
 	next "by FIRE.@"
+
+LightningRodDescription:
+	db   "Ups SP. ATK. if"
+	next "hit by ELECTRIC.@"

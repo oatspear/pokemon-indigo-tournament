@@ -7,3 +7,4 @@ AbilityNames::
 	db "SAND RUSH@"
 	db "SLUSH RUSH@"
 	db "FLASH FIRE@"
+	db "LIGHTNINGROD@"

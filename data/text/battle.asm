@@ -999,6 +999,12 @@ FlashFirePowerUpText:
 	cont "FIRE moves!"
 	done
 
+LightningRodPowerUpText:
+	text "<TARGET>'s"
+	line "LIGHTNINGROD draws"
+	cont "ELECTRIC moves!"
+	done
+
 SpikesText:
 	text "SPIKES scattered"
 	line "all around"
