@@ -1337,9 +1337,6 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 ; checkhit
 
-	call CheckDamageAbsorptionAbilities
-	jp z, .Miss
-
 	call .DreamEater
 	jp z, .Miss
 
@@ -1350,28 +1347,28 @@ BattleCommand_CheckHit:
 	jp z, .Miss
 
 	call .NoGuard
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	call .LockOn
-	ret nz
+	jr nz, .DamageAbsorptionAbilities
 
 	call .FlyDigMoves
 	jp nz, .Miss
 
 	call .ThunderRain
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	call .BlizzardHail
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	call .XAccuracy
-	ret nz
+	jr nz, .DamageAbsorptionAbilities
 
 ; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	ld a, [wPlayerMoveStruct + MOVE_ACC]
 	ld b, a
@@ -1384,7 +1381,7 @@ BattleCommand_CheckHit:
 .CheckPerfectAccuracy:
 	ld a, b
 	and a
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	call .StatModifiers
 
@@ -1415,12 +1412,16 @@ BattleCommand_CheckHit:
 .skip_brightpowder
 	ld a, b
 	cp -1
-	ret z
+	jr z, .DamageAbsorptionAbilities
 
 	call BattleRandom
 	cp b
 	jr nc, .Miss
-	ret
+
+.DamageAbsorptionAbilities
+	call CheckDamageAbsorptionAbilities
+	ret nz
+	; fallthrough
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
