@@ -1689,13 +1689,22 @@ CheckDamageAbsorptionAbilities:
 	call GetBattleVar  ; preserves hl, de, and bc
 	and TYPE_MASK
 
-	cp FIRE
-	jr z, .fire
-
 	cp ELECTRIC
 	jr z, .electric
 
+	cp FIRE
+	jr z, .fire
+
 	ret
+
+.electric
+	call GetOpponentAbility
+	cp LIGHTNING_ROD
+	ret nz
+
+	ld hl, LightningRodPowerUpText
+	call .nullify
+	jr LightningRodEffect
 
 .fire
 	call GetOpponentAbility
@@ -1708,26 +1717,6 @@ CheckDamageAbsorptionAbilities:
 	set SUBSTATUS_FLASH_FIRE, [hl]
 
 	ld hl, FlashFirePowerUpText
-	jr .nullify
-
-.electric
-	call GetOpponentAbility
-	cp LIGHTNING_ROD
-	ret nz
-
-	; TODO raise Sp. Attack
-	; switchturn
-	; attackup2
-	; switchturn
-	; lowersub
-	; statupanim
-	; raisesub
-	; failuretext
-	; switchturn
-	; statupmessage
-	; switchturn
-
-	ld hl, LightningRodPowerUpText
 	; jr .nullify
 	; fallthrough
 
@@ -1742,6 +1731,28 @@ CheckDamageAbsorptionAbilities:
 	call DelayFrames
 	xor a
 	ret
+
+
+LightningRodEffect:
+	; switchturn
+	; specialattackup
+	; lowersub
+	; statupanim
+	; raisesub
+	; statupmessage
+	; statupfailtext
+	; switchturn
+	; endmove
+
+	call BattleCommand_SwitchTurn
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_LowerSub
+	call BattleCommand_StatUpAnim
+	call BattleCommand_RaiseSub
+	call BattleCommand_StatUpMessage
+	call BattleCommand_StatUpFailText
+	call BattleCommand_SwitchTurn
+	jp EndMoveEffect
 
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
