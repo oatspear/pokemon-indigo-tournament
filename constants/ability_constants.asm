@@ -15,4 +15,5 @@
 	const FLASH_FIRE    ; 08
 	const LIGHTNING_ROD ; 09
 	const LEVITATE      ; 0a
+	const SAP_SIPPER    ; 0b
 NUM_ABILITIES EQU const_value - 1

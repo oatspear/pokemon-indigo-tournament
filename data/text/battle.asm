@@ -1005,6 +1005,12 @@ LightningRodPowerUpText:
 	cont "ELECTRIC moves!"
 	done
 
+SapSipperPowerUpText:
+	text "<TARGET>'s"
+	line "SAP SIPPER absorbs"
+	cont "GRASS moves!"
+	done
+
 SpikesText:
 	text "SPIKES scattered"
 	line "all around"

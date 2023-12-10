@@ -39,6 +39,7 @@
 - **Flash Fire**: Absorbs Fire-type moves, boosting the power of the Pokémon's own Fire-type moves.
 - **Lightning Rod**: Absorbs Electric-type moves, boosting the Pokémon's Special Attack.
 - **Levitate**: Immunity to Ground-type moves, including Spikes.
+- **Sap Sipper**: Absorbs Grass-type moves, boosting the Pokémon's Attack.
 
 ### Removed
 

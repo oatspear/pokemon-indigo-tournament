@@ -1693,6 +1693,9 @@ CheckDamageAbsorptionAbilities:
 	cp ELECTRIC
 	jr z, .electric
 
+	cp GRASS
+	jr z, .grass
+
 	cp FIRE
 	jr z, .fire
 
@@ -1714,6 +1717,15 @@ CheckDamageAbsorptionAbilities:
 	ld hl, LightningRodPowerUpText
 	call .nullify
 	jr LightningRodEffect
+
+.grass
+	call GetOpponentAbility
+	cp SAP_SIPPER
+	ret nz
+
+	ld hl, SapSipperPowerUpText
+	call .nullify
+	jr SapSipperEffect
 
 .ground
 	call GetOpponentAbility
@@ -1767,6 +1779,28 @@ LightningRodEffect:
 
 	call BattleCommand_SwitchTurn
 	call BattleCommand_SpecialAttackUp
+	call BattleCommand_LowerSub
+	call BattleCommand_StatUpAnim
+	call BattleCommand_RaiseSub
+	call BattleCommand_StatUpMessage
+	call BattleCommand_StatUpFailText
+	call BattleCommand_SwitchTurn
+	jp EndMoveEffect
+
+
+SapSipperEffect:
+	; switchturn
+	; attackup
+	; lowersub
+	; statupanim
+	; raisesub
+	; statupmessage
+	; statupfailtext
+	; switchturn
+	; endmove
+
+	call BattleCommand_SwitchTurn
+	call BattleCommand_AttackUp
 	call BattleCommand_LowerSub
 	call BattleCommand_StatUpAnim
 	call BattleCommand_RaiseSub

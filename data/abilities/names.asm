@@ -9,3 +9,4 @@ AbilityNames::
 	db "FLASH FIRE@"
 	db "LIGHTNINGROD@"
 	db "LEVITATE@"
+	db "SAP SIPPER@"

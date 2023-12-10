@@ -10,6 +10,7 @@ AbilityDescriptions::
 		dw FlashFireDescription
 		dw LightningRodDescription
 		dw LevitateDescription
+		dw SapSipperDescription
 
 
 NoAbilityDescription:
@@ -48,8 +49,12 @@ FlashFireDescription:
 	next "by FIRE.@"
 
 LightningRodDescription:
-	db   "Ups SP. ATK. if"
+	db   "Ups SP. ATK if"
 	next "hit by ELECTRIC.@"
+
+SapSipperDescription:
+	db   "Ups ATTACK if"
+	next "hit by GRASS.@"
 
 LevitateDescription:
 	db   "Immune to GROUND"
