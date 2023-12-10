@@ -7,6 +7,7 @@ AbilityDescriptions::
 		dw SwiftSwimDescription
 		dw SandRushDescription
 		dw SlushRushDescription
+		dw FlashFireDescription
 
 
 NoAbilityDescription:
@@ -39,3 +40,7 @@ SandRushDescription:
 SlushRushDescription:
 	db   "Doubles SPEED in"
 	next "a hail storm.@"
+
+FlashFireDescription:
+	db   "Powers up if hit"
+	next "by FIRE.@"

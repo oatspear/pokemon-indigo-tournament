@@ -36,6 +36,7 @@
 - **Swift Swim**: Doubles Speed during heavy rain.
 - **Sand Rush**: Doubles Speed during a sandstorm. Prevents Sandstorm damage.
 - **Slush Rush**: Doubles Speed during hail. Prevents Hail damage.
+- **Flash Fire**: Absorbs Fire-type moves, boosting the power of the Pokémon's own Fire-type moves.
 
 ### Removed
 

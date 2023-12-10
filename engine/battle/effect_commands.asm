@@ -1337,6 +1337,9 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 ; checkhit
 
+	call CheckDamageAbsorptionAbilities
+	jp z, .Miss
+
 	call .DreamEater
 	jp z, .Miss
 
@@ -1677,6 +1680,45 @@ BattleCommand_CheckHit:
 	pop hl
 	ld [hl], a
 	ret
+
+
+; Return z if the opponent's ability nullifies the attack.
+CheckDamageAbsorptionAbilities:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar  ; preserves hl, de, and bc
+	and TYPE_MASK
+
+	cp FIRE
+	jr z, .flash_fire
+
+	ret
+
+.flash_fire
+	call GetOpponentAbility
+	cp FLASH_FIRE
+	ret nz
+
+	; set Flash Fire's substatus
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	set SUBSTATUS_FLASH_FIRE, [hl]
+
+	ld hl, FlashFirePowerUpText
+	; jr .nullify
+	; fallthrough
+
+; ability nullifies the attack
+; assume: hl pointing to text
+.nullify
+	ld c, 40
+	call DelayFrames
+	; ld hl, Text
+	call StdBattleTextbox
+	ld c, 40
+	call DelayFrames
+	xor a
+	ret
+
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
 
@@ -2407,6 +2449,8 @@ PlayerAttackDamage:
 	and a
 	ld d, a
 	ret z
+
+	call FlashFirePowerBoost  ; preserves hl
 
 	ld a, [hl]
 	cp SPECIAL
@@ -6695,20 +6739,11 @@ SandstormSpDefBoost:
 	ret nz
 
 ; Then, check the opponent's types.
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wBattleMonType1
-.ok
-	ld a, [hli]
-	cp ROCK
-	jr z, .start_boost
-	ld a, [hl]
-	cp ROCK
+	ld a, ROCK
+	call CheckOpponentHasType
 	ret nz
 
-.start_boost
+; Apply boost
 	ld h, b
 	ld l, c
 	srl b
@@ -6716,4 +6751,27 @@ SandstormSpDefBoost:
 	add hl, bc
 	ld b, h
 	ld c, l
+	ret
+
+
+FlashFirePowerBoost:
+; check if we are using a Fire-type move
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar  ; preserves hl, de, and bc
+	and TYPE_MASK
+	cp FIRE
+	ret nz
+; check whether Flash Fire is active
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_FLASH_FIRE, a
+	ret z
+; increase move power in d by 50%
+	ld a, d
+	srl a
+	add d
+	ld d, a
+	ret nc
+; carry, set move power to 255
+	ld d, $ff
 	ret

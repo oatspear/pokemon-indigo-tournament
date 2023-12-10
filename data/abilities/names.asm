@@ -6,3 +6,4 @@ AbilityNames::
 	db "SWIFT SWIM@"
 	db "SAND RUSH@"
 	db "SLUSH RUSH@"
+	db "FLASH FIRE@"

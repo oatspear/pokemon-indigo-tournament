@@ -12,4 +12,5 @@
 	const SWIFT_SWIM   ; 05
 	const SAND_RUSH    ; 06
 	const SLUSH_RUSH   ; 07
+	const FLASH_FIRE   ; 08
 NUM_ABILITIES EQU const_value - 1

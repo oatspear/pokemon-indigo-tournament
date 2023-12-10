@@ -993,6 +993,12 @@ ProtectingItselfText:
 	line "PROTECTING itself!"
 	done
 
+FlashFirePowerUpText:
+	text "<TARGET>'s"
+	line "FLASH FIRE absorbs"
+	cont "FIRE moves!"
+	done
+
 SpikesText:
 	text "SPIKES scattered"
 	line "all around"
