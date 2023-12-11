@@ -151,9 +151,9 @@ BattleText_TheSandstormRages:
 	prompt
 
 BattleText_HailContinuesToFall:
-    text "Hail continues to"
-    line "fall."
-    prompt
+	text "Hail continues to"
+	line "fall."
+	prompt
 
 BattleText_TheRainStopped:
 	text "The rain stopped."
@@ -170,8 +170,8 @@ BattleText_TheSandstormSubsided:
 	prompt
 
 BattleText_TheHailStopped:
-    text "The hail stopped."
-    prompt
+	text "The hail stopped."
+	prompt
 
 BattleText_EnemyMonFainted:
 	text "Enemy @"
