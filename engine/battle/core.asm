@@ -3531,6 +3531,14 @@ ShowBattleTextEnemySentOut:
 	callfar Battle_GetTrainerName
 	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
+
+	; DEBUG
+	ld a, [wEnemyMonAbility]
+	ld [wNamedObjectIndex], a
+	call GetAbilityName
+	ld hl, MimicLearnedMoveText
+	call StdBattleTextbox
+
 	jp WaitBGMap
 
 ShowSetEnemyMonAndSendOutAnimation:
@@ -7493,6 +7501,15 @@ AnimateExpBar:
 	ret
 
 SendOutMonText:
+	call _SendOutMonText
+	; DEBUG
+	ld a, [wBattleMonAbility]
+	ld [wNamedObjectIndex], a
+	call GetAbilityName
+	ld hl, MimicLearnedMoveText
+	jp StdBattleTextbox
+
+_SendOutMonText:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
