@@ -2789,10 +2789,21 @@ DoubleStatInHL:
 
 ; receives a pointer in hl to a stat and doubles its value
 DoubleBattleStat:
+	push bc
+	push hl
 	ld a, [hli]
 	ld l, [hl]
 	ld h, a
-	jr DoubleStatInHL
+	call DoubleStatInHL
+	ld c, l
+	ld b, h
+	pop hl
+	ld a, c
+	ld [hli], a
+	ld a, b
+	ld [hl], a
+	pop bc
+	ret
 
 
 EnemyAttackDamage:
