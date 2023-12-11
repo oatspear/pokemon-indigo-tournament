@@ -6441,6 +6441,16 @@ CheckHpIsFull:
 	ret
 
 
+HealQuarterMaxHp:
+	ld hl, GetQuarterMaxHP
+	jr HealFractionMaxHP
+
+
+HealHalfMaxHp:
+	ld hl, GetHalfMaxHP
+	jr HealFractionMaxHP
+
+
 ; input:
 ;   hl: pointer to function to get a percentage of max hp (e.g., GetHalfMaxHP)
 HealFractionMaxHP:
