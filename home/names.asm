@@ -2,7 +2,7 @@ NamesPointers::
 ; entries correspond to GetName constants (see constants/text_constants.asm)
 	dba PokemonNames        ; MON_NAME (not used; jumps to GetPokemonName)
 	dba MoveNames           ; MOVE_NAME
-	dba NULL                ; DUMMY_NAME
+	dba AbilityNames        ; ABILITY_NAME
 	dba ItemNames           ; ITEM_NAME
 	dbw 0, wPartyMonOT      ; PARTY_OT_NAME
 	dbw 0, wOTPartyMonOT    ; ENEMY_OT_NAME
@@ -253,13 +253,22 @@ GetTMHMName::
 
 INCLUDE "home/hm_moves.asm"
 
+GetAbilityName::
+	ld a, ABILITY_NAME
+	jr GetMoveOrAbilityName
+
 GetMoveName::
+	ld a, MOVE_NAME
+	; fallthrough
+
+; input:
+;   a: MOVE_NAME | ABILITY_NAME
+GetMoveOrAbilityName::
 	push hl
 
-	ld a, MOVE_NAME
 	ld [wNamedObjectType], a
 
-	ld a, [wNamedObjectIndex] ; move id
+	ld a, [wNamedObjectIndex] ; move/ability id
 	ld [wCurSpecies], a
 
 	call GetName
