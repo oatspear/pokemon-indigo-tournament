@@ -1711,7 +1711,7 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	call GetCurrentAbility
+	farcall GetCurrentAbility
 	cp SAND_RUSH
 	ret z
 
@@ -1775,7 +1775,7 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	call GetCurrentAbility
+	farcall GetCurrentAbility
 	cp SLUSH_RUSH
 	ret z
 
@@ -4117,7 +4117,7 @@ SpikesDamage:
 	ret z
 
 	; Levitate users are not affected by Spikes.
-	call GetCurrentAbility
+	farcall GetCurrentAbility
 	cp LEVITATE
 	ret z
 
