@@ -6034,33 +6034,17 @@ BattleCommand_ResetStats:
 BattleCommand_Heal:
 ; heal
 
-	ld de, wBattleMonHP
-	ld hl, wBattleMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld de, wEnemyMonHP
-	ld hl, wEnemyMonMaxHP
-.got_hp
+	call CheckHpIsFull
+	jp z, HealFractionMaxHP.full
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	ld b, a
-	push hl
-	push de
-	push bc
-	ld c, 2
-	call CompareBytes
-	pop bc
-	pop de
-	pop hl
-	jp z, .hp_full
-	ld a, b
 	cp REST
-	jr nz, .not_rest
+	jr z, .rest
 
-	push hl
-	push de
-	push af
+	ld hl, GetHalfMaxHP
+	jp HealFractionMaxHP.heal
+
+.rest
 	call BattleCommand_MoveDelay
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
@@ -6084,34 +6068,9 @@ BattleCommand_Heal:
 .calc_enemy_stats
 	call CalcEnemyStats
 .got_stats
-	pop af
-	pop de
-	pop hl
-
-.not_rest
-	jr z, .restore_full_hp
-	ld hl, GetHalfMaxHP
-	call CallBattleCore
-	jr .finish
-
-.restore_full_hp
 	ld hl, GetMaxHP
-	call CallBattleCore
-.finish
-	call AnimateCurrentMove
-	call BattleCommand_SwitchTurn
-	ld hl, RestoreHP
-	call CallBattleCore
-	call BattleCommand_SwitchTurn
-	call UpdateUserInParty
-	call RefreshBattleHuds
-	ld hl, RegainedHealthText
-	jp StdBattleTextbox
+	jp HealFractionMaxHP.heal
 
-.hp_full
-	call AnimateFailedMove
-	ld hl, HPIsFullText
-	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/transform.asm"
 
@@ -6465,10 +6424,8 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetTwoThirdsMaxHP
 
 
-; input:
-;   hl: pointer to function to get a percentage of max hp (e.g., GetHalfMaxHP)
-HealFractionMaxHP:
-	push hl
+; Return z if the turn holder's HP is full
+CheckHpIsFull:
 	ld hl, wBattleMonMaxHP
 	ld de, wBattleMonHP
 	ldh a, [hBattleTurn]
@@ -6476,17 +6433,24 @@ HealFractionMaxHP:
 	jr z, .start
 	ld hl, wEnemyMonMaxHP
 	ld de, wEnemyMonHP
-
 .start
-; don't bother healing if HP is already full
 	push bc
 	ld c, 2
 	call CompareBytes
 	pop bc
-	jr z, .Full
+	ret
 
-; heal
+
+; input:
+;   hl: pointer to function to get a percentage of max hp (e.g., GetHalfMaxHP)
+HealFractionMaxHP:
+; don't bother healing if HP is already full
+	push hl
+	call CheckHpIsFull
 	pop hl
+	jr z, .full
+
+.heal  ; anchor to jump from other places (skip check)
 	ld a, BANK(GetMaxHP)
 	rst FarCall
 
@@ -6497,14 +6461,14 @@ HealFractionMaxHP:
 
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
+	call RefreshBattleHuds
 
 ; 'regained health!'
 	ld hl, RegainedHealthText
 	jp StdBattleTextbox
 
-.Full:
+.full
 	call AnimateFailedMove
-
 ; 'hp is full!'
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
