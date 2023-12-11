@@ -325,9 +325,9 @@ TrainerType4:
 
 ; prepare ability
 	push hl
-	ld a, [wPartyCount]
+	ld a, [wOTPartyCount]
 	dec a
-	ld hl, wPartyMon1Ability
+	ld hl, wOTPartyMon1Ability
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
 	ld d, h
