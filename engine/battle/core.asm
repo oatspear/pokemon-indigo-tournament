@@ -3534,10 +3534,13 @@ ShowBattleTextEnemySentOut:
 
 	; DEBUG
 	ld a, [wEnemyMonAbility]
+	and a
+	jr z, .skip_name
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
 	ld hl, MimicLearnedMoveText
 	call StdBattleTextbox
+.skip_name
 
 	jp WaitBGMap
 
@@ -7504,6 +7507,8 @@ SendOutMonText:
 	call _SendOutMonText
 	; DEBUG
 	ld a, [wBattleMonAbility]
+	and a
+	ret z
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
 	ld hl, MimicLearnedMoveText
