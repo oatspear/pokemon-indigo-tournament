@@ -823,7 +823,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -963,6 +962,8 @@ BattleCommand_Critical:
 	ld a, 1
 	ld [wCriticalHit], a
 	ret
+
+INCLUDE "data/abilities/mold_breaker_suppressed_abilities.asm"
 
 INCLUDE "data/moves/critical_hit_moves.asm"
 
@@ -1858,8 +1859,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5589,10 +5588,6 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -5609,10 +5604,6 @@ BattleCommand_Charge:
 
 .BattleLoweredHeadText:
 	text_far _BattleLoweredHeadText
-	text_end
-
-.BattleGlowingText:
-	text_far _BattleGlowingText
 	text_end
 
 .BattleFlewText:
@@ -6545,7 +6536,7 @@ BattleCommand_SkipSunCharge:
 	jp SkipToBattleCommand
 
 BattleCommand_CheckPowder:
-; Checks if the move is powder/spore-based and 
+; Checks if the move is powder/spore-based and
 ; if the opponent is Grass-type
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
@@ -6822,7 +6813,7 @@ _CheckBattleScene:
 	pop hl
 	ret
 
-SandstormSpDefBoost: 
+SandstormSpDefBoost:
 ; First, check if Sandstorm is active.
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM

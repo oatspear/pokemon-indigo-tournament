@@ -1711,12 +1711,7 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonAbility]
-	jr z, .ability_ok
-	ld a, [wEnemyMonAbility]
-.ability_ok
+	call GetCurrentAbility
 	cp SAND_RUSH
 	ret z
 
@@ -1780,12 +1775,7 @@ HandleWeather:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonAbility]
-	jr z, .ability_ok
-	ld a, [wEnemyMonAbility]
-.ability_ok
+	call GetCurrentAbility
 	cp SLUSH_RUSH
 	ret z
 
@@ -8976,7 +8966,7 @@ GetWeatherImage:
 	ld b, PAL_BATTLE_OB_BLUE
 	jr z, .done
 	ret
-	
+
 .done
 	push bc
 	ld b, BANK(WeatherImages) ; c = 4

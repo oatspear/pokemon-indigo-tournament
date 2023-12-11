@@ -637,6 +637,7 @@ SECTION "Miscellaneous Text", ROMX
 INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
+INCLUDE "data/abilities/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
 
 

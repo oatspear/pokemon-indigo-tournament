@@ -14,3 +14,4 @@ PrintMoveDescription:
 	jp PlaceString
 
 INCLUDE "data/moves/descriptions.asm"
+INCLUDE "data/abilities/descriptions.asm"

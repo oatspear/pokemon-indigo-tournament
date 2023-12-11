@@ -4,7 +4,7 @@
 ; - AbilityDescriptions (see data/abilities/descriptions.asm)
 ; - BattleAnimations (see data/abilities/animations.asm)
 	const_def
-	const NO_MOVE       ; 00
+	const NO_ABILITY    ; 00
 	const NO_GUARD      ; 01
 	const BATTLE_ARMOR  ; 02
 	const MOLD_BREAKER  ; 03
