@@ -6433,29 +6433,9 @@ BattleCommand_HealNite:
 
 BattleCommand_TimeBasedHealContinue:
 ; Weather-sensitive heal.
-
-	ld hl, wBattleMonMaxHP
-	ld de, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .start
-	ld hl, wEnemyMonMaxHP
-	ld de, wEnemyMonHP
-
-.start
 ; Index for .Multipliers
 ; Default restores half max HP.
 	ld c, 1
-
-; Don't bother healing if HP is already full.
-	inc c   ; Temporarily increase c to compare bytes correctly.
-	push bc
-	call CompareBytes
-	pop bc
-	jr z, .Full
-	dec c   ; Return c to its original value.
-
-.Weather:
 	ld a, [wBattleWeather]
 	and a
 	jr z, .Heal
@@ -6477,6 +6457,36 @@ BattleCommand_TimeBasedHealContinue:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	jr HealFractionMaxHP
+
+.Multipliers:
+	dw GetQuarterMaxHP
+	dw GetHalfMaxHP
+	dw GetTwoThirdsMaxHP
+
+
+; input:
+;   hl: pointer to function to get a percentage of max hp (e.g., GetHalfMaxHP)
+HealFractionMaxHP:
+	push hl
+	ld hl, wBattleMonMaxHP
+	ld de, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .start
+	ld hl, wEnemyMonMaxHP
+	ld de, wEnemyMonHP
+
+.start
+; don't bother healing if HP is already full
+	push bc
+	ld c, 2
+	call CompareBytes
+	pop bc
+	jr z, .Full
+
+; heal
+	pop hl
 	ld a, BANK(GetMaxHP)
 	rst FarCall
 
@@ -6499,10 +6509,6 @@ BattleCommand_TimeBasedHealContinue:
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
 
-.Multipliers:
-	dw GetQuarterMaxHP
-	dw GetHalfMaxHP
-	dw GetTwoThirdsMaxHP
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
 
