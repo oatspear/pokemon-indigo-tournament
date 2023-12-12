@@ -999,16 +999,12 @@ FlashFirePowerUpText:
 	cont "FIRE moves!"
 	done
 
-LightningRodPowerUpText:
+AbilityAbsorbsMoveText:
 	text "<TARGET>'s"
-	line "LIGHTNINGROD draws"
-	cont "ELECTRIC moves!"
-	done
-
-SapSipperPowerUpText:
-	text "<TARGET>'s"
-	line "SAP SIPPER absorbs"
-	cont "GRASS moves!"
+	line "@"
+	text_ram wStringBuffer1
+	text_start
+	cont "absorbs the move!"
 	done
 
 SpikesText:

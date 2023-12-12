@@ -16,4 +16,6 @@
 	const LIGHTNING_ROD ; 09
 	const LEVITATE      ; 0a
 	const SAP_SIPPER    ; 0b
+	const WATER_ABSORB  ; 0c
+	const VOLT_ABSORB   ; 0d
 NUM_ABILITIES EQU const_value - 1

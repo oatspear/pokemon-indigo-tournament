@@ -10,3 +10,5 @@ AbilityNames::
 	db "LIGHTNINGROD@"
 	db "LEVITATE@"
 	db "SAP SIPPER@"
+	db "WATER ABSORB@"
+	db "VOLT ABSORB@"

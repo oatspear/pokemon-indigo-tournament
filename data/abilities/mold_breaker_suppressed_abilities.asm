@@ -4,8 +4,8 @@ MoldBreakerSuppressedAbilities:
 	db LIGHTNING_ROD
 	db LEVITATE
 	db SAP_SIPPER
-	; db VOLT_ABSORB
-	; db WATER_ABSORB
+	db WATER_ABSORB
+	db VOLT_ABSORB
 	; db SAND_VEIL
 	; db THICK_FAT
 	; db STURDY

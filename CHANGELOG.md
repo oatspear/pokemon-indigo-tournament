@@ -40,6 +40,8 @@
 - **Lightning Rod**: Absorbs Electric-type moves, boosting the Pokémon's Special Attack.
 - **Levitate**: Immunity to Ground-type moves, including Spikes.
 - **Sap Sipper**: Absorbs Grass-type moves, boosting the Pokémon's Attack.
+- **Water Absorb**: Absorbs Water-type moves, healing the Pokémon for 1/4 max HP.
+- **Volt Absorb**: Absorbs Water-type moves, healing the Pokémon for 1/4 max HP.
 
 ### Removed
 

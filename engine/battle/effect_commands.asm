@@ -1691,6 +1691,9 @@ CheckDamageAbsorptionAbilities:
 	call GetBattleVar  ; preserves hl, de, and bc
 	and TYPE_MASK
 
+	cp WATER
+	jr z, .water
+
 	cp ELECTRIC
 	jr z, .electric
 
@@ -1710,13 +1713,28 @@ CheckDamageAbsorptionAbilities:
 	and a
 	ret
 
+.water
+	call GetOpponentAbility
+	cp WATER_ABSORB
+	ret nz
+
+	call .ability_draws_move
+	jr MoveAbsorbEffect
+
 .electric
+	call GetOpponentAbility
+	cp VOLT_ABSORB
+	jr nz, .lightning_rod
+
+	call .ability_draws_move
+	jr MoveAbsorbEffect
+
+.lightning_rod
 	call GetOpponentAbility
 	cp LIGHTNING_ROD
 	ret nz
 
-	ld hl, LightningRodPowerUpText
-	call .nullify
+	call .ability_draws_move
 	jr LightningRodEffect
 
 .grass
@@ -1724,8 +1742,7 @@ CheckDamageAbsorptionAbilities:
 	cp SAP_SIPPER
 	ret nz
 
-	ld hl, SapSipperPowerUpText
-	call .nullify
+	call .ability_draws_move
 	jr SapSipperEffect
 
 .ground
@@ -1751,9 +1768,12 @@ CheckDamageAbsorptionAbilities:
 	set SUBSTATUS_FLASH_FIRE, [hl]
 
 	ld hl, FlashFirePowerUpText
-	; jr .nullify
-	; fallthrough
+	jr .nullify
 
+.ability_draws_move
+	ld [wNamedObjectIndex], a
+	call GetAbilityName
+	ld hl, AbilityAbsorbsMoveText
 ; ability nullifies the attack
 ; assume: hl pointing to text
 .nullify
@@ -1765,6 +1785,21 @@ CheckDamageAbsorptionAbilities:
 	call DelayFrames
 	xor a
 	ret
+
+
+MoveAbsorbEffect:
+	; switchturn
+	; lowersub
+	; heal
+	; switchturn
+	; endmove
+
+	call BattleCommand_SwitchTurn
+	call BattleCommand_LowerSub
+	call HealQuarterMaxHp
+	call BattleCommand_RaiseSub
+	call BattleCommand_SwitchTurn
+	jp EndMoveEffect
 
 
 LightningRodEffect:

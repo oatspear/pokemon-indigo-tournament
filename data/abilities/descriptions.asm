@@ -11,6 +11,8 @@ AbilityDescriptions::
 		dw LightningRodDescription
 		dw LevitateDescription
 		dw SapSipperDescription
+		dw WaterAbsorbDescription
+		dw VoltAbsorbDescription
 
 
 NoAbilityDescription:
@@ -59,3 +61,11 @@ SapSipperDescription:
 LevitateDescription:
 	db   "Immune to GROUND"
 	next "moves.@"
+
+WaterAbsorbDescription:
+	db   "Heals if hit"
+	next "by WATER.@"
+
+VoltAbsorbDescription:
+	db   "Heals if hit"
+	next "by ELECTRIC.@"
