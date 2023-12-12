@@ -3538,7 +3538,7 @@ ShowBattleTextEnemySentOut:
 	jr z, .skip_name
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
-	ld hl, MimicLearnedMoveText
+	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
 .skip_name
 
@@ -6208,6 +6208,12 @@ LoadEnemyMon:
 ; Set level
 	ld a, [wCurPartyLevel]
 	ld [wEnemyMonLevel], a
+; Set ability
+	ld a, [wCurPartyMon]
+	ld hl, wOTPartyMon1Ability
+	call GetPartyLocation
+	ld a, [hl]
+	ld [wEnemyMonAbility], a
 ; Fill stats
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
