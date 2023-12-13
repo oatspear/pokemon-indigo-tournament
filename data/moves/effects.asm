@@ -782,7 +782,7 @@ Overheat:
 	supereffectivetext
 	switchturn
 	specialattackdown2
-	statdownanim
+	; statdownanim
 	statdownmessage
 	statdownfailtext
 	switchturn
