@@ -6411,9 +6411,8 @@ LoadEnemyMon:
 	ld hl, wEnemyMonStats
 	ld de, wEnemyStats
 	ld bc, NUM_EXP_STATS * 2
-	call CopyBytes
+	jp CopyBytes
 
-	ret
 
 CheckSleepingTreeMon:
 ; Return carry if species is in the list
