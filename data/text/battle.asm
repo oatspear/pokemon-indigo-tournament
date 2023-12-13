@@ -363,7 +363,13 @@ BattleText_StringBuffer1GrewToLevel:
 	sound_dex_fanfare_50_79
 	text_end
 
-	text_end ; unreferenced
+BattleText_PokemonsAbility:
+	text "The #MON's"
+	line "ability is"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
 
 BattleText_WildMonIsEating:
 	text "Wild @"

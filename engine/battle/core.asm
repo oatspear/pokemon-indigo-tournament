@@ -3538,7 +3538,9 @@ ShowBattleTextEnemySentOut:
 	jr z, .skip_name
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
-	ld hl, BattleText_EnemySentOut
+	ld c, 60
+	call DelayFrames
+	ld hl, BattleText_PokemonsAbility
 	call StdBattleTextbox
 .skip_name
 
@@ -7517,7 +7519,9 @@ SendOutMonText:
 	ret z
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
-	ld hl, MimicLearnedMoveText
+	ld c, 60
+	call DelayFrames
+	ld hl, BattleText_PokemonsAbility
 	jp StdBattleTextbox
 
 _SendOutMonText:
