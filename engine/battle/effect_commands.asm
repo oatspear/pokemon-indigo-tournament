@@ -209,8 +209,6 @@ BattleCommand_CheckTurn:
 	and SLP
 	jr z, .woke_up
 
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_SLP
 	call FarPlayBattleAnimation
 	jr .fast_asleep
@@ -309,8 +307,6 @@ BattleCommand_CheckTurn:
 .confused
 	ld hl, IsConfusedText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
@@ -337,8 +333,6 @@ BattleCommand_CheckTurn:
 
 	ld hl, InLoveWithText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_IN_LOVE
 	call FarPlayBattleAnimation
 
@@ -440,8 +434,6 @@ CheckEnemyTurn:
 
 	ld hl, FastAsleepText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_SLP
 	call FarPlayBattleAnimation
 	jr .fast_asleep
@@ -538,8 +530,6 @@ CheckEnemyTurn:
 	ld hl, IsConfusedText
 	call StdBattleTextbox
 
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
@@ -585,8 +575,6 @@ CheckEnemyTurn:
 
 	ld hl, InLoveWithText
 	call StdBattleTextbox
-	xor a
-	ld [wNumHits], a
 	ld de, ANIM_IN_LOVE
 	call FarPlayBattleAnimation
 
@@ -1762,13 +1750,9 @@ CheckDamageAbsorptionAbilities:
 	cp FLASH_FIRE
 	ret nz
 
-	; set Flash Fire's substatus
-	ld a, BATTLE_VARS_SUBSTATUS2_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLASH_FIRE, [hl]
-
 	ld hl, FlashFirePowerUpText
-	jr .nullify
+	call .nullify
+	jr FlashFireEffect
 
 .ability_draws_move
 	ld [wNamedObjectIndex], a
@@ -1795,6 +1779,12 @@ MoveAbsorbEffect:
 	; endmove
 
 	call BattleCommand_SwitchTurn
+
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVarAddr
+	ld a, RECOVER
+	ld [hl], a
+
 	call BattleCommand_LowerSub
 	call HealQuarterMaxHp
 	call BattleCommand_RaiseSub
@@ -1814,10 +1804,20 @@ LightningRodEffect:
 	; endmove
 
 	call BattleCommand_SwitchTurn
+
+	; ld a, BATTLE_VARS_MOVE_ANIM
+	; call GetBattleVarAddr
+	; ld a, FOCUS_ENERGY
+	; ld [hl], a
+
 	call BattleCommand_SpecialAttackUp
-	call BattleCommand_LowerSub
-	call BattleCommand_StatUpAnim
-	call BattleCommand_RaiseSub
+	; call BattleCommand_LowerSub
+	; call BattleCommand_StatUpAnim
+	; call BattleCommand_RaiseSub
+
+	ld de, ANIM_PAR
+	call FarPlayBattleAnimation
+
 	call BattleCommand_StatUpMessage
 	call BattleCommand_StatUpFailText
 	call BattleCommand_SwitchTurn
@@ -1836,13 +1836,49 @@ SapSipperEffect:
 	; endmove
 
 	call BattleCommand_SwitchTurn
+
+	; ld a, BATTLE_VARS_MOVE_ANIM
+	; call GetBattleVarAddr
+	; ld a, GROWTH
+	; ld [hl], a
+
 	call BattleCommand_AttackUp
-	call BattleCommand_LowerSub
-	call BattleCommand_StatUpAnim
-	call BattleCommand_RaiseSub
+	; call BattleCommand_LowerSub
+	; call BattleCommand_StatUpAnim
+	; call BattleCommand_RaiseSub
+
+	ld de, ANIM_SAP
+	call FarPlayBattleAnimation
+
 	call BattleCommand_StatUpMessage
 	call BattleCommand_StatUpFailText
 	call BattleCommand_SwitchTurn
+	jp EndMoveEffect
+
+
+FlashFireEffect:
+	; switchturn
+	; flashfire
+	; moveanim
+	; switchturn
+	; endmove
+
+	; ld a, BATTLE_VARS_MOVE_ANIM
+	; call GetBattleVarAddr
+	; ld a, WILL_O_WISP
+	; ld [hl], a
+	; call BattleCommand_MoveAnim
+
+	call BattleCommand_SwitchTurn
+	; set Flash Fire's substatus
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_FLASH_FIRE, [hl]
+
+	ld de, ANIM_BRN
+	call FarPlayBattleAnimation
+	call BattleCommand_SwitchTurn
+
 	jp EndMoveEffect
 
 
@@ -3437,6 +3473,9 @@ INCLUDE "engine/battle/move_effects/heal_bell.asm"
 
 FarPlayBattleAnimation:
 ; play animation de
+
+	xor a
+	ld [wNumHits], a
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
