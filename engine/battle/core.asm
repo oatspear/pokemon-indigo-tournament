@@ -1280,6 +1280,15 @@ HandleLeftovers:
 	cp HELD_LEFTOVERS
 	ret nz
 
+	call CoreRestoreSixteenthMaxHp
+	ret z
+	ld hl, BattleText_TargetRecoveredWithItem
+	jp StdBattleTextbox
+
+
+; Return z if the turn holder's HP is full
+; Assumes wBattleMonMaxHP comes right after wBattleMonHP in wram macro
+CoreCheckHpIsFull:
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1287,24 +1296,43 @@ HandleLeftovers:
 	ld hl, wEnemyMonHP
 
 .got_hp
-; Don't restore if we're already at max HP
 	ld a, [hli]
 	ld b, a
 	ld a, [hli]
 	ld c, a
 	ld a, [hli]
 	cp b
-	jr nz, .restore
+	ret nz
 	ld a, [hl]
 	cp c
+	ret
+
+
+CoreRestoreSixteenthMaxHp:
+	ld hl, GetSixteenthMaxHP
+	jr CoreRestoreFractionMaxHp
+
+
+; input:
+;   hl: pointer to function to get a percentage of max hp (e.g., GetHalfMaxHP)
+; output:
+;   z: if HP is full
+;   nz: if HP was restored
+CoreRestoreFractionMaxHp:
+; Don't restore if we're already at max HP
+	push hl
+	call CheckHpIsFull
+	pop hl
 	ret z
 
-.restore
-	call GetSixteenthMaxHP
+	; call GetSixteenthMaxHP
+	call _hl_
 	call SwitchTurnCore
 	call RestoreHP
-	ld hl, BattleText_TargetRecoveredWithItem
-	jp StdBattleTextbox
+	ld a, 1
+	and a
+	ret
+
 
 HandleMysteryberry:
 	ldh a, [hSerialConnectionStatus]
