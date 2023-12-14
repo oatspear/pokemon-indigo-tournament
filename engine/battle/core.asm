@@ -1721,20 +1721,73 @@ HandleWeather:
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
-	jr z, .enemy_first
+	jr z, .enemy_first_sand
 
 ; player first
 	call SetPlayerTurn
-	call .SandstormDamage
+	call HandleSandstormDamage
 	call SetEnemyTurn
-	jr .SandstormDamage
+	jr HandleSandstormDamage
 
-.enemy_first
+.enemy_first_sand
 	call SetEnemyTurn
-	call .SandstormDamage
+	call HandleSandstormDamage
 	call SetPlayerTurn
+	jr HandleSandstormDamage
 
-.SandstormDamage:
+.check_hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first_hail
+
+; player first
+	call SetPlayerTurn
+	call HandleHailDamage
+	call SetEnemyTurn
+	jr HandleHailDamage
+
+.enemy_first_hail
+	call SetEnemyTurn
+	call HandleHailDamage
+	call SetPlayerTurn
+	jr HandleHailDamage
+
+.PrintWeatherMessage:
+	ld a, [wBattleWeather]
+	dec a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	jp StdBattleTextbox
+
+.WeatherMessages:
+; entries correspond to WEATHER_* constants
+	dw BattleText_RainContinuesToFall
+	dw BattleText_TheSunlightIsStrong
+	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
+
+.WeatherEndedMessages:
+; entries correspond to WEATHER_* constants
+	dw BattleText_TheRainStopped
+	dw BattleText_TheSunlightFaded
+	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
+
+
+; ------------------------------------------------------------------------------
+; Weather Effects
+; ------------------------------------------------------------------------------
+
+HandleSandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
@@ -1778,27 +1831,8 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
-.check_hail
-	ld a, [wBattleWeather]
-	cp WEATHER_HAIL
-	ret nz
 
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .enemy_first_hail
-
-; player first
-	call SetPlayerTurn
-	call .HailDamage
-	call SetEnemyTurn
-	jr .HailDamage
-
-.enemy_first_hail
-	call SetEnemyTurn
-	call .HailDamage
-	call SetPlayerTurn
-
-.HailDamage:
+HandleHailDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVar
 	bit SUBSTATUS_UNDERGROUND, a
@@ -1835,31 +1869,11 @@ HandleWeather:
 	ld hl, PeltedByHailText
 	jp StdBattleTextbox
 
-.PrintWeatherMessage:
-	ld a, [wBattleWeather]
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp StdBattleTextbox
 
-.WeatherMessages:
-; entries correspond to WEATHER_* constants
-	dw BattleText_RainContinuesToFall
-	dw BattleText_TheSunlightIsStrong
-	dw BattleText_TheSandstormRages
-	dw BattleText_HailContinuesToFall
+; ------------------------------------------------------------------------------
 
-.WeatherEndedMessages:
-; entries correspond to WEATHER_* constants
-	dw BattleText_TheRainStopped
-	dw BattleText_TheSunlightFaded
-	dw BattleText_TheSandstormSubsided
-	dw BattleText_TheHailStopped
+
+
 
 SubtractHPFromTarget:
 	call SubtractHP
