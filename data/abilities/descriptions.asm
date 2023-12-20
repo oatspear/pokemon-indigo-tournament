@@ -13,6 +13,7 @@ AbilityDescriptions::
 		dw SapSipperDescription
 		dw WaterAbsorbDescription
 		dw VoltAbsorbDescription
+		dw RainDishDescription
 
 
 NoAbilityDescription:
@@ -69,3 +70,7 @@ WaterAbsorbDescription:
 VoltAbsorbDescription:
 	db   "Heals if hit"
 	next "by ELECTRIC.@"
+
+RainDishDescription:
+	db   "Heals during"
+	next "heavy rain.@"

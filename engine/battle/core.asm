@@ -1264,7 +1264,7 @@ HandleLeftovers:
 	call SetPlayerTurn
 	call .do_it
 	call SetEnemyTurn
-	jp .do_it
+	jr .do_it
 
 .DoEnemyFirst:
 	call SetEnemyTurn
@@ -1715,45 +1715,49 @@ HandleWeather:
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
+	; avoid code duplication, set the appropriate turn now
+	; later on, just switch turns
+
+	; ldh a, [hSerialConnectionStatus]
+	; cp USING_EXTERNAL_CLOCK
+	; jr z, .enemy_first_sand
+
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first
+	call SetPlayerTurn
+	jr .weather_checks
+
+.enemy_first
+	call SetEnemyTurn
+	; fallthrough
+
+.weather_checks
 	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr nz, .check_sandstorm
+
+; the turn is already set
+	call HandleRainAbilities
+	call SwitchTurnCore
+	jr HandleRainAbilities
+
+.check_sandstorm
 	cp WEATHER_SANDSTORM
 	jr nz, .check_hail
 
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .enemy_first_sand
-
-; player first
-	call SetPlayerTurn
+; the turn is already set
 	call HandleSandstormDamage
-	call SetEnemyTurn
-	jr HandleSandstormDamage
-
-.enemy_first_sand
-	call SetEnemyTurn
-	call HandleSandstormDamage
-	call SetPlayerTurn
+	call SwitchTurnCore
 	jr HandleSandstormDamage
 
 .check_hail
-	ld a, [wBattleWeather]
 	cp WEATHER_HAIL
 	ret nz
 
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .enemy_first_hail
-
-; player first
-	call SetPlayerTurn
+; the turn is already set
 	call HandleHailDamage
-	call SetEnemyTurn
-	jr HandleHailDamage
-
-.enemy_first_hail
-	call SetEnemyTurn
-	call HandleHailDamage
-	call SetPlayerTurn
+	call SwitchTurnCore
 	jr HandleHailDamage
 
 .PrintWeatherMessage:
@@ -1786,6 +1790,19 @@ HandleWeather:
 ; ------------------------------------------------------------------------------
 ; Weather Effects
 ; ------------------------------------------------------------------------------
+
+HandleRainAbilities:
+	farcall GetCurrentAbility
+	cp RAIN_DISH
+	ret nz
+
+	ld [wNamedObjectIndex], a
+	call GetAbilityName
+	call CoreRestoreSixteenthMaxHp
+	ret z
+	ld hl, BattleText_TargetRecoveredWithItem
+	jp StdBattleTextbox
+
 
 HandleSandstormDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3

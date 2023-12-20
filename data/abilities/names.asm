@@ -12,3 +12,4 @@ AbilityNames::
 	db "SAP SIPPER@"
 	db "WATER ABSORB@"
 	db "VOLT ABSORB@"
+	db "RAIN DISH@"
