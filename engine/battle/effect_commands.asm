@@ -959,6 +959,26 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
+
+BoostDamage50Percent:
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+
+	ld b, h
+	ld c, l
+	srl b
+	rr c
+	add hl, bc
+
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1017,22 +1037,7 @@ BattleCommand_Stab:
 	jr .SkipStab
 
 .stab
-	ld hl, wCurDamage + 1
-	ld a, [hld]
-	ld h, [hl]
-	ld l, a
-
-	ld b, h
-	ld c, l
-	srl b
-	rr c
-	add hl, bc
-
-	ld a, h
-	ld [wCurDamage], a
-	ld a, l
-	ld [wCurDamage + 1], a
-
+	call BoostDamage50Percent
 	ld hl, wTypeModifier
 	set 7, [hl]
 
