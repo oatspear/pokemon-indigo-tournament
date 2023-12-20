@@ -1758,7 +1758,7 @@ HandleWeather:
 ; the turn is already set
 	call HandleHailDamage
 	call SwitchTurnCore
-	jr HandleHailDamage
+	jp HandleHailDamage
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
