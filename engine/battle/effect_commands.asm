@@ -2157,11 +2157,15 @@ BattleCommand_FailureText:
 BattleCommand_ApplyDamage:
 ; applydamage
 
+	call IsSturdyActive
+	jr z, .false_swipe
+
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
 	jr z, .focus_band
 
+.false_swipe
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
@@ -5529,6 +5533,9 @@ BattleCommand_HeldFlinch:
 BattleCommand_OHKO:
 ; ohko
 
+	call IsSturdyActive
+	jr z, .no_effect
+
 	call ResetDamage
 	ld a, [wTypeModifier]
 	and $7f
@@ -6925,4 +6932,17 @@ FlashFirePowerBoost:
 	ret nc
 ; carry, set move power to 255
 	ld d, $ff
+	ret
+
+
+; returns z if sturdy is active (opponent has ability and is at max HP)
+IsSturdyActive:
+	call GetOpponentAbility
+	cp STURDY
+	ret nz
+	call BattleCommand_SwitchTurn
+	call CheckHpIsFull
+	push af
+	call BattleCommand_SwitchTurn
+	pop af
 	ret

@@ -19,4 +19,5 @@
 	const WATER_ABSORB  ; 0c
 	const VOLT_ABSORB   ; 0d
 	const RAIN_DISH     ; 0e
+	const STURDY        ; 0f
 NUM_ABILITIES EQU const_value - 1

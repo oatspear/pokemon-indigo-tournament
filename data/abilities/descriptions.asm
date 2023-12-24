@@ -14,6 +14,7 @@ AbilityDescriptions::
 		dw WaterAbsorbDescription
 		dw VoltAbsorbDescription
 		dw RainDishDescription
+		dw SturdyDescription
 
 
 NoAbilityDescription:
@@ -74,3 +75,7 @@ VoltAbsorbDescription:
 RainDishDescription:
 	db   "Heals during"
 	next "heavy rain.@"
+
+SturdyDescription:
+	db   "Negates one-hit"
+	next "KO attacks.@"

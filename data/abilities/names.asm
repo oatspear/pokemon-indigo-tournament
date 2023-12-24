@@ -13,3 +13,4 @@ AbilityNames::
 	db "WATER ABSORB@"
 	db "VOLT ABSORB@"
 	db "RAIN DISH@"
+	db "STURDY@"
