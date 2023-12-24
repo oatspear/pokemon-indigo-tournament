@@ -20,4 +20,5 @@
 	const VOLT_ABSORB   ; 0d
 	const RAIN_DISH     ; 0e
 	const STURDY        ; 0f
+	const ROCK_HEAD     ; 10
 NUM_ABILITIES EQU const_value - 1

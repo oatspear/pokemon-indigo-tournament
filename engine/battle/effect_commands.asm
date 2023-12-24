@@ -5777,6 +5777,10 @@ INCLUDE "engine/battle/move_effects/focus_energy.asm"
 BattleCommand_Recoil:
 ; recoil
 
+	call GetCurrentAbility
+	cp ROCK_HEAD
+	ret z
+
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
 	and a

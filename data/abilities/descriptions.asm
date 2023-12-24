@@ -15,6 +15,7 @@ AbilityDescriptions::
 		dw VoltAbsorbDescription
 		dw RainDishDescription
 		dw SturdyDescription
+		dw RockHeadDescription
 
 
 NoAbilityDescription:
@@ -79,3 +80,7 @@ RainDishDescription:
 SturdyDescription:
 	db   "Negates one-hit"
 	next "KO attacks.@"
+
+RockHeadDescription:
+	db   "Prevents recoil"
+	next "damage.@"

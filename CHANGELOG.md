@@ -44,6 +44,7 @@
 - **Volt Absorb**: Absorbs Water-type moves, healing the Pokémon for 1/4 max HP.
 - **Rain Dish**: Heals 1/16 max HP during rain.
 - **Sturdy**: Endures damage and negates one-hit KO moves when at full HP.
+- **Rock Head**: Prevents recoil damage.
 
 ### Removed
 

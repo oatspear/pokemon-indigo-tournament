@@ -14,3 +14,4 @@ AbilityNames::
 	db "VOLT ABSORB@"
 	db "RAIN DISH@"
 	db "STURDY@"
+	db "ROCK HEAD@"
