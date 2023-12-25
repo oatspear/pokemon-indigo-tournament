@@ -89,6 +89,11 @@ PeltedByHailText:
 	line "is pelted by HAIL!"
 	prompt
 
+HurtByDrySkinText:
+	text "<USER>'s'"
+	line "DRY SKIN hurts!"
+	prompt
+
 PerishCountText:
 	text "<USER>'s"
 	line "PERISH count is @"
@@ -96,8 +101,16 @@ PerishCountText:
 	text "!"
 	prompt
 
-BattleText_TargetRecoveredWithItem:
-	text "<TARGET>"
+; BattleText_TargetRecoveredWithItem:
+; 	text "<TARGET>"
+; 	line "recovered with"
+; 	cont "@"
+; 	text_ram wStringBuffer1
+; 	text "."
+; 	prompt
+
+BattleText_UserRecoveredWith:
+	text "<USER>"
 	line "recovered with"
 	cont "@"
 	text_ram wStringBuffer1

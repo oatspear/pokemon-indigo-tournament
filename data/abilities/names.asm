@@ -15,3 +15,4 @@ AbilityNames::
 	db "RAIN DISH@"
 	db "STURDY@"
 	db "ROCK HEAD@"
+	db "DRY SKIN@"

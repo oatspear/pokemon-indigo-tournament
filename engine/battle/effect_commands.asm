@@ -979,6 +979,27 @@ BoostDamage50Percent:
 	ret
 
 
+BoostDamage25Percent:
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+
+	ld b, h
+	ld c, l
+	srl b
+	rr c
+	srl b
+	rr c
+	add hl, bc
+
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1042,8 +1063,26 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
+; handle special move types (begin)
 	call GetSpecialMoveTypeIfAny
 	ld b, a
+
+; handle dry skin
+	call GetOpponentAbility  ; preserves bc
+	cp DRY_SKIN
+	jr nz, .skip_dry_skin
+
+	ld a, b
+	cp FIRE
+	jr nz, .skip_dry_skin
+	push bc
+	call BoostDamage25Percent
+	ld hl, HurtByDrySkinText  ; debug
+	call StdBattleTextbox  ; debug
+	pop bc
+
+.skip_dry_skin
+; handle special move types (end)
 	ld hl, TypeMatchups
 
 .TypesLoop:
@@ -1147,6 +1186,7 @@ BattleCommand_Stab:
 	or b
 	ld [wTypeModifier], a
 	ret
+
 
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
@@ -1709,8 +1749,11 @@ CheckDamageAbsorptionAbilities:
 .water
 	call GetOpponentAbility
 	cp WATER_ABSORB
+	jr z, .water_absorb
+	cp DRY_SKIN
 	ret nz
 
+.water_absorb
 	call .ability_draws_move
 	jr MoveAbsorbEffect
 

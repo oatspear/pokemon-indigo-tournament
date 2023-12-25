@@ -16,6 +16,7 @@ AbilityDescriptions::
 		dw RainDishDescription
 		dw SturdyDescription
 		dw RockHeadDescription
+		dw DrySkinDescription
 
 
 NoAbilityDescription:
@@ -84,3 +85,7 @@ SturdyDescription:
 RockHeadDescription:
 	db   "Prevents recoil"
 	next "damage.@"
+
+DrySkinDescription:
+	db   "Heals with WATER."
+	next "Hurts with FIRE.@"

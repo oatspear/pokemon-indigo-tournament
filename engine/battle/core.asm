@@ -1282,7 +1282,7 @@ HandleLeftovers:
 
 	call CoreRestoreSixteenthMaxHp
 	ret z
-	ld hl, BattleText_TargetRecoveredWithItem
+	ld hl, BattleText_UserRecoveredWith
 	jp StdBattleTextbox
 
 
@@ -1308,6 +1308,11 @@ CoreCheckHpIsFull:
 	ret
 
 
+CoreRestoreEighthMaxHp:
+	ld hl, GetEighthMaxHP
+	jr CoreRestoreFractionMaxHp
+
+
 CoreRestoreSixteenthMaxHp:
 	ld hl, GetSixteenthMaxHP
 	jr CoreRestoreFractionMaxHp
@@ -1321,7 +1326,7 @@ CoreRestoreSixteenthMaxHp:
 CoreRestoreFractionMaxHp:
 ; Don't restore if we're already at max HP
 	push hl
-	call CheckHpIsFull
+	call CoreCheckHpIsFull
 	pop hl
 	ret z
 
@@ -1329,6 +1334,7 @@ CoreRestoreFractionMaxHp:
 	call _hl_
 	call SwitchTurnCore
 	call RestoreHP
+	call SwitchTurnCore
 	ld a, 1
 	and a
 	ret
@@ -1734,6 +1740,15 @@ HandleWeather:
 
 .weather_checks
 	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr nz, .check_rain
+
+; the turn is already set
+	call HandleSunAbilities
+	call SwitchTurnCore
+	jr HandleSunAbilities
+
+.check_rain
 	cp WEATHER_RAIN
 	jr nz, .check_sandstorm
 
@@ -1791,16 +1806,39 @@ HandleWeather:
 ; Weather Effects
 ; ------------------------------------------------------------------------------
 
-HandleRainAbilities:
-	farcall GetCurrentAbility
-	cp RAIN_DISH
+HandleSunAbilities:
+	call CoreGetCurrentAbility
+	cp DRY_SKIN
 	ret nz
 
+	call SwitchTurnCore
+	xor a
+	ld [wNumHits], a
+	ld de, SUNNY_DAY
+	call Call_PlayBattleAnim
+	call SwitchTurnCore
+	call GetEighthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, HurtByDrySkinText
+	jp StdBattleTextbox
+
+
+HandleRainAbilities:
+	call CoreGetCurrentAbility
+	ld hl, GetSixteenthMaxHP
+	cp RAIN_DISH
+	jr z, .restore_hp
+	ld hl, GetEighthMaxHP
+	cp DRY_SKIN
+	ret nz
+
+.restore_hp
 	ld [wNamedObjectIndex], a
-	call GetAbilityName
-	call CoreRestoreSixteenthMaxHp
+	call GetAbilityName  ; preserves hl
+	call CoreRestoreFractionMaxHp
 	ret z
-	ld hl, BattleText_TargetRecoveredWithItem
+	ld hl, BattleText_UserRecoveredWith
 	jp StdBattleTextbox
 
 
@@ -1810,7 +1848,7 @@ HandleSandstormDamage:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	farcall GetCurrentAbility
+	call CoreGetCurrentAbility
 	cp SAND_RUSH
 	ret z
 
@@ -1855,7 +1893,7 @@ HandleHailDamage:
 	bit SUBSTATUS_UNDERGROUND, a
 	ret nz
 
-	farcall GetCurrentAbility
+	call CoreGetCurrentAbility
 	cp SLUSH_RUSH
 	ret z
 
@@ -4172,7 +4210,7 @@ SpikesDamage:
 	ret z
 
 	; Levitate users are not affected by Spikes.
-	farcall GetCurrentAbility
+	call CoreGetCurrentAbility
 	cp LEVITATE
 	ret z
 
@@ -9023,3 +9061,14 @@ IsEvsGreaterThan510:
     ld a, c
     cp LOW(MAX_TOTAL_EV)
     ret
+
+
+; this copy is needed because farcall does not preserve
+; the return value in register a
+CoreGetCurrentAbility:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonAbility]
+	ret nz
+	ld a, [wBattleMonAbility]
+	ret

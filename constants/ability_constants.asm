@@ -21,4 +21,5 @@
 	const RAIN_DISH     ; 0e
 	const STURDY        ; 0f
 	const ROCK_HEAD     ; 10
+	const DRY_SKIN      ; 11
 NUM_ABILITIES EQU const_value - 1
