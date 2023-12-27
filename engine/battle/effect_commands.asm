@@ -960,6 +960,22 @@ INCLUDE "data/battle/critical_hit_chances.asm"
 INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
 
+NerfDamage50Percent:
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+
+	srl h
+	rr l
+
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+
+
 BoostDamage50Percent:
 	ld hl, wCurDamage + 1
 	ld a, [hld]
@@ -1053,9 +1069,7 @@ BattleCommand_Stab:
 	cp b
 	jr z, .stab
 	cp c
-	jr z, .stab
-
-	jr .SkipStab
+	jr nz, .SkipStab
 
 .stab
 	call BoostDamage50Percent
@@ -1063,26 +1077,40 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
-; handle special move types (begin)
-	call GetSpecialMoveTypeIfAny
-	ld b, a
-
 ; handle dry skin
 	call GetOpponentAbility  ; preserves bc
 	cp DRY_SKIN
 	jr nz, .skip_dry_skin
 
-	ld a, b
+	ld a, [wCurType]
 	cp FIRE
-	jr nz, .skip_dry_skin
-	push bc
+	jr nz, .special_move_types
 	call BoostDamage25Percent
 	ld hl, HurtByDrySkinText  ; debug
 	call StdBattleTextbox  ; debug
-	pop bc
+	jr .special_move_types
 
 .skip_dry_skin
-; handle special move types (end)
+	cp THICK_FAT
+	jr nz, .special_move_types
+
+	ld a, [wCurType]
+	cp FIRE
+	jr z, .thick_fat_nerf
+	cp ICE
+	jr nz, .special_move_types
+
+.thick_fat_nerf
+	call NerfDamage50Percent
+	ld hl, ProtectedByThickFatText  ; debug
+	call StdBattleTextbox  ; debug
+	; jr .special_move_types
+	; fallthrough
+
+.special_move_types
+; handle special move types
+	call GetSpecialMoveTypeIfAny
+	ld b, a
 	ld hl, TypeMatchups
 
 .TypesLoop:

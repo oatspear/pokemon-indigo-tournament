@@ -6,8 +6,8 @@ MoldBreakerSuppressedAbilities:
 	db SAP_SIPPER
 	db WATER_ABSORB
 	db VOLT_ABSORB
+	db THICK_FAT
 	; db SAND_VEIL
-	; db THICK_FAT
 	; db STURDY
 	; db DRY_SKIN
 	; db BIG_PECKS

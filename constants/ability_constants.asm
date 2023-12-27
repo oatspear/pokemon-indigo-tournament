@@ -22,4 +22,5 @@
 	const STURDY        ; 0f
 	const ROCK_HEAD     ; 10
 	const DRY_SKIN      ; 11
+	const THICK_FAT     ; 12
 NUM_ABILITIES EQU const_value - 1

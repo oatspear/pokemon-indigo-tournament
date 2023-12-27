@@ -16,3 +16,4 @@ AbilityNames::
 	db "STURDY@"
 	db "ROCK HEAD@"
 	db "DRY SKIN@"
+	db "THICK FAT@"

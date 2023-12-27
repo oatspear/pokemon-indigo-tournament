@@ -17,6 +17,7 @@ AbilityDescriptions::
 		dw SturdyDescription
 		dw RockHeadDescription
 		dw DrySkinDescription
+		dw ThickFatDescription
 
 
 NoAbilityDescription:
@@ -89,3 +90,7 @@ RockHeadDescription:
 DrySkinDescription:
 	db   "Heals with WATER."
 	next "Hurts with FIRE.@"
+
+ThickFatDescription:
+	db   "Heat and cold"
+	next "protection.@"

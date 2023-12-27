@@ -94,6 +94,11 @@ HurtByDrySkinText:
 	line "DRY SKIN hurts!"
 	prompt
 
+ProtectedByThickFatText:
+	text "<USER>'s'"
+	line "THICK FAT blocks!"
+	prompt
+
 PerishCountText:
 	text "<USER>'s"
 	line "PERISH count is @"
