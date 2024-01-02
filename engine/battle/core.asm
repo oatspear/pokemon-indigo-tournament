@@ -488,7 +488,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp e
 	jr nc, .speed_check
-	jp .player_first
+	jr .player_first
 
 .player_no_quick_claw
 	ld a, b
@@ -497,7 +497,7 @@ DetermineMoveOrder:
 	call BattleRandom
 	cp c
 	jr nc, .speed_check
-	jp .enemy_first
+	jr .enemy_first
 
 .both_have_quick_claw
 	ldh a, [hSerialConnectionStatus]
@@ -505,16 +505,16 @@ DetermineMoveOrder:
 	jr z, .player_2b
 	call BattleRandom
 	cp c
-	jp c, .enemy_first
+	jr c, .enemy_first
 	call BattleRandom
 	cp e
-	jp c, .player_first
+	jr c, .player_first
 	jr .speed_check
 
 .player_2b
 	call BattleRandom
 	cp e
-	jp c, .player_first
+	jr c, .player_first
 	call BattleRandom
 	cp c
 	jp c, .enemy_first
@@ -526,8 +526,8 @@ DetermineMoveOrder:
 	ld c, 2
 	call CompareBytes
 	jr z, .speed_tie
-	jp nc, .player_first
-	jp .enemy_first
+	jr nc, .player_first
+	jr .enemy_first
 
 .speed_tie
 	ldh a, [hSerialConnectionStatus]
@@ -535,13 +535,13 @@ DetermineMoveOrder:
 	jr z, .player_2c
 	call BattleRandom
 	cp 50 percent + 1
-	jp c, .player_first
-	jp .enemy_first
+	ret c  ; .player_first
+	jr .enemy_first
 
 .player_2c
 	call BattleRandom
 	cp 50 percent + 1
-	jp c, .enemy_first
+	jr c, .enemy_first
 .player_first
 	scf
 	ret
