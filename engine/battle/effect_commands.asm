@@ -5093,6 +5093,15 @@ CalcEnemySpeed:
 	jp CalcSingleBattleStat
 
 
+ResetWeatherEffects:
+	xor a
+	ld [wWeatherCount], a
+	ld [wBattleWeather], a
+; recalculate speed stats due to abilities
+	call CalcPlayerSpeed
+	jr CalcEnemySpeed
+
+
 INCLUDE "engine/battle/move_effects/bide.asm"
 
 BattleCommand_CheckRampage:

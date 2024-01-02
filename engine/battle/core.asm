@@ -1710,11 +1710,7 @@ HandleWeather:
 ; ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
-	xor a
-	ld [wBattleWeather], a
-; recalculate speed stats due to abilities
-	farcall CalcPlayerSpeed
-	farcall CalcEnemySpeed
+	farcall ResetWeatherEffects
 	ret
 
 .continues
@@ -9054,21 +9050,82 @@ CoreGetCurrentAbility:
 
 CoreEnemyAbilitySendOut:
 	ld a, [wEnemyMonAbility]
-	jr _PokemonAbilitySendOut
+	and a
+	ret z
+
+	call PokemonAbilityNotice
+	ld a, [wEnemyMonAbility]
+	jp HandleBattlecryAbilities
 
 
 CorePlayerAbilitySendOut:
 	ld a, [wBattleMonAbility]
-	; jr _PokemonAbilitySendOut
-	; fallthrough
-
-
-_PokemonAbilitySendOut:
 	and a
 	ret z
+
+	call PokemonAbilityNotice
+	ld a, [wBattleMonAbility]
+	jp HandleBattlecryAbilities
+
+
+PokemonAbilityNotice:
 	ld [wNamedObjectIndex], a
 	call GetAbilityName
 	ld c, 60
 	call DelayFrames
 	ld hl, BattleText_PokemonsAbility
 	jp StdBattleTextbox
+
+
+; input:
+;   a: ability constant
+HandleBattlecryAbilities:
+; preamble: store a bunch of variables
+	ld b, a
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVarAddr
+	push hl
+	push af
+	xor a
+	ld [hl], a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	ld a, b
+
+; drought
+	cp DROUGHT
+	jr nz, .drizzle
+	ld a, SUNNY_DAY
+	ld [hl], a
+	farcall BattleCommand_StartSun
+	jr .done
+
+.drizzle
+	cp DRIZZLE
+	jr nz, .sand_stream
+	ld a, RAIN_DANCE
+	ld [hl], a
+	farcall BattleCommand_StartRain
+	jr .done
+
+.sand_stream
+	cp SAND_STREAM
+	jr nz, .snow_warning
+	ld a, SANDSTORM
+	ld [hl], a
+	farcall BattleCommand_StartSandstorm
+	jr .done
+
+.snow_warning
+	cp SNOW_WARNING
+	jr nz, .done
+	ld a, HAIL
+	ld [hl], a
+	farcall BattleCommand_StartHail
+	; fallthrough
+
+.done
+	pop af
+	pop hl
+	ld [hl], a
+	ret

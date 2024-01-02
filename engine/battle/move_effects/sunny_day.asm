@@ -1,5 +1,6 @@
 BattleCommand_StartSun:
 ; startsun
+	call ResetWeatherEffects
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
 	ld a, 5

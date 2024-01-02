@@ -1,5 +1,6 @@
 BattleCommand_StartRain:
 ; startrain
+	call ResetWeatherEffects
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
 	ld a, 5

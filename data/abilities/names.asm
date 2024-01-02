@@ -17,3 +17,7 @@ AbilityNames::
 	db "ROCK HEAD@"
 	db "DRY SKIN@"
 	db "THICK FAT@"
+	db "DROUGHT@"
+	db "DRIZZLE@"
+	db "SAND STREAM@"
+	db "SNOW WARNING@"

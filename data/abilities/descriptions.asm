@@ -18,6 +18,10 @@ AbilityDescriptions::
 		dw RockHeadDescription
 		dw DrySkinDescription
 		dw ThickFatDescription
+		dw DroughtDescription
+		dw DrizzleDescription
+		dw SandStreamDescription
+		dw SnowWarningDescription
 
 
 NoAbilityDescription:
@@ -94,3 +98,19 @@ DrySkinDescription:
 ThickFatDescription:
 	db   "Heat and cold"
 	next "protection.@"
+
+DroughtDescription:
+	db   "Summons sunlight"
+	next "in battle.@"
+
+DrizzleDescription:
+	db   "Summons rain"
+	next "in battle.@"
+
+SandStreamDescription:
+	db   "Summons a"
+	next "sandstorm.@"
+
+SnowWarningDescription:
+	db   "Summons hail"
+	next "in battle.@"

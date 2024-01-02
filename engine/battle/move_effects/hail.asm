@@ -1,5 +1,11 @@
 BattleCommand_StartHail:
 ; starthail
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .failed
+
+	call ResetWeatherEffects
 	ld a, WEATHER_HAIL
 	ld [wBattleWeather], a
 	ld a, 5
@@ -21,3 +27,7 @@ BattleCommand_StartHail:
 	ret nz
 	ld hl, wEnemyMonSpeed
 	jp DoubleBattleStat
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
