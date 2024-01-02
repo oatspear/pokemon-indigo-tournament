@@ -3612,7 +3612,6 @@ ShowBattleTextEnemySentOut:
 	callfar Battle_GetTrainerName
 	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
-	call CoreEnemyAbilitySendOut ; DEBUG
 	jp WaitBGMap
 
 
@@ -3665,6 +3664,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
+	call CoreEnemyAbilitySendOut ; DEBUG
 	ret
 
 NewEnemyMonStatus:
