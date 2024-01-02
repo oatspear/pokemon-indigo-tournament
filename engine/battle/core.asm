@@ -3664,8 +3664,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	call CoreEnemyAbilitySendOut ; DEBUG
-	ret
+	jp CoreEnemyAbilitySendOut ; DEBUG
 
 NewEnemyMonStatus:
 	xor a
@@ -4134,7 +4133,7 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	ret
+	jp CorePlayerAbilitySendOut  ; DEBUG
 
 NewBattleMonStatus:
 	xor a
@@ -7582,11 +7581,6 @@ AnimateExpBar:
 
 
 SendOutMonText:
-	call _SendOutMonText
-	jp CorePlayerAbilitySendOut  ; DEBUG
-
-
-_SendOutMonText:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
