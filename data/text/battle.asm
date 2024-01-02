@@ -381,12 +381,19 @@ BattleText_StringBuffer1GrewToLevel:
 	sound_dex_fanfare_50_79
 	text_end
 
-BattleText_PokemonsAbility:
-	text "The #MON's"
-	line "ability is"
-	cont "@"
+; BattleText_PokemonsAbility:
+; 	text "The #MON's"
+; 	line "ability is"
+; 	cont "@"
+; 	text_ram wStringBuffer1
+; 	text "."
+; 	prompt
+
+BattleText_UsersAbility:
+	text "<USER>'s"
+	line "@"
 	text_ram wStringBuffer1
-	text "."
+	text "!"
 	prompt
 
 BattleText_WildMonIsEating:

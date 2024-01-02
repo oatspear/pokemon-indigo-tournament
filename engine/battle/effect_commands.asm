@@ -2466,6 +2466,23 @@ BattleCommand_SuperEffectiveText:
 .print
 	jp StdBattleTextbox
 
+
+; return z if zero, nz otherwise
+CheckEnemyFainted:
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	ret
+
+
+; return z if zero, nz otherwise
+CheckPlayerFainted:
+	ld hl, wBattleMonHP
+	ld a, [hli]
+	or [hl]
+	ret
+
+
 BattleCommand_CheckFaint:
 ; checkfaint
 
@@ -5274,6 +5291,8 @@ BattleCommand_ForceSwitch:
 	call StdBattleTextbox
 
 	ld hl, SpikesDamage
+	call CallBattleCore
+	ld hl, HandleEnemyBattlecryAbility
 	jp CallBattleCore
 
 .switch_fail
@@ -5371,6 +5390,8 @@ BattleCommand_ForceSwitch:
 	call StdBattleTextbox
 
 	ld hl, SpikesDamage
+	call CallBattleCore
+	ld hl, HandlePlayerBattlecryAbility
 	jp CallBattleCore
 
 .fail

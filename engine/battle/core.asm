@@ -110,6 +110,7 @@ DoBattle:
 	call SpikesDamage
 
 .not_linked_2
+	call HandleBothBattlecryAbilities
 	jp BattleTurn
 
 .tutorial_debug
@@ -2470,6 +2471,7 @@ EnemyPartyMonEntrance:
 	call ResetBattleParticipants
 	call SetEnemyTurn
 	call SpikesDamage
+	call HandleEnemyBattlecryAbility
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2890,6 +2892,7 @@ ForcePlayerMonChoice:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+	call HandlePlayerBattlecryAbility
 	ld a, $1
 	and a
 	ld c, a
@@ -2910,7 +2913,8 @@ PlayerPartyMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp HandlePlayerBattlecryAbility
 
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
@@ -3178,6 +3182,7 @@ SlideBattlePicOut:
 	jr nz, .back
 	ret
 
+
 ForceEnemySwitch:
 	call ResetEnemyBattleVars
 	ld a, [wEnemySwitchMonIndex]
@@ -3189,8 +3194,8 @@ ForceEnemySwitch:
 	call ResetEnemyStatLevels
 	call ShowSetEnemyMonAndSendOutAnimation
 	call BreakAttraction
-	call ResetBattleParticipants
-	ret
+	jp ResetBattleParticipants
+
 
 EnemySwitch:
 	call CheckWhetherToAskSwitch
@@ -3660,7 +3665,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call UpdateEnemyHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	jp CoreEnemyAbilitySendOut ; DEBUG
+	jp EnemyAbilitySendOutNotice ; DEBUG
 
 NewEnemyMonStatus:
 	xor a
@@ -4129,7 +4134,7 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
-	jp CorePlayerAbilitySendOut  ; DEBUG
+	jp PlayerAbilitySendOutNotice  ; DEBUG
 
 NewBattleMonStatus:
 	xor a
@@ -5292,7 +5297,8 @@ PlayerSwitch:
 EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp HandleEnemyBattlecryAbility
 
 BattleMonEntrance:
 	call WithdrawMonText
@@ -5326,6 +5332,7 @@ BattleMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	call SpikesDamage
+	call HandlePlayerBattlecryAbility
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5349,7 +5356,8 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	call SpikesDamage
+	jp HandlePlayerBattlecryAbility
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap
@@ -9048,38 +9056,80 @@ CoreGetCurrentAbility:
 
 
 
-CoreEnemyAbilitySendOut:
+EnemyAbilitySendOutNotice:
 	ld a, [wEnemyMonAbility]
-	and a
-	ret z
+	jr PokemonAbilityNotice
 
-	call PokemonAbilityNotice
-	ld a, [wEnemyMonAbility]
-	jp HandleBattlecryAbilities
-
-
-CorePlayerAbilitySendOut:
+PlayerAbilitySendOutNotice:
 	ld a, [wBattleMonAbility]
-	and a
-	ret z
-
-	call PokemonAbilityNotice
-	ld a, [wBattleMonAbility]
-	jp HandleBattlecryAbilities
-
+	; jr PokemonAbilityNotice
+	; fallthrough
 
 PokemonAbilityNotice:
 	ld [wNamedObjectIndex], a
+	and a
+	ret z
 	call GetAbilityName
 	ld c, 60
 	call DelayFrames
-	ld hl, BattleText_PokemonsAbility
+	; ld hl, BattleText_PokemonsAbility
+	ld hl, BattleText_UsersAbility
 	jp StdBattleTextbox
+
+
+HandleBattlecryAbilities:
+	ld a, [wPlayerIsSwitching]
+	and a
+	jr z, .enemy
+	ld a, [wEnemyIsSwitching]
+	and a
+	jr nz, HandleBothBattlecryAbilities
+	jr HandlePlayerBattlecryAbility
+
+.enemy
+	ld a, [wEnemyIsSwitching]
+	jr nz, HandleEnemyBattlecryAbility
+	ret
+
+HandleBothBattlecryAbilities:
+	call DetermineMoveOrder.speed_check
+	jr c, .player_first
+
+	call SetEnemyTurn
+	call HandleEnemyBattlecryAbility
+	call SetPlayerTurn
+	jr HandlePlayerBattlecryAbility
+
+.player_first
+	call SetPlayerTurn
+	call HandlePlayerBattlecryAbility
+	call SetEnemyTurn
+	jr HandleEnemyBattlecryAbility
+
+
+HandleEnemyBattlecryAbility:
+	ld hl, wEnemyMonHP
+	ld a, [hli]
+	or [hl]
+	ret z
+	ld a, [wEnemyMonAbility]
+	jr DoBattlecry
+
+HandlePlayerBattlecryAbility:
+	ld hl, wBattleMonHP
+	ld a, [hli]
+	or [hl]
+	ret z
+	ld a, [wBattleMonAbility]
+	; jr DoBattlecry
+	; fallthrough
 
 
 ; input:
 ;   a: ability constant
-HandleBattlecryAbilities:
+DoBattlecry:
+	and a
+	ret z
 ; preamble: store a bunch of variables
 	ld b, a
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -9097,6 +9147,8 @@ HandleBattlecryAbilities:
 	jr nz, .drizzle
 	ld a, SUNNY_DAY
 	ld [hl], a
+	ld a, DROUGHT
+	call PokemonAbilityNotice
 	farcall BattleCommand_StartSun
 	jr .done
 
@@ -9105,6 +9157,8 @@ HandleBattlecryAbilities:
 	jr nz, .sand_stream
 	ld a, RAIN_DANCE
 	ld [hl], a
+	ld a, DRIZZLE
+	call PokemonAbilityNotice
 	farcall BattleCommand_StartRain
 	jr .done
 
@@ -9113,6 +9167,11 @@ HandleBattlecryAbilities:
 	jr nz, .snow_warning
 	ld a, SANDSTORM
 	ld [hl], a
+	ld a, SAND_STREAM
+	call PokemonAbilityNotice
+	; avoid "it failed" messages due to repeating weather
+	xor a
+	ld [wBattleWeather], a
 	farcall BattleCommand_StartSandstorm
 	jr .done
 
@@ -9121,6 +9180,11 @@ HandleBattlecryAbilities:
 	jr nz, .done
 	ld a, HAIL
 	ld [hl], a
+	ld a, SNOW_WARNING
+	call PokemonAbilityNotice
+	; avoid "it failed" messages due to repeating weather
+	xor a
+	ld [wBattleWeather], a
 	farcall BattleCommand_StartHail
 	; fallthrough
 

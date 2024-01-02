@@ -35,6 +35,8 @@ BattleCommand_UTurn:
 	ld hl, SwitchPlayerMon
 	call CallBattleCore
 	ld hl, SpikesDamage
+	call CallBattleCore
+	ld hl, HandlePlayerBattlecryAbility
 	jp CallBattleCore
 
 .Enemy:
@@ -75,4 +77,6 @@ BattleCommand_UTurn:
 	ld [wEnemySwitchMonIndex], a
 	callfar ForceEnemySwitch
 	ld hl, SpikesDamage
+	call CallBattleCore
+	ld hl, HandleEnemyBattlecryAbility
 	jp CallBattleCore
