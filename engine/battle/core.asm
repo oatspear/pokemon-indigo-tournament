@@ -3607,24 +3607,14 @@ ClearEnemyMonBox:
 	call WaitBGMap
 	jp FinishBattleAnim
 
+
 ShowBattleTextEnemySentOut:
 	callfar Battle_GetTrainerName
 	ld hl, BattleText_EnemySentOut
 	call StdBattleTextbox
-
-	; DEBUG
-	ld a, [wEnemyMonAbility]
-	and a
-	jr z, .skip_name
-	ld [wNamedObjectIndex], a
-	call GetAbilityName
-	ld c, 60
-	call DelayFrames
-	ld hl, BattleText_PokemonsAbility
-	call StdBattleTextbox
-.skip_name
-
+	call CoreEnemyAbilitySendOut ; DEBUG
 	jp WaitBGMap
+
 
 ShowSetEnemyMonAndSendOutAnimation:
 	ld a, [wTempEnemyMonSpecies]
@@ -7590,18 +7580,11 @@ AnimateExpBar:
 	ldh [hBGMapMode], a
 	ret
 
+
 SendOutMonText:
 	call _SendOutMonText
-	; DEBUG
-	ld a, [wBattleMonAbility]
-	and a
-	ret z
-	ld [wNamedObjectIndex], a
-	call GetAbilityName
-	ld c, 60
-	call DelayFrames
-	ld hl, BattleText_PokemonsAbility
-	jp StdBattleTextbox
+	jp CorePlayerAbilitySendOut  ; DEBUG
+
 
 _SendOutMonText:
 	ld a, [wLinkMode]
@@ -9072,3 +9055,26 @@ CoreGetCurrentAbility:
 	ret nz
 	ld a, [wBattleMonAbility]
 	ret
+
+
+
+CoreEnemyAbilitySendOut:
+	ld a, [wEnemyMonAbility]
+	jr _PokemonAbilitySendOut
+
+
+CorePlayerAbilitySendOut:
+	ld a, [wBattleMonAbility]
+	; jr _PokemonAbilitySendOut
+	; fallthrough
+
+
+_PokemonAbilitySendOut:
+	and a
+	ret z
+	ld [wNamedObjectIndex], a
+	call GetAbilityName
+	ld c, 60
+	call DelayFrames
+	ld hl, BattleText_PokemonsAbility
+	jp StdBattleTextbox
