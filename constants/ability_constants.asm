@@ -27,4 +27,5 @@
 	const DRIZZLE       ; 14
 	const SAND_STREAM   ; 15
 	const SNOW_WARNING  ; 16
+	const SNIPER        ; 17
 NUM_ABILITIES EQU const_value - 1

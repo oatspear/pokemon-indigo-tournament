@@ -22,6 +22,7 @@ AbilityDescriptions::
 		dw DrizzleDescription
 		dw SandStreamDescription
 		dw SnowWarningDescription
+		dw SniperDescription
 
 
 NoAbilityDescription:
@@ -114,3 +115,7 @@ SandStreamDescription:
 SnowWarningDescription:
 	db   "Summons hail"
 	next "in battle.@"
+
+SniperDescription:
+	db   "Powers up"
+	next "critical hits.@"

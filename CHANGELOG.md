@@ -51,6 +51,7 @@
 - **Drizzle**: Summons rain when entering battle.
 - **Sand Stream**: Summons a sandstorm when entering battle.
 - **Snow Warning**: Summons hail when entering battle.
+- **Sniper**: Boosts critical hit damage by 50%.
 
 ### Removed
 

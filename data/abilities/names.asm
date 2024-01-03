@@ -21,3 +21,4 @@ AbilityNames::
 	db "DRIZZLE@"
 	db "SAND STREAM@"
 	db "SNOW WARNING@"
+	db "SNIPER@"

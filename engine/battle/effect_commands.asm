@@ -3239,7 +3239,10 @@ ConfusionDamageCalc:
 
 .DoneItem:
 ; Critical hits
-	call .CriticalMultiplier
+	call .CriticalMultiplier  ; x1.5
+	call GetCurrentAbility
+	cp SNIPER
+	call z, .CriticalMultiplier  ; x1.5 (50% boost to critical damage)
 
 ; Update wCurDamage. Max 999 (capped at 997, then add 2).
 MAX_DAMAGE EQU 999
