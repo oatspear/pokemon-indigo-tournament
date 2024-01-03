@@ -52,6 +52,7 @@
 - **Sand Stream**: Summons a sandstorm when entering battle.
 - **Snow Warning**: Summons hail when entering battle.
 - **Sniper**: Boosts critical hit damage by 50%.
+- **Super Luck**: Boosts critical hit ratio by 1 stage.
 
 ### Removed
 
@@ -85,6 +86,7 @@
 - Paralysis reduces Speed by 50%, instead of 75%.
 - High-power recoil moves do approximately 1/3 recoil damage, instead of 1/4 recoil damage.
 - **Sky Attack**: single turn attack, 80 Power, 100% Accuracy, high critical-hit ratio, 30% chance to flinch.
+- Updated critical hit chances to current generation mechanics.
 
 
 ## Version 0.1

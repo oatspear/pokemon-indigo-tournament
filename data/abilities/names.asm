@@ -22,3 +22,4 @@ AbilityNames::
 	db "SAND STREAM@"
 	db "SNOW WARNING@"
 	db "SNIPER@"
+	db "SUPER LUCK@"

@@ -23,6 +23,7 @@ AbilityDescriptions::
 		dw SandStreamDescription
 		dw SnowWarningDescription
 		dw SniperDescription
+		dw SuperLuckDescription
 
 
 NoAbilityDescription:
@@ -119,3 +120,7 @@ SnowWarningDescription:
 SniperDescription:
 	db   "Powers up"
 	next "critical hits.@"
+
+SuperLuckDescription:
+	db   "Critical hits"
+	next "land more often.@"

@@ -902,7 +902,15 @@ BattleCommand_Critical:
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVar
 	bit SUBSTATUS_FOCUS_ENERGY, a
-	jr z, .CheckCritical
+	jr z, .SuperLuck
+
+; +1 critical level
+	inc c
+
+.SuperLuck:
+	call GetCurrentAbility
+	cp SUPER_LUCK
+	jr nz, .CheckCritical
 
 ; +1 critical level
 	inc c
@@ -940,6 +948,10 @@ BattleCommand_Critical:
 	inc c
 
 .Tally:
+	ld a, c
+	cp 3
+	jr nc, .AlwaysCritical
+
 	ld hl, CriticalHitChances
 	ld b, 0
 	add hl, bc
