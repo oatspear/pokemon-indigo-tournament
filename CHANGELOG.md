@@ -47,6 +47,10 @@
 - **Rock Head**: Prevents recoil damage.
 - **Dry Skin**: Heals 1/8 max HP in rain; takes 1/8 max HP damage in sunlight; absorbs Water-type moves, healing for 1/4 max HP; Fire-type moves against the user deal 25% more damage.
 - **Thick Fat**: Halves damage taken from Fire-type and Ice-type moves.
+- **Drought**: Summons sunlight when entering battle.
+- **Drizzle**: Summons rain when entering battle.
+- **Sand Stream**: Summons a sandstorm when entering battle.
+- **Snow Warning**: Summons hail when entering battle.
 
 ### Removed
 
